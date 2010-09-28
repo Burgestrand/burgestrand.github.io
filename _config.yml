@@ -1,0 +1,16 @@
+# Ignored by GitHub:
+# - source: <your pages repo>
+# - destination: <the build dir>
+# - lsi: false
+# - pygments: true
+#
+
+# Maruku for extensions & definition lists
+markdown: maruku
+# N posts per page
+paginate: 10
+# List of directories to exclude in Jekyll
+exclude: []
+
+# Custom data, available through {{ site.<variable> }}
+base_uri: "http://burgestrand.se/"
