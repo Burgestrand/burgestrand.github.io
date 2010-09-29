@@ -14,3 +14,4 @@ exclude: []
 
 # Custom data, available through {{ site.<variable> }}
 base_uri: "http://burgestrand.se/"
+title: ".authentic nerd"
