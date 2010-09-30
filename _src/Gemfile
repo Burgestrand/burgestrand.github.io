@@ -1,0 +1,5 @@
+source :rubygems
+
+gem 'rake'
+gem 'haml', '~> 3'
+gem 'compass', '~> 0.10'
