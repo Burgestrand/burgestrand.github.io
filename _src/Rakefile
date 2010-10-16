@@ -17,6 +17,9 @@ haml_config = {
 }
 
 # Tasks
+desc "Compiles all SASS stylesheets and HAML documents."
+task :default => ['compile:css', 'compile:haml']
+
 namespace :compile do
   desc "Compiles all SASS stylesheets to CSS using Compass."
   task :css do
