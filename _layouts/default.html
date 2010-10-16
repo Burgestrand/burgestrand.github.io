@@ -10,9 +10,12 @@
       <!-- Kort introduktion -->
       <!-- Navigationsmeny -->
     </div>
-    <div class="section body">{{ content }}</div>
-    <div class="footer">
-      <!-- Snabblänkar -->
+    <div class="section body">
+      {% include navigation.html %}
+      {{ content }}
+      <div class="footer">
+        <!-- Snabblänkar -->
+      </div>
     </div>
   </body>
 </html>

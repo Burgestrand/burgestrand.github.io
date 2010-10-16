@@ -7,11 +7,11 @@
   %body
     .header
       %h1 {{ page.title }}
-      / Kort introduktion
-      / Navigationsmeny
     
-    .section.body {{ content }}
+    .section.body
+      {% include navigation.html %}
+      
+      {{ content }}
     
-    .footer
-      / Snabblänkar
-    
+      .footer
+        / Snabblänkar
