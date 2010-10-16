@@ -20,11 +20,14 @@ haml_config = {
 namespace :compile do
   desc "Compiles all SASS stylesheets to CSS using Compass."
   task :css do
+    puts "[Compiling SASS]".blue
     system 'bundle exec compass compile -c Rakefile'
   end
   
   desc "Compiles all HAML to HTML into main dir."
   task :haml do
+    puts "[Compiling HAML]".blue
+    
     # Find HAMLs and their respective HTMLs
     hamls = Dir[File.join(src_dir, '**', '*.haml')]
     htmls = hamls.map { |input| input.gsub(src_dir, base_dir).gsub(/haml\z/, 'html') }
@@ -36,7 +39,7 @@ namespace :compile do
       tag = "[#{i+1}/#{count}]"
       
       if FileUtils.uptodate?(output, [input])
-        puts "#{tag} skipping #{input}".white
+        puts "#{tag} no change for #{input}".white
         next
       end
       
@@ -47,17 +50,30 @@ namespace :compile do
   end
 end
 
-# Library
-class String
+##
+# TODO: Make gem?
+module ConsoleColors
   def green
-    colorize("\e[1m\e[32m")
+    colorize "\e[1m\e[32m"
   end
   
   def white
-    colorize("\e[37m")
+    colorize "\e[37m"
+  end
+  
+  def blue
+    colorize "\e[34m"
+  end
+  
+  def bright
+    colorize "\e[1m"
   end
   
   def colorize(color_code)
     "#{color_code}#{self}\e[0m"
   end
+end
+
+class String
+  include ConsoleColors
 end
