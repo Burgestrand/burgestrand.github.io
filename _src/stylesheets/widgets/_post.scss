@@ -28,13 +28,6 @@ article
     { float: right }
   }
   
-  & + article
-  {
-    border-top: .1em solid #999;
-  }
-  
-  p
-  {
-    margin: 0 0 1em;
-  }
+  & + article { border-top: .1em solid #999; }
+  p { margin: 0 0 1em; }
 }
