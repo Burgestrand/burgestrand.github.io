@@ -1,9 +1,32 @@
 ---
 layout: default
-title: Vad behöver jag från min hemsida?
+title: Senaste inläggen
 ---
-<ul>
-  <li>Tunn bloggmotor (Jekyll?)</li>
-  <li>En “Om Mig”-sida</li>
-  <li>En CV-sida</li>
-</ul>
+<section>
+  {% for post in site.posts %}
+  <article>
+    <header>
+      <h1>{{ post.title }}</h1>
+      <p>
+        Publicerad
+        <time datetime="{{ post.date | date_to_xmlschema }}" pubdate="pubdate">
+          {{ post.date | date: "%d %B %Y" }}
+        </time>
+        <a href="{{ post.url }}" rel="permalink">permalink</a>
+      </p>
+    </header>
+    {% if post.slug != nil %}
+    <blockquote cite="{{ post.url }}">
+      <p>{{ post.slug }}</p>
+    </blockquote>
+    <p>
+      <cite>
+        <a href="{{ post.url }}">Läs mer av “{{ post.title }}”</a>
+      </cite>
+    </p>
+    {% else %}
+    {{ post.content }}
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>

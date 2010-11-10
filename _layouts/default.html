@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }} | {{ site.title }}</title>
+    {% include common/head.html %}
   </head>
   <body>
-    <div class="header">
-      <h1>{{ page.title }}</h1>
-      <!-- Kort introduktion -->
-      <!-- Navigationsmeny -->
-    </div>
-    <div class="section body">{{ content }}</div>
-    <div class="footer">
-      <!-- Snabblänkar -->
-    </div>
+    {% include common/header.html %}
+    {{ content }}
   </body>
 </html>

@@ -1,10 +1,28 @@
 :plain
   ---
   layout: default
-  title: Vad behöver jag från min hemsida?
+  title: Senaste inläggen
   ---
 
-%ul
-  %li Tunn bloggmotor (Jekyll?)
-  %li En “Om Mig”-sida
-  %li En CV-sida
+%section
+  {% for post in site.posts %}
+  %article
+    %header
+      %h1 {{ post.title }}
+      %p
+        Publicerad
+        %time{:pubdate => 'pubdate', :datetime => "{{ post.date | date_to_xmlschema }}"}
+          {{ post.date | date: "%d %B %Y" }}
+        %a{:rel => 'permalink', :href => "{{ post.url }}"} permalink
+
+    {% if post.slug != nil %}
+    %blockquote{:cite => "{{ post.url }}"}
+      %p {{ post.slug }}
+
+    %p
+      %cite
+        %a{:href => "{{ post.url }}"} Läs mer av “{{ post.title }}”
+    {% else %}
+    {{ post.content }}
+    {% endif %}
+  {% endfor %}

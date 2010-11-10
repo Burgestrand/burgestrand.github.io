@@ -1,17 +1,8 @@
 !!!
 %html
   %head
-    %meta{:charset => 'utf-8'}
-    
-    %title {{ page.title }} | {{ site.title }}
+    {% include common/head.html %}
   %body
-    .header
-      %h1 {{ page.title }}
-      / Kort introduktion
-      / Navigationsmeny
+    {% include common/header.html %}
     
-    .section.body {{ content }}
-    
-    .footer
-      / Snabblänkar
-    
+    {{ content }}
