@@ -6,8 +6,8 @@ src_dir  = './'
 base_dir = '../'
 
 # Compass config
-sass_dir = File.join(src_dir, 'css')
-css_dir = File.join(base_dir, 'css', 'compiled')
+sass_dir = File.join(src_dir, 'stylesheets')
+css_dir = File.join(base_dir, 'stylesheets', 'compiled')
 output_style = :compressed
 
 # Haml config
