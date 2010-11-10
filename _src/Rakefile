@@ -46,6 +46,9 @@ namespace :compile do
         next
       end
       
+      # Make directory if necessary
+      FileUtils.mkpath File.dirname(output)
+      
       puts "#{tag} #{input} => #{output}".green
       engine = Haml::Engine.new IO.read(input), haml_config.merge(:filename => input)
       File.open(output, 'w') { |f| f.write(engine.render) }
