@@ -1,0 +1,23 @@
+body > header
+{
+  margin-bottom: 2em;
+  position: relative;
+  
+  @include clearfix;
+  
+  nav
+  {
+    bottom: 0;
+    font-size: 1.2em;
+    left: 0;
+    position: absolute;
+    
+    li
+    {
+      display: inline-block;
+      margin-left: 1.2em;
+      
+      &:first-child { margin-left: 0 }
+    }
+  }
+}

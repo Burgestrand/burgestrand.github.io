@@ -1,0 +1,11 @@
+// Wrap
+body > header, body > nav,
+body > article, body > section
+{
+  margin: 0 auto;
+  position: relative;
+  width: 42em;
+}
+
+@import "widgets/header.scss";
+@import "widgets/post.scss";

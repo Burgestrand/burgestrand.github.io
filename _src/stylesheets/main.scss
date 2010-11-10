@@ -1,7 +1,16 @@
 @import "compass.scss";
+@import "compass/css3.scss";
+@import "compass/reset.scss";
+@import "fonts.scss";
 
 body
 {
+  border-top: .3em solid #666;
   color: #333;
-  font: 100.01%/1.25 'Lucida Grande', sans-serif;
 }
+
+.clear { clear: both }
+.hide  { display: none }
+
+@import "typography.scss";
+@import "layout.scss";

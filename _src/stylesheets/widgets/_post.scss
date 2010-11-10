@@ -1,0 +1,40 @@
+article > header + blockquote p
+{
+  // Slug
+  color: #666;
+}
+
+article
+{
+  font-size: 1.2em;
+  
+  header
+  {
+    margin-bottom: 1em;
+    @include clearfix;
+    
+    h1 + p
+    {
+      background: #eee;
+      font-size: .8em;
+      color: #999;
+      margin-bottom: 0;
+      padding: .2em .4em;
+      
+      @include border-radius(.2em);
+    }
+    
+    a[rel="permalink"]
+    { float: right }
+  }
+  
+  & + article
+  {
+    border-top: .1em solid #999;
+  }
+  
+  p
+  {
+    margin: 0 0 1em;
+  }
+}
