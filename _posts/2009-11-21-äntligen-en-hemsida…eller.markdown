@@ -2,7 +2,7 @@
 layout: post
 title: Äntligen en hemsida… eller?
 date: Nov 21st, 2009 8:29pm CET
-tags: om mig
+tags: [om mig]
 slug:
   Jag har programmerat sen jag var tio år gammal. Jag fick upp ögonen för att
   skapa hemsidor i början av gymnasiet, och har pysslat med det till och från
