@@ -9,4 +9,4 @@ nytt system för att driva hela min blogg. Med det planerar jag även att skriva
 om hela introduktionssidan om mig.
 
 Tills det är gjort finns min äldre introduktionssida:  
-<http://burgestrand.tumblr.com/post/252543664/kim-burgestrand-me>
+http://burgestrand.tumblr.com/post/252543664/kim-burgestrand-me
