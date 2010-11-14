@@ -1,5 +1,4 @@
 @import "compass/reset.scss";
-@import "reset/nav.scss";
 
 // CSS3
 section, article, header, footer, nav
@@ -11,6 +10,8 @@ section, article, header, footer, nav
 // Unreset
 pre, code { font-family: monospace; }
 q, blockquote { color: #666; }
+
+p { margin: 0 0 1em; }
 
 ul, ol
 {
@@ -31,4 +32,11 @@ dl
   }
   
   dd { margin: 0 1em; }
+}
+
+// Specials
+nav ol, nav ul
+{
+  @include reset-list-style;
+  @include reset-box-model;
 }

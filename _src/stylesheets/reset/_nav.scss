@@ -1,8 +1,0 @@
-nav
-{
-  ol, ul
-  {
-    @include reset-list-style;
-    @include reset-box-model;
-  }
-}

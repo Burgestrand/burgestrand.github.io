@@ -3,8 +3,16 @@ body > .main
 {
   margin: 0 auto;
   position: relative;
-  width: 42em;
+  width: 35em;
+}
+
+article + article
+{
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: .1em dashed #DDD;
 }
 
 @import "layout/header.scss";
+@import "post/meta.scss";
 @import "post/post.scss";

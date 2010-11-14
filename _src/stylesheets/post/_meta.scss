@@ -1,0 +1,24 @@
+article
+{
+  & > header, & > footer
+  {
+    p
+    {
+      background: #eee;
+      font-size: .8em;
+      color: #999;
+      margin-bottom: 0;
+      padding: .2em .4em;
+    }
+  }
+  
+  & > header p
+  {
+    @include border-top-radius(.2em);
+  }
+  
+  & > footer p
+  {
+    @include border-bottom-radius(.2em);
+  }
+}
