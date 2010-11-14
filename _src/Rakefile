@@ -8,7 +8,7 @@ base_dir = '../'
 # Compass config
 sass_dir = File.join(src_dir, 'stylesheets')
 css_dir = File.join(base_dir, 'stylesheets', 'compiled')
-output_style = :compressed
+output_style = :nested
 
 # Haml config
 haml_config = {
