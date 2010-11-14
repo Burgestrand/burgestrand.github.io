@@ -3,21 +3,15 @@
   %head
     {% include common/head.html %}
   %body
-    {% include common/header.html %}
+    %div.main
+      {% include common/header.html %}
     
-    %section
-      %article
-        %header
-          %h1 {{ page.title }}
-          %p
-            Publicerad
-            %time{:pubdate => 'pubdate', :datetime => "{{ page.date | date_to_xmlschema }}"}
-              {{ page.date | date: "%d %B %Y" }}
-            %a{:rel => 'permalink', :href => "{{ page.url }}"} permalink
-
-        {% if page.slug != nil %}
-        %blockquote{:cite => "{{ page.url }}"}
-          %p {{ page.slug }}
-        {% endif %}
-        
-        {{ content }}
+      %section
+        %article{:class => "{{ post.layout }}"}
+          {% if post.layout == "post" %}
+          {% include post/post.html %}
+          {% elsif post.layout == "quote" %}
+          {% include post/quote.html %}
+          {% elsif post.layout == "link" %}
+          {% include post/link.html %}
+          {% endif %}

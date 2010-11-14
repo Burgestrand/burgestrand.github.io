@@ -4,26 +4,19 @@
     {% include common/head.html %}
   </head>
   <body>
-    {% include common/header.html %}
-    <section>
-      <article>
-        <header>
-          <h1>{{ page.title }}</h1>
-          <p>
-            Publicerad
-            <time datetime="{{ page.date | date_to_xmlschema }}" pubdate="pubdate">
-              {{ page.date | date: "%d %B %Y" }}
-            </time>
-            <a href="{{ page.url }}" rel="permalink">permalink</a>
-          </p>
-        </header>
-        {% if page.slug != nil %}
-        <blockquote cite="{{ page.url }}">
-          <p>{{ page.slug }}</p>
-        </blockquote>
-        {% endif %}
-        {{ content }}
-      </article>
-    </section>
+    <div class="main">
+      {% include common/header.html %}
+      <section>
+        <article class="{{ post.layout }}">
+          {% if post.layout == "post" %}
+          {% include post/post.html %}
+          {% elsif post.layout == "quote" %}
+          {% include post/quote.html %}
+          {% elsif post.layout == "link" %}
+          {% include post/link.html %}
+          {% endif %}
+        </article>
+      </section>
+    </div>
   </body>
 </html>

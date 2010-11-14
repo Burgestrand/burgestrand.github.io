@@ -1,9 +1,7 @@
-body > header
+.main > header
 {
   margin-bottom: 2em;
   position: relative;
-  
-  @include clearfix;
   
   nav
   {
