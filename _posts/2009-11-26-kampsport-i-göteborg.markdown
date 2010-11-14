@@ -2,7 +2,7 @@
 layout: post
 title: Kampsport i Göteborg
 date: Nov 26th, 2009 2:05am CET
-categories: [om mig, kampsport]
+categories: [om-mig, kampsport]
 slug:
   Har tränat kampsport en stor del av mitt liv. Jag var väldigt seriös när jag
   var liten, men i tonåren började jag bli mindre intresserad av att avancera

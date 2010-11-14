@@ -2,7 +2,7 @@
 layout: post
 title: Nu har jag flyttat!
 date: 2010-11-13 17:32:48 CET
-categories: [om mig]
+categories: [om-mig]
 slug:
   Jag skrev för ett litet tag sedan att jag skulle flytta min blogg. Idag hade
   jag lite tråkigt — och Elins dator — så jag fixade det allra minsta som

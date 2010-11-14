@@ -2,7 +2,7 @@
 layout: post
 title: Människor med paraply
 date: Nov 26th, 2009 6:04pm CET
-categories: [om andra]
+categories: [om-andra]
 slug:
   Idag regnade det. Inte storm, men det blåste som tusan och duggregnet stod som
   spön i backen. Naturligtvis betyder detta att folk tar med sig paraply när de

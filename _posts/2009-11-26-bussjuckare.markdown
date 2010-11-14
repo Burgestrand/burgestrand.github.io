@@ -2,7 +2,7 @@
 layout: post
 title: Bussjuckare
 date: Nov 26th, 2009 12:00pm CET
-categories: [om andra]
+categories: [om-andra]
 slug:
   Fullpackade bussar och kramande medpassagerare. Alla som åker i
   kollektivtrafiken verkar ha ett starkt behov av att gnida sig mot varandra…
