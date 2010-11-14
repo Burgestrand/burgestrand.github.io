@@ -1,4 +1,5 @@
-<header>
+{{ post.content }}
+<footer>
   <h1>{{ post.title }}</h1>
   <p>
     Publicerad
@@ -7,14 +8,4 @@
     </time>
     <a href="{{ post.url }}" rel="permalink">permalink</a>
   </p>
-</header>
-{% if post.slug != nil %}
-<blockquote cite="{{ post.url }}">
-  <p>{{ post.slug }}</p>
-</blockquote>
-<p>
-  <a href="{{ post.url }}">Läs mer av “<cite>{{ post.title }}</cite>”…</a>
-</p>
-{% else %}
-{{ post.content }}
-{% endif %}
+</footer>

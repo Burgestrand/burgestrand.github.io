@@ -1,17 +1,11 @@
-%header
-  %h1 {{ post.title }}
+%h1
+  %q{:cite => "{{ post.source }}"} {{ post.title }}
+
+{{ post.content }}
+
+%footer
   %p
     Publicerad
     %time{:pubdate => 'pubdate', :datetime => "{{ post.date | date_to_xmlschema }}"}
       {{ post.date | date: "%d %B %Y" }}
     %a{:rel => 'permalink', :href => "{{ post.url }}"} permalink
-
-{% if post.slug != nil %}
-%blockquote{:cite => "{{ post.url }}"}
-  %p {{ post.slug }}
-
-%p
-  %a{:href => "{{ post.url }}"} Läs mer av “<cite>{{ post.title }}</cite>”…
-{% else %}
-{{ post.content }}
-{% endif %}

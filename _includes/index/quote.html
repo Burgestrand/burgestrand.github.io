@@ -1,5 +1,8 @@
-<header>
-  <h1>{{ post.title }}</h1>
+<h1>
+  <q cite="{{ post.source }}">{{ post.title }}</q>
+</h1>
+{{ post.content }}
+<footer>
   <p>
     Publicerad
     <time datetime="{{ post.date | date_to_xmlschema }}" pubdate="pubdate">
@@ -7,14 +10,4 @@
     </time>
     <a href="{{ post.url }}" rel="permalink">permalink</a>
   </p>
-</header>
-{% if post.slug != nil %}
-<blockquote cite="{{ post.url }}">
-  <p>{{ post.slug }}</p>
-</blockquote>
-<p>
-  <a href="{{ post.url }}">Läs mer av “<cite>{{ post.title }}</cite>”…</a>
-</p>
-{% else %}
-{{ post.content }}
-{% endif %}
+</footer>
