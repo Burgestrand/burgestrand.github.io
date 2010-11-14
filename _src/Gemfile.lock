@@ -4,7 +4,10 @@ GEM
     compass (0.10.5)
       haml (>= 3.0.4)
     haml (3.0.21)
+    maruku (0.6.0)
+      syntax (>= 1.0.0)
     rake (0.8.7)
+    syntax (1.0.0)
 
 PLATFORMS
   ruby
@@ -12,4 +15,5 @@ PLATFORMS
 DEPENDENCIES
   compass (~> 0.10)
   haml (~> 3)
+  maruku
   rake
