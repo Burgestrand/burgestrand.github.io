@@ -1,6 +1,6 @@
 ---
 title: There is no gravity, the world sucks.
-layout: post
+layout: quote
 date: Nov 22nd, 2009 1:11pm CET
 ---
 

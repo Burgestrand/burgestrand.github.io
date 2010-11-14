@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: quote
 date: Dec 6th, 2009 6:12pm CET
 title:
   Programming today is a race between software engineers striving to build
