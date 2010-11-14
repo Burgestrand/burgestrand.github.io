@@ -1,7 +1,10 @@
 {{ post.content }}
 
+{% if post.caption %}
+%p {{ post.caption }}
+{% endif %}
+
 %footer
-  %h1 {{ post.title }}
   %p
     Publicerad
     %time{:pubdate => 'pubdate', :datetime => "{{ post.date | date_to_xmlschema }}"}

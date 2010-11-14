@@ -4,8 +4,5 @@ article.post
   {
     margin-bottom: 1em;
     @include clearfix;
-    
-    a[rel="permalink"]
-    { float: right }
   }
 }

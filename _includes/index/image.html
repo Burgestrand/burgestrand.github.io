@@ -1,6 +1,8 @@
 {{ post.content }}
+{% if post.caption %}
+<p>{{ post.caption }}</p>
+{% endif %}
 <footer>
-  <h1>{{ post.title }}</h1>
   <p>
     Publicerad
     <time datetime="{{ post.date | date_to_xmlschema }}" pubdate="pubdate">
