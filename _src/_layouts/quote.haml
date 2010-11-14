@@ -1,1 +1,23 @@
-post.haml
+!!!
+%html
+  %head
+    {% include common/head.html %}
+  %body
+    {% include common/header.html %}
+    
+    %section
+      %article
+        %header
+          %h1 {{ page.title }}
+          %p
+            Publicerad
+            %time{:pubdate => 'pubdate', :datetime => "{{ page.date | date_to_xmlschema }}"}
+              {{ page.date | date: "%d %B %Y" }}
+            %a{:rel => 'permalink', :href => "{{ page.url }}"} permalink
+
+        {% if page.slug != nil %}
+        %blockquote{:cite => "{{ page.url }}"}
+          %p {{ page.slug }}
+        {% endif %}
+        
+        {{ content }}
