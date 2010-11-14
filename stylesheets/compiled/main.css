@@ -233,12 +233,14 @@ article > header, article > footer {
     background: #eee;
     font-size: .8em;
     color: #999;
+    margin: 0;
     padding: .2em .4em; }
-  /* line 15, ../../_src/stylesheets/post/_meta.scss */
+  /* line 16, ../../_src/stylesheets/post/_meta.scss */
   article > header a[rel="permalink"], article > footer a[rel="permalink"] {
     float: right; }
-/* line 18, ../../_src/stylesheets/post/_meta.scss */
+/* line 20, ../../_src/stylesheets/post/_meta.scss */
 article > header p {
+  margin: .5em 0 1em;
   -moz-border-radius-topleft: 0.2em;
   -webkit-border-top-left-radius: 0.2em;
   -o-border-top-left-radius: 0.2em;
@@ -251,8 +253,9 @@ article > header p {
   -ms-border-top-right-radius: 0.2em;
   -khtml-border-top-right-radius: 0.2em;
   border-top-right-radius: 0.2em; }
-/* line 19, ../../_src/stylesheets/post/_meta.scss */
+/* line 26, ../../_src/stylesheets/post/_meta.scss */
 article > footer p {
+  margin: .5em 0 0;
   -moz-border-radius-bottomleft: 0.2em;
   -webkit-border-bottom-left-radius: 0.2em;
   -o-border-bottom-left-radius: 0.2em;
