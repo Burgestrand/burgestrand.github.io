@@ -11,3 +11,24 @@ section, article, header, footer, nav
 // Unreset
 pre, code { font-family: monospace; }
 q, blockquote { color: #666; }
+
+ul, ol
+{
+  list-style-position: inside;
+  margin: 0 2em 1em;
+}
+ul li { list-style-type: disc; }
+ol li { list-style-type: decimal; }
+
+dl
+{
+  margin-bottom: 1em;
+  
+  dt
+  {
+    color: #666;
+    font-weight: bold;
+  }
+  
+  dd { margin: 0 1em; }
+}

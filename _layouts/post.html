@@ -7,12 +7,12 @@
     <div class="main">
       {% include common/header.html %}
       <section>
-        <article class="{{ post.layout }}">
-          {% if post.layout == "post" %}
+        <article class="{{ page.layout }}">
+          {% if page.layout == "post" %}
           {% include post/post.html %}
-          {% elsif post.layout == "quote" %}
+          {% elsif page.layout == "quote" %}
           {% include post/quote.html %}
-          {% elsif post.layout == "link" %}
+          {% elsif page.layout == "link" %}
           {% include post/link.html %}
           {% endif %}
         </article>
