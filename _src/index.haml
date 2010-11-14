@@ -13,5 +13,7 @@
     {% include index/quote.html %}
     {% elsif post.layout == "link" %}
     {% include index/link.html %}
+    {% elsif post.layout == "image" %}
+    {% include index/image.html %}
     {% endif %}
   {% endfor %}
