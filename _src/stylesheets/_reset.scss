@@ -10,6 +10,11 @@ section, article, header, footer, nav
 // Unreset
 pre, code { font-family: monospace; }
 q, blockquote { color: #666; }
+small
+{
+  font-size: .8em;
+  font-weight: normal;
+}
 
 p { margin: 0 0 1em; }
 
@@ -32,6 +37,7 @@ dl
   }
   
   dd { margin: 0 1em; }
+  dd + dt { margin-top: .5em; }
 }
 
 // Specials

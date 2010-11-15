@@ -71,34 +71,42 @@ q, blockquote {
   color: #666; }
 
 /* line 14, ../../_src/stylesheets/_reset.scss */
+small {
+  font-size: .8em;
+  font-weight: normal; }
+
+/* line 19, ../../_src/stylesheets/_reset.scss */
 p {
   margin: 0 0 1em; }
 
-/* line 17, ../../_src/stylesheets/_reset.scss */
+/* line 22, ../../_src/stylesheets/_reset.scss */
 ul, ol {
   list-style-position: inside;
   margin: 0 2em 1em; }
 
-/* line 21, ../../_src/stylesheets/_reset.scss */
+/* line 26, ../../_src/stylesheets/_reset.scss */
 ul li {
   list-style-type: disc; }
 
-/* line 22, ../../_src/stylesheets/_reset.scss */
+/* line 27, ../../_src/stylesheets/_reset.scss */
 ol li {
   list-style-type: decimal; }
 
-/* line 25, ../../_src/stylesheets/_reset.scss */
+/* line 30, ../../_src/stylesheets/_reset.scss */
 dl {
   margin-bottom: 1em; }
-  /* line 29, ../../_src/stylesheets/_reset.scss */
+  /* line 34, ../../_src/stylesheets/_reset.scss */
   dl dt {
     color: #666;
     font-weight: bold; }
-  /* line 34, ../../_src/stylesheets/_reset.scss */
+  /* line 39, ../../_src/stylesheets/_reset.scss */
   dl dd {
     margin: 0 1em; }
+  /* line 40, ../../_src/stylesheets/_reset.scss */
+  dl dd + dt {
+    margin-top: .5em; }
 
-/* line 39, ../../_src/stylesheets/_reset.scss */
+/* line 45, ../../_src/stylesheets/_reset.scss */
 nav ol, nav ul {
   list-style: none;
   margin: 0;
@@ -283,3 +291,22 @@ article.image img {
 /* line 14, ../../_src/stylesheets/post/_image.scss */
 article.image footer h1 {
   color: #666; }
+
+/* line 3, ../../_src/stylesheets/page/_about-me.scss */
+article.about-me h1 {
+  margin-bottom: .25em; }
+/* line 6, ../../_src/stylesheets/page/_about-me.scss */
+article.about-me img {
+  border: .15em solid black;
+  float: right;
+  margin: 0 0 1em 1em;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0; }
+/* line 14, ../../_src/stylesheets/page/_about-me.scss */
+article.about-me header dd {
+  margin: 0; }
+/* line 15, ../../_src/stylesheets/page/_about-me.scss */
+article.about-me dl dd {
+  margin: 0 0 0 1em; }
