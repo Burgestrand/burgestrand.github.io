@@ -14,4 +14,4 @@ exclude: []
 
 # Custom data, available through {{ site.<variable> }}
 base_uri: "http://burgestrand.se/"
-title: "av Kim Burgestrand"
+title: "by Kim Burgestrand"
