@@ -1,0 +1,13 @@
+<h1>
+  <q cite="{{ post.source }}">{{ post.title }}</q>
+</h1>
+{{ post.content }}
+<footer>
+  <p>
+    Publicerad
+    <time datetime="{{ post.date | date_to_xmlschema }}" pubdate="pubdate">
+      {{ post.date | date: "%d %B %Y" }}
+    </time>
+    <a href="{{ post.url }}" rel="permalink">permalink</a>
+  </p>
+</footer>

@@ -1,0 +1,16 @@
+article.about-me
+{
+  h1 { margin-bottom: .25em; }
+  
+  img
+  {
+    border: .15em solid black;
+    float: right;
+    margin: 0 0 1em 1em;
+    
+    @include box-shadow(rgba(0, 0, 0, 0.6), 1px, 1px, 5px);
+  }
+  
+  header dd { margin: 0; }
+  dl dd { margin: 0 0 0 1em; }
+}

@@ -1,10 +1,19 @@
 :plain
   ---
-  layout: default
-  title: Vad behöver jag från min hemsida?
+  layout: page
+  title: Latest posts
   ---
 
-%ul
-  %li Tunn bloggmotor (Jekyll?)
-  %li En “Om Mig”-sida
-  %li En CV-sida
+%section
+  {% for post in site.posts %}
+  %article{:class => "{{ post.layout }}"}
+    {% if post.layout == "post" %}
+    {% include index/post.html %}
+    {% elsif post.layout == "quote" %}
+    {% include index/quote.html %}
+    {% elsif post.layout == "link" %}
+    {% include index/link.html %}
+    {% elsif post.layout == "image" %}
+    {% include index/image.html %}
+    {% endif %}
+  {% endfor %}

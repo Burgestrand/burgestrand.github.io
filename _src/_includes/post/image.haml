@@ -1,0 +1,12 @@
+{{ content }}
+
+{% if page.caption %}
+%p {{ page.caption }}
+{% endif %}
+
+%footer
+  %p
+    Publicerad
+    %time{:pubdate => 'pubdate', :datetime => "{{ page.date | date_to_xmlschema }}"}
+      {{ page.date | date: "%d %B %Y" }}
+    %a{:rel => 'permalink', :href => "{{ page.url }}"} permalink

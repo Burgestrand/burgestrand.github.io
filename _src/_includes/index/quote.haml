@@ -1,0 +1,11 @@
+%h1
+  %q{:cite => "{{ post.source }}"} {{ post.title }}
+
+{{ post.content }}
+
+%footer
+  %p
+    Publicerad
+    %time{:pubdate => 'pubdate', :datetime => "{{ post.date | date_to_xmlschema }}"}
+      {{ post.date | date: "%d %B %Y" }}
+    %a{:rel => 'permalink', :href => "{{ post.url }}"} permalink

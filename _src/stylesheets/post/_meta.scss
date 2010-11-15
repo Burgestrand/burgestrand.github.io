@@ -1,0 +1,30 @@
+article
+{
+  & > header, & > footer
+  {
+    @include clearfix;
+    
+    p
+    {
+      background: #eee;
+      font-size: .8em;
+      color: #999;
+      margin: 0;
+      padding: .2em .4em;
+    }
+    
+    a[rel="permalink"] { float: right }
+  }
+  
+  & > header p
+  {
+    margin: .5em 0 1em;
+    @include border-top-radius(.2em);
+  }
+  
+  & > footer p
+  {
+    margin: .5em 0 0;
+    @include border-bottom-radius(.2em);
+  }
+}

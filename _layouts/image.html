@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include common/head.html %}
+  </head>
+  <body>
+    <div class="main">
+      {% include common/header.html %}
+      <section>
+        <article class="{{ page.layout }}">
+          {% if page.layout == "post" %}
+          {% include post/post.html %}
+          {% elsif page.layout == "quote" %}
+          {% include post/quote.html %}
+          {% elsif page.layout == "link" %}
+          {% include post/link.html %}
+          {% elsif page.layout == "image" %}
+          {% include post/image.html %}
+          {% endif %}
+        </article>
+      </section>
+    </div>
+    {% include common/tracker.html %}
+  </body>
+</html>

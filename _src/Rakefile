@@ -6,9 +6,9 @@ src_dir  = './'
 base_dir = '../'
 
 # Compass config
-sass_dir = File.join(src_dir, 'css')
-css_dir = File.join(base_dir, 'css', 'compiled')
-output_style = :compressed
+sass_dir = File.join(src_dir, 'stylesheets')
+css_dir = File.join(base_dir, 'stylesheets', 'compiled')
+output_style = :nested
 
 # Haml config
 haml_config = {
@@ -45,6 +45,9 @@ namespace :compile do
         puts "#{tag} no change for #{input}".white
         next
       end
+      
+      # Make directory if necessary
+      FileUtils.mkpath File.dirname(output)
       
       puts "#{tag} #{input} => #{output}".green
       engine = Haml::Engine.new IO.read(input), haml_config.merge(:filename => input)

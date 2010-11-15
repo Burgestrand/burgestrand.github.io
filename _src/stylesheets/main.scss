@@ -1,0 +1,16 @@
+@import "compass.scss";
+@import "compass/css3.scss";
+@import "reset.scss";
+@import "typography.scss";
+
+body
+{
+  border-top: .3em solid #666;
+  color: #333;
+}
+body > .main { font-size: 1.2em; }
+
+.clear { clear: both }
+.hide  { display: none }
+
+@import "layout.scss";
