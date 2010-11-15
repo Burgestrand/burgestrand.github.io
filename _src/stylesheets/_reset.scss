@@ -10,6 +10,12 @@ section, article, header, footer, nav
 // Unreset
 pre, code { font-family: monospace; }
 q, blockquote { color: #666; }
+em { font-style: italic; }
+strong
+{
+  color: #444;
+  font-weight: bold;
+}
 small
 {
   font-size: .8em;
