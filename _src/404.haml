@@ -20,7 +20,7 @@
     :javascript
       var tumblr = document.getElementById("tumblr");
       var loc = window.location.pathname.toString();
-      tumblr.href = tumblr.href + loc;
+      tumblr.href = tumblr.href + loc.replace(/^\//, '');
       tumblr.innerHTML = tumblr.innerHTML + loc;
     
     // reinvigorate.net
