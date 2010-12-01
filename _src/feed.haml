@@ -25,9 +25,9 @@
         {% else %}
         {{ post.content | xml_escape }}
         {% endif %}
-      %guid {{ post.url }}
+      %guid {{ site.base_uri }}{{ post.url }}
       
-      %pubDate {{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }} }}
+      %pubDate {{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}
       {% for category in post.categories %}
       %category{:domain => "{{ site.base_uri }}/{{ category }}"} {{category}}
       {% endfor %}

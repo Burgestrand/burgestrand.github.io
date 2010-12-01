@@ -23,8 +23,8 @@ layout: rss (does not exist)
         {{ post.content | xml_escape }}
         {% endif %}
       </description>
-      <guid>{{ post.url }}</guid>
-      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }} }}</pubDate>
+      <guid>{{ site.base_uri }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
       {% for category in post.categories %}
       <category domain="{{ site.base_uri }}/{{ category }}">{{category}}</category>
       {% endfor %}
