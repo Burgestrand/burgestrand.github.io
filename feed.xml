@@ -4,7 +4,7 @@ layout: rss (does not exist)
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
   <channel>
-    <title>{{ page.title }} {{ site.title }}</title>
+    <title>Latest posts {{ site.title }}</title>
     <link>{{ site.base_uri }}/</link>
     <description>
       Kim Burgestrand and his miscellaneous freaky — but brilliant — ideas
