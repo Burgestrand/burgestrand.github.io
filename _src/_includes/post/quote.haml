@@ -6,9 +6,4 @@
       {{ page.date | date: "%d %B %Y" }}
     %a{:rel => 'permalink', :href => "{{ page.url }}"} permalink
 
-{% if page.slug != nil %}
-%blockquote{:cite => "{{ page.url }}"}
-  %p {{ page.slug }}
-{% endif %}
-
 {{ content }}

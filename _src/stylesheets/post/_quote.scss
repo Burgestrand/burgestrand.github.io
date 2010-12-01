@@ -1,0 +1,27 @@
+article.quote
+{
+  & > h1
+  {
+    font-size: 1.4em;
+    margin-bottom: .5em;
+    
+    .openquote
+    {
+      color: #AAA;
+      height: .1em;
+      font-family: 'Georgia';
+      font-size: 400%;
+      margin-bottom: -.25em;
+
+      @include inline-block;
+    }
+    
+    q { color: #333; }
+    
+    & + p
+    {
+      &:before { content: "— "; }
+      color: #999;
+    }
+  }
+}

@@ -306,6 +306,33 @@ article.image img {
 article.image footer h1 {
   color: #666; }
 
+/* line 4, ../../_src/stylesheets/post/_quote.scss */
+article.quote > h1 {
+  font-size: 1.4em;
+  margin-bottom: .5em; }
+  /* line 9, ../../_src/stylesheets/post/_quote.scss */
+  article.quote > h1 .openquote {
+    color: #AAA;
+    height: .1em;
+    font-family: 'Georgia';
+    font-size: 400%;
+    margin-bottom: -0.25em;
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    vertical-align: middle;
+    *display: inline;
+    *vertical-align: auto; }
+  /* line 19, ../../_src/stylesheets/post/_quote.scss */
+  article.quote > h1 q {
+    color: #333; }
+  /* line 22, ../../_src/stylesheets/post/_quote.scss */
+  article.quote > h1 + p {
+    color: #999; }
+    /* line 23, ../../_src/stylesheets/post/_quote.scss */
+    article.quote > h1 + p:before {
+      content: "— "; }
+
 /* line 3, ../../_src/stylesheets/page/_about-me.scss */
 article.about-me h1 {
   margin-bottom: .25em; }

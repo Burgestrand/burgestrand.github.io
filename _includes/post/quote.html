@@ -8,9 +8,4 @@
     <a href="{{ page.url }}" rel="permalink">permalink</a>
   </p>
 </header>
-{% if page.slug != nil %}
-<blockquote cite="{{ page.url }}">
-  <p>{{ page.slug }}</p>
-</blockquote>
-{% endif %}
 {{ content }}
