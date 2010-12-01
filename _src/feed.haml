@@ -7,28 +7,28 @@
 %rss{:version => "2.0"}
   %channel
     %title {{ page.title }} {{ site.title }}
-    %link  http://burgestrand.se/
+    %link  {{ site.base_uri }}/
     %description
       Kim Burgestrand and his miscellaneous freaky — but brilliant — ideas
       and thoughts.
     
     %language sv-se
-    %lastBuildDate {{ site.posts.first.date | date_to_xmlschema }}
+    %lastBuildDate {{ site.posts.first.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}
     
     {% for post in site.posts %}
     %item
       %title {{ post.title }}
-      %link  {{ post.url }}
+      %link  {{ site.base_uri }}{{ post.url }}
       %description
         {% if page.slug != nil %}
         {{ post.slug | xml_escape }}
         {% else %}
         {{ post.content | xml_escape }}
         {% endif %}
+      %guid {{ post.url }}
       
-      %pubDate {{ post.date | date_to_xmlschema }}
-      
+      %pubDate {{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }} }}
       {% for category in post.categories %}
-      %category{:domain => "http://burgestrand.se/{{ category }}"} {{category}}
+      %category{:domain => "{{ site.base_uri }}/{{ category }}"} {{category}}
       {% endfor %}
     {% endfor %}

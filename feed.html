@@ -5,17 +5,17 @@ layout: rss (does not exist)
 <rss version="2.0">
   <channel>
     <title>{{ page.title }} {{ site.title }}</title>
-    <link>http://burgestrand.se/</link>
+    <link>{{ site.base_uri }}/</link>
     <description>
       Kim Burgestrand and his miscellaneous freaky — but brilliant — ideas
       and thoughts.
     </description>
     <language>sv-se</language>
-    <lastBuildDate>{{ site.posts.first.date | date_to_xmlschema }}</lastBuildDate>
+    <lastBuildDate>{{ site.posts.first.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</lastBuildDate>
     {% for post in site.posts %}
     <item>
       <title>{{ post.title }}</title>
-      <link>{{ post.url }}</link>
+      <link>{{ site.base_uri }}{{ post.url }}</link>
       <description>
         {% if page.slug != nil %}
         {{ post.slug | xml_escape }}
@@ -23,9 +23,10 @@ layout: rss (does not exist)
         {{ post.content | xml_escape }}
         {% endif %}
       </description>
-      <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+      <guid>{{ post.url }}</guid>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }} }}</pubDate>
       {% for category in post.categories %}
-      <category domain="http://burgestrand.se/{{ category }}">{{category}}</category>
+      <category domain="{{ site.base_uri }}/{{ category }}">{{category}}</category>
       {% endfor %}
     </item>
     {% endfor %}
