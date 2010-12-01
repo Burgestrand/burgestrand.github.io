@@ -2,7 +2,7 @@
 layout: post
 title: Nördsafari!
 date: 2010-12-01 03:58:43 CET
-categories: [om mig, nerd]
+categories: [om-mig, nerd]
 slug: 
   Det var min flickvän som fick mig till Dreamhack första gången. Förra gången
   hade vi rätt kul, och spenderade upp emot fem timmar att gå runt och undersöka
