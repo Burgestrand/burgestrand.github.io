@@ -5,7 +5,7 @@
 <footer>
   <p>
     Publicerad
-    <time datetime="{{ post.date | date_to_xmlschema }}" pubdate="pubdate">
+    <time datetime="{{ post.date }}" pubdate="pubdate">
       {{ post.date | date: "%d %B %Y" }}
     </time>
     <a href="{{ post.url }}" rel="permalink">permalink</a>

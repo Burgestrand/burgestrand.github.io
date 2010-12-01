@@ -7,6 +7,6 @@
 %footer
   %p
     Publicerad
-    %time{:pubdate => 'pubdate', :datetime => "{{ post.date | date_to_xmlschema }}"}
+    %time{:pubdate => 'pubdate', :datetime => "{{ post.date }}"}
       {{ post.date | date: "%d %B %Y" }}
     %a{:rel => 'permalink', :href => "{{ post.url }}"} permalink
