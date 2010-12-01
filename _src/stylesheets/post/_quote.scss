@@ -1,6 +1,6 @@
 article.quote
 {
-  & > h1
+  h1
   {
     font-size: 1.4em;
     margin-bottom: .5em;
@@ -21,7 +21,7 @@ article.quote
     & + p
     {
       &:before { content: "— "; }
-      color: #999;
+      color: #666;
     }
   }
 }
