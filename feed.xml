@@ -1,1 +1,34 @@
-feed.html
+---
+layout: rss (does not exist)
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ page.title }} {{ site.title }}</title>
+    <link>{{ site.base_uri }}/</link>
+    <description>
+      Kim Burgestrand and his miscellaneous freaky — but brilliant — ideas
+      and thoughts.
+    </description>
+    <language>sv-se</language>
+    <lastBuildDate>{{ site.posts.first.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</lastBuildDate>
+    {% for post in site.posts %}
+    <item>
+      <title>{{ post.title }}</title>
+      <link>{{ site.base_uri }}{{ post.url }}</link>
+      <description>
+        {% if page.slug != nil %}
+        {{ post.slug | xml_escape }}
+        {% else %}
+        {{ post.content | xml_escape }}
+        {% endif %}
+      </description>
+      <guid>{{ site.base_uri }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
+      {% for category in post.categories %}
+      <category domain="{{ site.base_uri }}/{{ category }}">{{category}}</category>
+      {% endfor %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
