@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Äntligen en hemsida… eller?
-date: Nov 21st, 2009 8:29pm CET
+date: 21 Nov 2009 20:29:00 CET
 categories: [om-mig]
 slug:
   Jag har programmerat sen jag var tio år gammal. Jag fick upp ögonen för att

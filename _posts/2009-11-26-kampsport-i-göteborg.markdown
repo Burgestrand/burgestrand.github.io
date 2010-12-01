@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kampsport i Göteborg
-date: Nov 26th, 2009 2:05am CET
+date: 26 Nov 2009 02:05:00 CET
 categories: [om-mig, kampsport]
 slug:
   Har tränat kampsport en stor del av mitt liv. Jag var väldigt seriös när jag

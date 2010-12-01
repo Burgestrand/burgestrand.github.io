@@ -13,7 +13,7 @@
       and thoughts.
     
     %language sv-se
-    %lastBuildDate {{ site.posts.first.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}
+    %lastBuildDate {{ site.posts.first.date }}
     
     {% for post in site.posts %}
     %item
@@ -27,7 +27,7 @@
         {% endif %}
       %guid {{ site.base_uri }}{{ post.url }}
       
-      %pubDate {{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}
+      %pubDate {{ post.date }}
       {% for category in post.categories %}
       %category{:domain => "{{ site.base_uri }}/{{ category }}"} {{category}}
       {% endfor %}

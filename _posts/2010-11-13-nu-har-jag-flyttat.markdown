@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Nu har jag flyttat!
-date: 2010-11-13 17:32:48 CET
+date: 13 Nov 2010 17:32:48 CET
 categories: [om-mig]
 slug:
   Jag skrev för ett litet tag sedan att jag skulle flytta min blogg. Idag hade

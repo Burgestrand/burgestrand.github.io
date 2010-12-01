@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Humor och djur?
-date: 2010-12-01 20:46:13 CET
+date: 01 Dec 2010 20:46:13 CET
 ---
 
 Jag citerade ett par sjungande hajar på vägen hem från taidon, vilket ledde till att Elins syster ([Ylva](http://www.youtube.com/user/therealyllsson)) tittade på mig underligt. Av den här anledningen fick jag då för mig att leta upp den igen. Hade lite svårt att slita mig så jag tittade igenom lite fler:

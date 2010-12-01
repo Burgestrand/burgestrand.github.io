@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bussjuckare
-date: Nov 26th, 2009 12:00pm CET
+date: 26 Nov 2009 12:00:00 CET
 categories: [om-andra]
 slug:
   Fullpackade bussar och kramande medpassagerare. Alla som åker i
