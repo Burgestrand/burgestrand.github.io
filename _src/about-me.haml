@@ -18,12 +18,16 @@
     : web & library development, martial arts, juggling, wakeboarding
     
     Exists
-    : [github][], [twitter][], [phpportalen][], [email][]
+    : [github][], [twitter][], [phpportalen][], <a href="" id="email">email</a>
     
     [github]: http://github.com/Burgestrand
     [twitter]: http://twitter.com/Burgestrand
     [phpportalen]: http://www.phpportalen.net/profile.php?mode=viewprofile&u=9735
-    [email]: mailto: kim @ burgestrand.se
+  
+  :javascript
+    var prefix = "mailto:"
+    var at = "@"
+    document.getElementById("email").setAttribute("href", prefix + "kim" + at + "burgestrand.se")
   
   .clear
   :markdown
