@@ -1,0 +1,34 @@
+:plain
+  ---
+  layout: rss (does not exist)
+  ---
+
+<?xml version="1.0" encoding="utf-8"?> 
+%rss{:version => "2.0"}
+  %channel
+    %title {{ page.title }} {{ site.title }}
+    %link  http://burgestrand.se/
+    %description
+      Kim Burgestrand and his miscellaneous freaky — but brilliant — ideas
+      and thoughts.
+    
+    %language sv-se
+    %lastBuildDate {{ site.posts.first.date | date_to_xmlschema }}
+    
+    {% for post in site.posts %}
+    %item
+      %title {{ post.title }}
+      %link  {{ post.url }}
+      %description
+        {% if page.slug != nil %}
+        {{ post.slug | xml_escape }}
+        {% else %}
+        {{ post.content | xml_escape }}
+        {% endif %}
+      
+      %pubDate {{ post.date | date_to_xmlschema }}
+      
+      {% for category in post.categories %}
+      %category{:domain => "http://burgestrand.se/{{ category }}"} {{category}}
+      {% endfor %}
+    {% endfor %}
