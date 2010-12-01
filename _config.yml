@@ -13,5 +13,5 @@ paginate: 10
 exclude: []
 
 # Custom data, available through {{ site.<variable> }}
-base_uri: "http://burgestrand.se/"
+base_uri: "http://burgestrand.se"
 title: "by Kim Burgestrand"
