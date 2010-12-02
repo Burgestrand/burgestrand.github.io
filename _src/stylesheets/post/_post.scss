@@ -1,8 +1,16 @@
 article.post
 {
+  h2, h3 { color: #666; font-weight: bold; }
+  
   h2
   {
     font-size: 1.8em;
     margin: 1em 0 .2em;
+  }
+  
+  h3
+  {
+    font-size: 1.2em;
+    margin: .8em 0 0;
   }
 }

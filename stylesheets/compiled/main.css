@@ -286,10 +286,18 @@ article > footer p {
   -khtml-border-bottom-right-radius: 0.2em;
   border-bottom-right-radius: 0.2em; }
 
-/* line 4, ../../_src/stylesheets/post/_post.scss */
+/* line 3, ../../_src/stylesheets/post/_post.scss */
+article.post h2, article.post h3 {
+  color: #666;
+  font-weight: bold; }
+/* line 6, ../../_src/stylesheets/post/_post.scss */
 article.post h2 {
   font-size: 1.8em;
   margin: 1em 0 .2em; }
+/* line 12, ../../_src/stylesheets/post/_post.scss */
+article.post h3 {
+  font-size: 1.2em;
+  margin: .8em 0 0; }
 
 /* line 3, ../../_src/stylesheets/post/_image.scss */
 article.image > p {
