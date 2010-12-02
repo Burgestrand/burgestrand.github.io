@@ -1,0 +1,9 @@
+---
+layout: post
+title: RSS feed för burgestrand.se
+date: 02 Dec 2010 01:01:40 CET
+---
+
+Har nu fixat en RSS-feed (som körs på samma motor som resten av siten). Har du en någorlunda modern webbläsare bör du se en RSS-ikon i ditt adressfält. Google Chrome på Mac kräver dock ett tillägg för detta: <https://chrome.google.com/extensions/detail/nlbjncdgjeocebhnmkbbbdekmmmcbfjd>
+
+Vad detta betyder är att man nu kan prenumerera på min blogg via en RSS-läsare, så att man blir notifierad så fort det finns nya inlägg!
