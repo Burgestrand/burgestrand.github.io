@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Människor med paraply
-date: 26 Nov 2009 18:04:00 CET
+date: 26 Nov 2009 18:04:00 UTC
 categories: [om-andra]
 slug:
   Idag regnade det. Inte storm, men det blåste som tusan och duggregnet stod som

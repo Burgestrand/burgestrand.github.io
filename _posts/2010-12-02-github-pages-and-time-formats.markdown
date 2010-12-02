@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GitHub pages and time formats
-date: 02 Dec 2010 00:10:12 UTC
+date: 02 Dec 2010 01:10:12 UTC
 categories: [hacks, github, annoying]
 slug: I’ve been very happy since I moved my blog to GitHub pages, but I just found my first annoyance.
 ---

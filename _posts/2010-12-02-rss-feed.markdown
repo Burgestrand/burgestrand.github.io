@@ -1,7 +1,7 @@
 ---
 layout: post
 title: RSS feed för burgestrand.se
-date: 02 Dec 2010 01:01:40 CET
+date: 02 Dec 2010 00:01:40 UTC
 ---
 
 Har nu fixat en RSS-feed (som körs på samma motor som resten av siten). Har du en någorlunda modern webbläsare bör du se en RSS-ikon i ditt adressfält. Google Chrome på Mac kräver dock ett tillägg för detta: <https://chrome.google.com/extensions/detail/nlbjncdgjeocebhnmkbbbdekmmmcbfjd>
