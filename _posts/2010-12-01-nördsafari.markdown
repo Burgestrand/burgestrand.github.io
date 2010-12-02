@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Nördsafari!
-date: 01 Dec 2010 03:58:43 +0100
+date: 01 Dec 2010 03:58:43 CET
 categories: [om-mig, nerd]
 slug: 
   Det var min flickvän som fick mig till Dreamhack första gången. Förra gången
