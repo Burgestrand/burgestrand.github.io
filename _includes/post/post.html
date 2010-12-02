@@ -2,7 +2,7 @@
   <h1>{{ page.title }}</h1>
   <p>
     Publicerad
-    <time datetime="{{ page.date }}" pubdate="pubdate">
+    <time datetime='{{ page.date | date: "%d %b %Y %H:%M:%S UTC" }}' pubdate="pubdate">
       {{ page.date | date: "%d %B %Y" }}
     </time>
     <a href="{{ page.url }}" rel="permalink">permalink</a>

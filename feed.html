@@ -11,7 +11,7 @@ layout: rss (does not exist)
       and thoughts.
     </description>
     <language>sv-se</language>
-    <lastBuildDate>{{ site.posts.first.date }}</lastBuildDate>
+    <lastBuildDate>{{ site.posts.first.date | date: "%d %b %Y %H:%M:%S UTC" }}</lastBuildDate>
     {% for post in site.posts %}
     <item>
       <title>{{ post.title }}</title>
@@ -24,7 +24,7 @@ layout: rss (does not exist)
         {% endif %}
       </description>
       <guid>{{ site.base_uri }}{{ post.url }}</guid>
-      <pubDate>{{ post.date }}</pubDate>
+      <pubDate>{{ post.date | date: "%d %b %Y %H:%M:%S UTC" }}</pubDate>
       {% for category in post.categories %}
       <category domain="{{ site.base_uri }}/{{ category }}">{{category}}</category>
       {% endfor %}
