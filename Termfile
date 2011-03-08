@@ -1,0 +1,2 @@
+run 'jekyll --server --auto --pygments'
+tab 'cd _src && bundle exec compass watch . -c Rakefile'
