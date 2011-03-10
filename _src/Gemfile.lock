@@ -41,6 +41,7 @@ GEM
       text-hyphen (~> 1.0.0)
     text-hyphen (1.0.0)
     thor (0.14.6)
+    watchr (0.7)
 
 PLATFORMS
   ruby
@@ -53,3 +54,4 @@ DEPENDENCIES
   maruku
   rake
   terminitor
+  watchr
