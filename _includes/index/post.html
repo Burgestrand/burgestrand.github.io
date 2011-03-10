@@ -1,7 +1,7 @@
 <header>
   <h1>{{ post.title }}</h1>
   <p>
-    Publicerad
+    Published
     <time datetime='{{ post.date | date: "%d %b %Y %H:%M:%S UTC" }}' pubdate="pubdate">
       {{ post.date | date: "%d %B %Y" }}
     </time>
@@ -13,7 +13,7 @@
   {{ post.slug | textilize }}
 </blockquote>
 <p>
-  <a href="{{ post.url }}">Läs mer av “<cite>{{ post.title }}</cite>”…</a>
+  <a href="{{ post.url }}">Read more of “<cite>{{ post.title }}</cite>”…</a>
 </p>
 {% else %}
 {{ post.content }}
