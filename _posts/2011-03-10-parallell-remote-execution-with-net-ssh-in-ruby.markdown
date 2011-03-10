@@ -117,3 +117,5 @@ Will give this output:
   Thu Mar 10 23:31:59 CET 2011</pre></div>
 
 Frank was happy, I was happy. Me and Frank talked for another twenty minutes, and then parted ways. Goodbye Frank, it was nice talking to you today!
+
+PS: Here’s the gist of it: https://gist.github.com/865129
