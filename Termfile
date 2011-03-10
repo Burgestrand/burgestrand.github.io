@@ -1,5 +1,6 @@
 run 'jekyll --server --auto --pygments'
 tab 'cd _src && bundle exec compass watch . -c Rakefile'
+tab 'cd _src && bundle exec watchr haml.watchr'
 tab do
   run 'open http://localhost:4000/'
   run '$EDITOR _src'
