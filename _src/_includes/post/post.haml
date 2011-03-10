@@ -8,7 +8,7 @@
 
 {% if page.slug != nil %}
 %blockquote{:cite => "{{ page.url }}"}
-  %p {{ page.slug }}
+  {{ page.slug | textilize }}
 {% endif %}
 
 {{ content }}

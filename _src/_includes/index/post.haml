@@ -8,7 +8,7 @@
 
 {% if post.slug != nil %}
 %blockquote{:cite => "{{ post.url }}"}
-  %p {{ post.slug }}
+  {{ post.slug | textilize }}
 
 %p
   %a{:href => "{{ post.url }}"} Läs mer av “<cite>{{ post.title }}</cite>”…

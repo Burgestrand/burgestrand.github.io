@@ -10,7 +10,7 @@
 </header>
 {% if post.slug != nil %}
 <blockquote cite="{{ post.url }}">
-  <p>{{ post.slug }}</p>
+  {{ post.slug | textilize }}
 </blockquote>
 <p>
   <a href="{{ post.url }}">Läs mer av “<cite>{{ post.title }}</cite>”…</a>
