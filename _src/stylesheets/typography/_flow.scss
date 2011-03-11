@@ -17,20 +17,20 @@ h1
 
 article
 {
-  blockquote:not(.slug)
+  blockquote:not(.slug), q
   {
     font-style: italic;
     line-height: 1.6em;
-
-    &:before
-    {
-      float: left;
-      font-family: Georgia, serif;
-      font-size: 2em;
-      content: "“";
-      margin-top: .1em;
-      @include opacity(.3);
-      text-indent: -.6em;
-    }
+  }
+  
+  blockquote:not(.slug):before
+  {
+    color: #999;
+    float: left;
+    font-family: Georgia, serif;
+    font-size: 2em;
+    content: "“";
+    margin-top: .1em;
+    text-indent: -.6em;
   }
 }

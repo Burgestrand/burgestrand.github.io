@@ -173,20 +173,18 @@ h1 {
   margin: 0 0 1em; }
 
 /* line 21, ../../_src/stylesheets/typography/_flow.scss */
-article blockquote:not(.slug) {
+article blockquote:not(.slug), article q {
   font-style: italic;
   line-height: 1.6em; }
-  /* line 26, ../../_src/stylesheets/typography/_flow.scss */
-  article blockquote:not(.slug):before {
-    float: left;
-    font-family: Georgia, serif;
-    font-size: 2em;
-    content: "“";
-    margin-top: .1em;
-    opacity: 0.3;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
-    text-indent: -0.6em; }
+/* line 27, ../../_src/stylesheets/typography/_flow.scss */
+article blockquote:not(.slug):before {
+  color: #999;
+  float: left;
+  font-family: Georgia, serif;
+  font-size: 2em;
+  content: "“";
+  margin-top: .1em;
+  text-indent: -0.6em; }
 
 /* line 8, ../../_src/stylesheets/_typography.scss */
 hgroup {
