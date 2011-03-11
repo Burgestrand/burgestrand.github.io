@@ -254,7 +254,11 @@ article + article {
     .main > header nav li {
       display: inline-block;
       margin-left: 1.2em; }
-      /* line 35, ../../_src/stylesheets/layout/_header.scss */
+      /* line 36, ../../_src/stylesheets/layout/_header.scss */
+      .main > header nav li a img {
+        padding-bottom: 4px;
+        vertical-align: middle; }
+      /* line 41, ../../_src/stylesheets/layout/_header.scss */
       .main > header nav li:first-child {
         margin-left: 0; }
 
