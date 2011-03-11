@@ -18,6 +18,7 @@
           {% include post/image.html %}
           {% endif %}
           
+          {% if page.comments %}
           %footer
             %h2 Comments <small>(powered by Disqus)</small>
             #disqus_thread
@@ -26,11 +27,12 @@
               var disqus_identifier = '{{ page.id }}';
               var disqus_url        = '{{ site.base_uri }}{{ page.url }}';
               var disqus_title      = '{{ page.title | replace:"'","\\'" }}';
-              
+            
               (function() {
                   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                   dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
                   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
               })();
+          {% endif %}
     
     {% include common/tracker.html %}

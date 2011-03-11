@@ -17,6 +17,7 @@
           {% elsif page.layout == "image" %}
           {% include post/image.html %}
           {% endif %}
+          {% if page.comments %}
           <footer>
             <h2>Comments <small>(powered by Disqus)</small></h2>
             <div id="disqus_thread"></div>
@@ -35,6 +36,7 @@
               //]]>
             </script>
           </footer>
+          {% endif %}
         </article>
       </section>
     </div>
