@@ -340,20 +340,16 @@ article.quote h1 {
   font-size: 1.4em;
   margin-bottom: .5em; }
   /* line 9, ../../_src/stylesheets/post/_quote.scss */
-  article.quote h1 .openquote {
-    color: #AAA;
-    height: .1em;
-    font-family: 'Georgia';
-    font-size: 400%;
-    margin-bottom: -0.25em;
-    display: -moz-inline-box;
-    -moz-box-orient: vertical;
-    display: inline-block;
-    vertical-align: middle;
-    *vertical-align: auto; }
-    /* line 7, ../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-    article.quote h1 .openquote {
-      *display: inline; }
+  article.quote h1 q:before {
+    float: left;
+    font-family: Georgia, serif;
+    font-size: 4em;
+    content: "“";
+    margin-top: .2em;
+    opacity: 0.3;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    text-indent: -0.5em; }
   /* line 19, ../../_src/stylesheets/post/_quote.scss */
   article.quote h1 q {
     color: #333; }

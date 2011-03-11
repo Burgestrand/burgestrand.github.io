@@ -5,15 +5,15 @@ article.quote
     font-size: 1.4em;
     margin-bottom: .5em;
     
-    .openquote
+    q:before
     {
-      color: #AAA;
-      height: .1em;
-      font-family: 'Georgia';
-      font-size: 400%;
-      margin-bottom: -.25em;
-
-      @include inline-block;
+      float: left;
+      font-family: Georgia, serif;
+      font-size: 4em;
+      content: "“";
+      margin-top: .2em;
+      @include opacity(.3);
+      text-indent: -.5em;
     }
     
     q { color: #333; }
