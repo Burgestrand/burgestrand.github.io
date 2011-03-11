@@ -4,7 +4,21 @@
   margin-bottom: 2em;
   position: relative;
   
-  h1 { margin-top: 1em; }
+  hgroup
+  {
+    float: right;
+    margin-top: 3em;
+    text-align: right;
+    
+    h1 + h2
+    {
+      color: #999;
+      font-size: .8em;
+      margin-top: 0;
+      margin-bottom: .2em;
+      font-weight: 100;
+    }
+  }
   
   nav
   {

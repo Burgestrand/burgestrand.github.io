@@ -4,20 +4,6 @@
 @import "typography/fonts.scss";
 @import "typography/flow.scss";
 
-hgroup
-{
-  float: right;
-  text-align: right;
-  
-  h1 + h2
-  {
-    color: #999;
-    font-size: .8em;
-    margin-top: 0;
-    font-weight: 100;
-  }
-}
-
 // Links
 a { color: #369; }
 a:hover { text-decoration: none; }

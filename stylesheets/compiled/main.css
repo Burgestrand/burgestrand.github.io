@@ -187,25 +187,14 @@ article blockquote:not(.slug):before {
   text-indent: -0.6em; }
 
 /* line 8, ../../_src/stylesheets/_typography.scss */
-hgroup {
-  float: right;
-  text-align: right; }
-  /* line 13, ../../_src/stylesheets/_typography.scss */
-  hgroup h1 + h2 {
-    color: #999;
-    font-size: .8em;
-    margin-top: 0;
-    font-weight: 100; }
-
-/* line 22, ../../_src/stylesheets/_typography.scss */
 a {
   color: #369; }
 
-/* line 23, ../../_src/stylesheets/_typography.scss */
+/* line 9, ../../_src/stylesheets/_typography.scss */
 a:hover {
   text-decoration: none; }
 
-/* line 24, ../../_src/stylesheets/_typography.scss */
+/* line 10, ../../_src/stylesheets/_typography.scss */
 a:active {
   color: #999; }
 
@@ -243,20 +232,29 @@ article + article {
   font-size: .8em;
   margin-bottom: 2em;
   position: relative; }
-  /* line 7, ../../_src/stylesheets/layout/_header.scss */
-  .main > header h1 {
-    margin-top: 1em; }
-  /* line 10, ../../_src/stylesheets/layout/_header.scss */
+  /* line 8, ../../_src/stylesheets/layout/_header.scss */
+  .main > header hgroup {
+    float: right;
+    margin-top: 3em;
+    text-align: right; }
+    /* line 14, ../../_src/stylesheets/layout/_header.scss */
+    .main > header hgroup h1 + h2 {
+      color: #999;
+      font-size: .8em;
+      margin-top: 0;
+      margin-bottom: .2em;
+      font-weight: 100; }
+  /* line 24, ../../_src/stylesheets/layout/_header.scss */
   .main > header nav {
     bottom: 0;
     font-size: 1.2em;
     left: 0;
     position: absolute; }
-    /* line 17, ../../_src/stylesheets/layout/_header.scss */
+    /* line 31, ../../_src/stylesheets/layout/_header.scss */
     .main > header nav li {
       display: inline-block;
       margin-left: 1.2em; }
-      /* line 21, ../../_src/stylesheets/layout/_header.scss */
+      /* line 35, ../../_src/stylesheets/layout/_header.scss */
       .main > header nav li:first-child {
         margin-left: 0; }
 
