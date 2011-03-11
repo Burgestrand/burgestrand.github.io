@@ -14,3 +14,23 @@ h1
 {
   margin: 0 0 1em;
 }
+
+article
+{
+  blockquote:not(.slug)
+  {
+    font-style: italic;
+    line-height: 1.6em;
+
+    &:before
+    {
+      float: left;
+      font-family: Georgia, serif;
+      font-size: 2em;
+      content: "“";
+      margin-top: .1em;
+      @include opacity(.3);
+      text-indent: -.6em;
+    }
+  }
+}

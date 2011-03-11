@@ -7,7 +7,7 @@
     %a{:rel => 'permalink', :href => "{{ page.url }}"} permalink
 
 {% if page.slug != nil %}
-%blockquote{:cite => "{{ page.url }}"}
+%blockquote{:cite => "{{ page.url }}", :class => 'slug'}
   {{ page.slug | textilize }}
 {% endif %}
 

@@ -9,7 +9,7 @@
   </p>
 </header>
 {% if page.slug != nil %}
-<blockquote cite="{{ page.url }}">
+<blockquote cite="{{ page.url }}" class="slug">
   {{ page.slug | textilize }}
 </blockquote>
 {% endif %}
