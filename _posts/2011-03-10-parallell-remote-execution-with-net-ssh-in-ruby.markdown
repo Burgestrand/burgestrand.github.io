@@ -55,7 +55,7 @@ end.join
 # Show result 4
 {% endhighlight %}
 
-Now that is nice; it works! Frank was happy, and quickly disappeared with a “<q>[…] thanks! im going to try it in a few mins […]</q>”.
+Now that is nice; it works! Frank was happy, and quickly disappeared with a <q>[…] thanks! im going to try it in a few mins […]</q>.
 
 ## Two hours later, Frank is back!
 He’s very excited. He has now written a script that first reads a list of ip addresses from the user, and then goes on to visit each address and running a script on it using [net/ssh](https://github.com/net-ssh/net-ssh). It looked like this:
