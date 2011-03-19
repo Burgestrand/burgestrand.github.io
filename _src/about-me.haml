@@ -9,20 +9,21 @@
   %header
     %h1 Kim Burgestrand
   
-  :markdown
-    ![Me!](/images/me.jpg)
-    Likes
-    : readable *clean* code, learning, teaching
+  %img.photo{:src => '/images/me.jpg', :alt => 'Me!'}
+  
+  %dl
+    %dt Likes
+    %dd readable <em>clean</em> code, learning, teaching
     
-    Does
-    : web & library development, martial arts, juggling, wakeboarding
+    %dt Does
+    %dd web & library development, martial arts, juggling, wake-boarding
     
-    Exists
-    : [github][], [twitter][], [phpportalen][], <a href="" id="email">email</a>
-    
-    [github]: http://github.com/Burgestrand
-    [twitter]: http://twitter.com/Burgestrand
-    [phpportalen]: http://www.phpportalen.net/profile.php?mode=viewprofile&u=9735
+    %dt Exists
+    %dd
+      <a href="http://github.com/Burgestrand">github</a>,
+      <a href="http://twitter.com/Burgestrand">twitter</a>,
+      <a href="http://www.phpportalen.net/profile.php?mode=viewprofile&u=9735">phpportalen</a>,
+      %a#email email
   
   :javascript
     var prefix = "mailto:"
