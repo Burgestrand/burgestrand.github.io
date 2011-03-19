@@ -27,10 +27,13 @@
     left: 0;
     position: absolute;
     
+    li.icon { margin-left: 0.2em; }
+    li:not(.icon) + li.icon { margin-left: 0.8em; }
+    
     li
     {
       display: inline-block;
-      margin-left: 1.2em;
+      margin-left: 1em;
       
       a img
       {
