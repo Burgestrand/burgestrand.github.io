@@ -364,7 +364,7 @@ article.quote h1 {
 article.about-me h1 {
   margin-bottom: .25em; }
 /* line 6, ../../_src/stylesheets/page/_about-me.scss */
-article.about-me img {
+article.about-me img.photo {
   border: .15em solid black;
   float: right;
   margin: 0 0 1em 1em;
