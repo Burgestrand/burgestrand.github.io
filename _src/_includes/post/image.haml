@@ -7,6 +7,6 @@
 %footer
   %p
     Published
-    %time{:pubdate => 'pubdate', :datetime => '{{ page.date | date: "%d %b %Y %H:%M:%S UTC" }}'}
+    %time{:pubdate => 'pubdate', :datetime => '{{ page.date | date: "%Y-%m-%dT%H:%M:%S" }}'}
       {{ page.date | date: "%d %B %Y" }}
     %a{:rel => 'permalink', :href => "{{ page.url }}"} permalink
