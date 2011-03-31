@@ -221,20 +221,26 @@ a:active {
 /* line 7, ../../_src/stylesheets/main.scss */
 body {
   border-top: .3em solid #666;
-  color: #333;
-  overflow-x: hidden; }
+  color: #333; }
 
-/* line 12, ../../_src/stylesheets/main.scss */
+/* line 11, ../../_src/stylesheets/main.scss */
 body > .main {
   font-size: 1.2em; }
 
-/* line 14, ../../_src/stylesheets/main.scss */
+/* line 13, ../../_src/stylesheets/main.scss */
 .clear {
   clear: both; }
 
-/* line 15, ../../_src/stylesheets/main.scss */
+/* line 14, ../../_src/stylesheets/main.scss */
 .hide {
   display: none; }
+
+/* Ribbon */
+/* line 18, ../../_src/stylesheets/main.scss */
+.ribbon {
+  position: absolute;
+  right: 0;
+  top: 0; }
 
 /* line 3, ../../_src/stylesheets/_layout.scss */
 body > .main {
@@ -735,28 +741,3 @@ html.not-found h2 {
   color: #009999; }
 
 /* Literal.Number.Integer.Long */
-/* line 2, ../../_src/stylesheets/_ribbon.scss */
-.nordic-ruby.ribbon {
-  background-color: #a00;
-  position: absolute;
-  right: -5em;
-  text-shadow: 0 -2px #801a29;
-  top: 4.3em;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #dc324b), color-stop(100%, #800b1c));
-  background-image: -moz-linear-gradient(top, #dc324b 0%, #800b1c 100%);
-  background-image: linear-gradient(top, #dc324b 0%, #800b1c 100%);
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg); }
-  /* line 13, ../../_src/stylesheets/_ribbon.scss */
-  .nordic-ruby.ribbon a {
-    border-bottom: 1px solid #f299a6;
-    border-top: 1px solid #f299a6;
-    color: #fff;
-    display: block;
-    font: bold 110% cursive;
-    margin: 2px 0;
-    padding: 0.25em 4em 0.4em;
-    text-align: center;
-    text-decoration: none; }

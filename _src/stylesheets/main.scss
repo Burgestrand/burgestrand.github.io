@@ -7,13 +7,19 @@ body
 {
   border-top: .3em solid #666;
   color: #333;
-  overflow-x: hidden;
 }
 body > .main { font-size: 1.2em; }
 
 .clear { clear: both }
 .hide  { display: none }
 
+/* Ribbon */
+.ribbon
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 @import "layout.scss";
 @import "highlight.scss";
-@import "ribbon.scss";
