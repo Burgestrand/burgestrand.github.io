@@ -170,7 +170,27 @@ h1 {
 
 /* line 14, ../../_src/stylesheets/typography/_flow.scss */
 .highlight {
-  margin: 0 0 1em; }
+  border: 2px dashed #DDD;
+  margin: 0 0 1em;
+  padding: .2em .5em;
+  position: relative;
+  overflow: hidden; }
+  /* line 22, ../../_src/stylesheets/typography/_flow.scss */
+  .highlight:hover {
+    border-color: #666;
+    overflow: auto; }
+  /* line 28, ../../_src/stylesheets/typography/_flow.scss */
+  .highlight:hover:after {
+    display: none; }
+  /* line 33, ../../_src/stylesheets/typography/_flow.scss */
+  .highlight:after {
+    color: rgba(0, 40, 80, 0.6);
+    content: '(mouse-over to scroll)';
+    font-size: .8em;
+    padding: .2em .4em;
+    position: absolute;
+    right: 0;
+    top: 0; }
 
 /* line 21, ../../_src/stylesheets/typography/_flow.scss */
 article blockquote:not(.slug), article q {

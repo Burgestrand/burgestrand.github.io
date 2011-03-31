@@ -12,7 +12,33 @@ h1
 
 .highlight
 {
+  border: 2px dashed #DDD;
   margin: 0 0 1em;
+  padding: .2em .5em;
+  position: relative;
+  overflow: hidden;
+  
+  &:hover
+  {
+    border-color: #666;
+    overflow: auto;
+  }
+  
+  &:hover:after
+  {
+    display: none;
+  }
+  
+  &:after
+  {
+    color: rgba(0, 40, 80, 0.6);
+    content: '(mouse-over to scroll)';
+    font-size: .8em;
+    padding: .2em .4em;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 article
