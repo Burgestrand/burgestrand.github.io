@@ -1,0 +1,24 @@
+.nordic-ruby.ribbon
+{
+  background-color: #a00;
+  position: absolute;
+  right: -5em;
+  text-shadow: 0 -2px rgb(128, 26, 41);
+  top: 4.3em;
+
+  @include linear-gradient(color-stops(rgb(220, 50, 75), rgb(128, 11, 28)));
+  @include rotate(45deg);
+  
+  a
+  {
+    border-bottom: 1px solid rgb(242, 153, 166);
+    border-top: 1px solid rgb(242, 153, 166);
+    color: #fff;
+    display: block;
+    font: bold 110% cursive;
+    margin: 2px 0;
+    padding: 0.25em 4em 0.4em;
+    text-align: center;
+    text-decoration: none;
+  }
+}
