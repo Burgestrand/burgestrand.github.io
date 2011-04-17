@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>pool.rb</title>
+  <link rel="stylesheet" href="http://github.com/jashkenas/docco/raw/0.3.0/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>pool.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-Ruby_Threadpool'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-Ruby_Threadpool">&#182;</a>
+        </div>
+        <h1>Ruby Threadpool</h1>
+
+<p>Creating a threadpool in Ruby is very simple using blocks and Queue, a
+thread-safe queue that will block on the <code>#pop</code> operation when the queue
+is empty.</p>
+
+<p>A threadpool is useful when you wish to do some work in a thread, but do
+not know how much work you will be doing in advance. Spawning one thread
+for each task is potentially expensive, as threads are not free.</p>
+
+<p>In this case, it might be more beneficial to start a predefined set of
+threads and then hand off work to them as it becomes available. This is
+the pure essence of what a threadpool is: an array of threads, all just
+waiting to do some work for you!</p>
+
+<h2>Prerequisites</h2>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>We need the <a href="http://rdoc.info/stdlib/thread/1.9.2/Queue">Queue</a>, as our
+threadpool is largely dependent on it. Thanks to this, the implementation
+becomes very simple!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nb">require</span> <span class="s1">&#39;thread&#39;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-Public_Interface'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-Public_Interface">&#182;</a>
+        </div>
+        <h2>Public Interface</h2>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-4">&#182;</a>
+        </div>
+        <p><code>Pool</code> is our threadpool class. It will allow us to do three operations:</p>
+
+<ul>
+<li><code>.new(size)</code> creates a threadpool of a given size</li>
+<li><code>#schedule(*args, &amp;job)</code> schedules a new job to be executed</li>
+<li><code>#shutdown</code> shuts down all threads (after letting them finish working, of course)</li>
+</ul>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">Pool</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-initialization,_or_&lt;code&gt;Pool.new(size)&lt;/code&gt;'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-initialization,_or_&lt;code&gt;Pool.new(size)&lt;/code&gt;">&#182;</a>
+        </div>
+        <h3>initialization, or <code>Pool.new(size)</code></h3>
+
+<p>Creating a new <code>Pool</code> involves a certain amount of work. First, however,
+we need to define its’ <code>size</code>. It defines how many threads we will have
+working internally.</p>
+
+<p>Which size is best for you is hard to answer. You do not want it to be
+too low, as then you won’t be able to do as many things concurrently.
+However, if you make it too high Ruby will spend too much time switching
+between threads, and that will also degrade performance!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">size</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-6">&#182;</a>
+        </div>
+        <p>Before we do anything else, we need to store some information about
+our pool. <code>@size</code> is useful later, when we want to shut our pool down,
+and <code>@jobs</code> is the heart of our pool that allows us to schedule work.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="vi">@size</span> <span class="o">=</span> <span class="n">size</span>
+    <span class="vi">@jobs</span> <span class="o">=</span> <span class="no">Queue</span><span class="o">.</span><span class="n">new</span>
+    </pre></div>
+      </td>
+    </tr>
+    <tr id='section-Creating_our_pool_of_threads'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-Creating_our_pool_of_threads">&#182;</a>
+        </div>
+        <h4>Creating our pool of threads</h4>
+
+<p>Once preparation is done, it’s time to create our pool of threads.
+Each thread store its’ index in a thread-local variable, in case we
+need to know which thread a job is executing in later on.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="vi">@pool</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vi">@size</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+      <span class="no">Thread</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span>
+        <span class="no">Thread</span><span class="o">.</span><span class="n">current</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-8">&#182;</a>
+        </div>
+        <p>We start off by defining a <code>catch</code> around our worker loop. This
+way we’ve provided a method for graceful shutdown of our threads.
+Shutting down is merely a <code>#schedule { throw :exit }</code> away!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>        <span class="kp">catch</span><span class="p">(</span><span class="ss">:exit</span><span class="p">)</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-9">&#182;</a>
+        </div>
+        <p>The worker thread life-cycle is very simple. We continuously wait
+for tasks to be put into our job <code>Queue</code>. If the <code>Queue</code> is empty,
+we will wait until it’s not.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>          <span class="kp">loop</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-10">&#182;</a>
+        </div>
+        <p>Once we have a piece of work to be done, we will pull out the
+information we need and get to work.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>            <span class="n">job</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="vi">@jobs</span><span class="o">.</span><span class="n">pop</span>
+            <span class="n">job</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  </pre></div>
+      </td>
+    </tr>
+    <tr id='section-Work_scheduling'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-Work_scheduling">&#182;</a>
+        </div>
+        <h3>Work scheduling</h3>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  </pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-12">&#182;</a>
+        </div>
+        <p>To schedule a piece of work to be done is to say to the <code>Pool</code> that you
+want something done.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">schedule</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-13'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-13">&#182;</a>
+        </div>
+        <p>Your given task will not be run immediately; rather, it will be put
+into the work <code>Queue</code> and executed once a thread is ready to work.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="vi">@jobs</span> <span class="o">&lt;&lt;</span> <span class="o">[</span><span class="n">block</span><span class="p">,</span> <span class="n">args</span><span class="o">]</span>
+  <span class="k">end</span>
+  </pre></div>
+      </td>
+    </tr>
+    <tr id='section-Graceful_shutdown'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-Graceful_shutdown">&#182;</a>
+        </div>
+        <h3>Graceful shutdown</h3>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  </pre></div>
+      </td>
+    </tr>
+    <tr id='section-15'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-15">&#182;</a>
+        </div>
+        <p>If you ever wish to close down your application, I took the liberty of
+making it easy for you to wait for any currently executing jobs to finish
+before you exit.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">shutdown</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-16'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-16">&#182;</a>
+        </div>
+        <p>A graceful shutdown involves threads exiting cleanly themselves, and
+since we’ve defined a <code>catch</code>-handler around the threads’ worker loop
+it is simply a matter of throwing <code>:exit</code>. Thus, if we throw one <code>:exit</code>
+for each thread in our pool, they will all exit eventually!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="vi">@size</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+      <span class="n">schedule</span> <span class="p">{</span> <span class="kp">throw</span> <span class="ss">:exit</span> <span class="p">}</span>
+    <span class="k">end</span>
+    </pre></div>
+      </td>
+    </tr>
+    <tr id='section-17'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-17">&#182;</a>
+        </div>
+        <p>And now one final thing: wait for our <code>throw :exit</code> jobs to be run on
+all our worker threads. This call will not return until all worker threads
+have exited.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="vi">@pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:join</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-Demonstration'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-Demonstration">&#182;</a>
+        </div>
+        <h2>Demonstration</h2>
+
+<p>Running this file will display how the threadpool works.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">if</span> <span class="vg">$0</span> <span class="o">==</span> <span class="bp">__FILE__</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-19'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-19">&#182;</a>
+        </div>
+        <ul>
+<li>First, we create a new threadpool with a size of 10. This number is
+lower than our planned amount of work, to show that threads do not
+exit once they have finished a task.</li>
+</ul>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="nb">p</span> <span class="o">=</span> <span class="no">Pool</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+  </pre></div>
+      </td>
+    </tr>
+    <tr id='section-20'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-20">&#182;</a>
+        </div>
+        <ul>
+<li>Next we simulate some workload by scheduling a large amount of work
+to be done. The actual time taken for each job is randomized. This
+is to demonstrate that even if two tasks are scheduled approximately
+at the same time, the one that takes less time to execute is likely
+to finish before the other one.</li>
+</ul>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="mi">20</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+    <span class="nb">p</span><span class="o">.</span><span class="n">schedule</span> <span class="k">do</span>
+      <span class="nb">sleep</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+      <span class="nb">puts</span> <span class="s2">&quot;Job </span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2"> finished by thread </span><span class="si">#{</span><span class="no">Thread</span><span class="o">.</span><span class="n">current</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-21'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-21">&#182;</a>
+        </div>
+        <ul>
+<li>Finally, register an <code>at_exit</code>-hook that will wait for our threadpool
+to properly shut down before allowing our script to completely exit.</li>
+</ul>
+
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="nb">at_exit</span> <span class="p">{</span> <span class="nb">p</span><span class="o">.</span><span class="n">shutdown</span> <span class="p">}</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
