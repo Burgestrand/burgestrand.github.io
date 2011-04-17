@@ -1,9 +1,5 @@
 # Ruby Threadpool
 # ===============
-# Creating a threadpool in Ruby is very simple using blocks and Queue, a
-# thread-safe queue that will block on the `#pop` operation when the queue
-# is empty.
-# 
 # A threadpool is useful when you wish to do some work in a thread, but do
 # not know how much work you will be doing in advance. Spawning one thread
 # for each task is potentially expensive, as threads are not free.
