@@ -1,28 +1,28 @@
-# Ruby Threadpool
-# ===============
-# A threadpool is useful when you wish to do some work in a thread, but do
+# Ruby Thread Pool
+# ================
+# A thread pool is useful when you wish to do some work in a thread, but do
 # not know how much work you will be doing in advance. Spawning one thread
 # for each task is potentially expensive, as threads are not free.
 # 
 # In this case, it might be more beneficial to start a predefined set of
 # threads and then hand off work to them as it becomes available. This is
-# the pure essence of what a threadpool is: an array of threads, all just
+# the pure essence of what a thread pool is: an array of threads, all just
 # waiting to do some work for you!
 #
 # Prerequisites
 # -------------
 
 # We need the [Queue](http://rdoc.info/stdlib/thread/1.9.2/Queue), as our
-# threadpool is largely dependent on it. Thanks to this, the implementation
+# thread pool is largely dependent on it. Thanks to this, the implementation
 # becomes very simple!
 require 'thread'
 
 # Public Interface
 # ----------------
 
-# `Pool` is our threadpool class. It will allow us to do three operations:
+# `Pool` is our thread pool class. It will allow us to do three operations:
 # 
-# - `.new(size)` creates a threadpool of a given size
+# - `.new(size)` creates a thread pool of a given size
 # - `#schedule(*args, &job)` schedules a new job to be executed
 # - `#shutdown` shuts down all threads (after letting them finish working, of course)
 class Pool
@@ -102,9 +102,9 @@ end
 
 # Demonstration
 # -------------
-# Running this file will display how the threadpool works.
+# Running this file will display how the thread pool works.
 if $0 == __FILE__
-  # - First, we create a new threadpool with a size of 10. This number is
+  # - First, we create a new thread pool with a size of 10. This number is
   #   lower than our planned amount of work, to show that threads do not
   #   exit once they have finished a task.
   p = Pool.new(10)
@@ -121,7 +121,7 @@ if $0 == __FILE__
     end
   end
 
-  # - Finally, register an `at_exit`-hook that will wait for our threadpool
+  # - Finally, register an `at_exit`-hook that will wait for our thread pool
   #   to properly shut down before allowing our script to completely exit.
   at_exit { p.shutdown }
 end

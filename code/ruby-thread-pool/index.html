@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <title>threadpool.rb</title>
+  <title>Ruby Thread Pool</title>
   <link rel="stylesheet" href="http://github.com/jashkenas/docco/raw/0.3.0/resources/docco.css">
 </head>
 <body>
@@ -11,25 +11,25 @@
   <table cellspacing=0 cellpadding=0>
   <thead>
     <tr>
-      <th class=docs><h1>threadpool.rb</h1></th>
+      <th class=docs><h1>thread-pool.rb</h1></th>
       <th class=code></th>
     </tr>
   </thead>
   <tbody>
-    <tr id='section-Ruby_Threadpool'>
+    <tr id='section-Ruby_Thread_Pool'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-Ruby_Threadpool">&#182;</a>
+          <a class="pilcrow" href="#section-Ruby_Thread_Pool">&#182;</a>
         </div>
-        <h1>Ruby Threadpool</h1>
+        <h1>Ruby Thread Pool</h1>
 
-<p>A threadpool is useful when you wish to do some work in a thread, but do
+<p>A thread pool is useful when you wish to do some work in a thread, but do
 not know how much work you will be doing in advance. Spawning one thread
 for each task is potentially expensive, as threads are not free.</p>
 
 <p>In this case, it might be more beneficial to start a predefined set of
 threads and then hand off work to them as it becomes available. This is
-the pure essence of what a threadpool is: an array of threads, all just
+the pure essence of what a thread pool is: an array of threads, all just
 waiting to do some work for you!</p>
 
 <h2>Prerequisites</h2>
@@ -44,7 +44,7 @@ waiting to do some work for you!</p>
           <a class="pilcrow" href="#section-2">&#182;</a>
         </div>
         <p>We need the <a href="http://rdoc.info/stdlib/thread/1.9.2/Queue">Queue</a>, as our
-threadpool is largely dependent on it. Thanks to this, the implementation
+thread pool is largely dependent on it. Thanks to this, the implementation
 becomes very simple!</p>
       </td>
       <td class=code>
@@ -67,10 +67,10 @@ becomes very simple!</p>
         <div class="pilwrap">
           <a class="pilcrow" href="#section-4">&#182;</a>
         </div>
-        <p><code>Pool</code> is our threadpool class. It will allow us to do three operations:</p>
+        <p><code>Pool</code> is our thread pool class. It will allow us to do three operations:</p>
 
 <ul>
-<li><code>.new(size)</code> creates a threadpool of a given size</li>
+<li><code>.new(size)</code> creates a thread pool of a given size</li>
 <li><code>#schedule(*args, &amp;job)</code> schedules a new job to be executed</li>
 <li><code>#shutdown</code> shuts down all threads (after letting them finish working, of course)</li>
 </ul>
@@ -276,7 +276,7 @@ have exited.</p>
         </div>
         <h2>Demonstration</h2>
 
-<p>Running this file will display how the threadpool works.</p>
+<p>Running this file will display how the thread pool works.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre><span class="k">if</span> <span class="vg">$0</span> <span class="o">==</span> <span class="bp">__FILE__</span></pre></div>
@@ -288,7 +288,7 @@ have exited.</p>
           <a class="pilcrow" href="#section-19">&#182;</a>
         </div>
         <ul>
-<li>First, we create a new threadpool with a size of 10. This number is
+<li>First, we create a new thread pool with a size of 10. This number is
 lower than our planned amount of work, to show that threads do not
 exit once they have finished a task.</li>
 </ul>
@@ -326,7 +326,7 @@ to finish before the other one.</li>
           <a class="pilcrow" href="#section-21">&#182;</a>
         </div>
         <ul>
-<li>Finally, register an <code>at_exit</code>-hook that will wait for our threadpool
+<li>Finally, register an <code>at_exit</code>-hook that will wait for our thread pool
 to properly shut down before allowing our script to completely exit.</li>
 </ul>
 
