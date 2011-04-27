@@ -8,8 +8,8 @@
     %h1 This document is missing
     %p
       I couldn't find the page you were looking for. Some links have moved recently,
-      so you might have better luck changing the domain to
-      <a href="http://burgestrand.tumblr.com" id="tumblr">burgestrand.tumblr.com</a>
+      so you might have better luck changing the URL to
+      <a href="http://burgestrand.se/" id="url">burgestrand.se/articles/&lt;post title></a>
     
     %h2 Still can’t find it?
     %p
@@ -18,11 +18,11 @@
       though, so all is not lost.
     
     :javascript
-      var tumblr = document.getElementById("tumblr");
-      var loc = window.location.pathname.toString();
-      tumblr.href = tumblr.href + loc.replace(/^\//, '');
-      tumblr.innerHTML = tumblr.innerHTML + loc;
+      var article = document.getElementById("url");
+      var loc     = window.location.pathname.toString();
+      var title   = loc.substr(loc.lastIndexOf('/') + 1);
+      var url     = "http://burgestrand.se/articles/" + title;
+      article.href = url;
+      article.innerHTML = url;
     
-    // observerapp.com
-    <script type="text/javascript" src="http://www.observerapp.com/record.js"></script>
-    <script type="text/javascript">try { Observerapp.record("4c9a9db9d31fc5080e003817"); } catch(e) {};</script>
+    = # TODO: capture_haml { File.read('_includes/common/tracker.haml') }
