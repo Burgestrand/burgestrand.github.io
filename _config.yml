@@ -15,3 +15,6 @@ exclude: []
 # Custom data, available through {{ site.<variable> }}
 base_uri: "http://burgestrand.se"
 title: "by Kim Burgestrand"
+
+# Don not include categories in post permalinks
+permalink: /articles/:title.html
