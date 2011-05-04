@@ -25,4 +25,4 @@
       article.href = url;
       article.innerHTML = url;
     
-    = # TODO: capture_haml { File.read('_includes/common/tracker.haml') }
+    = Engine.new(File.read('_includes/common/tracker.haml')).render
