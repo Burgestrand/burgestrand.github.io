@@ -56,10 +56,10 @@ You might not realize it yet, but we have a major problem here. Inside `lmfao_ca
 
 **NOTE:** Content below is old and will be replaced. It is merely here to remind me of what I’ve previously written.
 
-You see, unless your current thread is a *Ruby* thread, you are not supposed to call any of the Ruby C API functions. Now, if libspotify calls one of our callbacks, and we cannot call any ruby functions from within that callback, how are we supposed to handle the callback using Ruby?
-
-## Shared heap to the rescue!
-Luckily for us (yay!), threads share the same heap, which in turn allows for easy communication between them. If we [malloc](http://en.wikipedia.org/wiki/Malloc#Dynamic_memory_allocation_in_C) in one thread, and share the pointer given to us with another thread, those two threads can communicate! All we need to do is to protect that memory area, making sure it is ever accessed by one thread at a time.
+## Related
+- [Avoiding cross-thread violations in a Ruby extension](http://stackoverflow.com/questions/3752006/how-do-i-avoid-cross-thread-violations-in-a-ruby-extension)
+- [Function.c in Ruby FFI](https://github.com/ffi/ffi/blob/85e431eb13ed96d3926fbd82e2ece7f5d93156f3/ext/ffi_c/Function.c#L470)
+- [rb\_thread\_blocking\_region](https://github.com/ruby/ruby/blob/4db93c3f41818261121d53214030aad6ec001ee7/thread.c#L1119)
 
 ## The final recipe
 To summarize, here’s what we have:
@@ -86,5 +86,3 @@ We want to know when the C callback is invoked, and what parameters it was given
 14. (ruby): give permission for more callbacks to fire
 
 &#13;<small>(note: point #8-13 can be handled concurrently with point #14 by having the C callback pass along means for ruby to signal with when the callback is handled)</small>
-
-As you can imagine, waiting in Rubys main thread is not acceptable, as it would defeat the purpose of asynchronous callbacks. Instead we spawn [a thread specifically for this purpose](https://github.com/Burgestrand/Hallon/blob/35aa74f18e8cde59186ed30024de1cb55d6bec2e/ext/hallon/callbacks.c). Notice that I use [rb\_thread\_blocking\_region](https://github.com/ruby/ruby/blob/4db93c3f41818261121d53214030aad6ec001ee7/thread.c#L1119) to avoid locking the entire ruby interpreter while I wait for events. If you want your extension to work on 1.8.7 in a similar fashion, you’ll want to use a pipe and [rb\_thread\_wait\_fd](https://github.com/ruby/ruby/blob/4db93c3f41818261121d53214030aad6ec001ee7/thread.c#L2637) and friends instead. [Ruby FFI has implemented this](https://github.com/ffi/ffi/blob/master/ext/ffi_c/Function.c), if you want an example.
