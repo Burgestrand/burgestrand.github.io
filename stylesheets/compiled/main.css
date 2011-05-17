@@ -420,6 +420,10 @@ html.not-found h1 {
 html.not-found h2 {
   font-size: 1.6em; }
 
+/* line 2, ../../_src/stylesheets/_gist.scss */
+div.gist {
+  font-size: .8em; }
+
 /* line 1, ../../_src/stylesheets/_highlight.scss */
 .highlight {
   background: #ffffff; }
