@@ -1,0 +1,90 @@
+---
+layout: post
+title: Asynchronous callbacks in Ruby C extensions
+date: 17 May 2011 06:15:12 UTC
+categories: [ruby, yarv, async]
+slug: Half a year ago, I was working on bindings for a C library known as
+      "libspotify":http://developer.spotify.com/en/libspotify/overview/.
+      As you might know, writing C extensions for Ruby is _really_ easy,
+      but this particular case was not.
+      
+      
+      libspotify relies _heavily_ on user-provided callbacks for event
+      handling. These callbacks are sometimes executed in their own
+      thread, and those threads are not allowed to call the Ruby API.
+      
+      
+      Now, how do you handle these callbacks if you cannot call Ruby code
+      from within them? I’d like to tell you the answer to this question.
+draft: yes
+---
+
+
+**WARNING**: this post will be very technical and mention topics related to concurrent programming and thread-synchronization. Knowledge about [mutexes](http://stackoverflow.com/questions/34524/what-is-a-mutex/34558#34558) and condition variables will be assumed.
+
+Okay. Down to the nitty-gritty. You have this awesome (and imaginary) C library, “library of massive fun and overjoy”, and you can call upon it to do some work. Thing is, when LMFAO does some work it spawns a new thread, and that thread will call a callback-function that you supply.
+
+Today, we are going to write a C extension for Ruby that allows our fellow Ruby programmers to use LMFAO without knowing an ounce of C; and to do that you’ll need the sauce, so here it is:
+
+<script src="https://gist.github.com/974171.js"> </script>
+
+## Writing the Ruby bindings
+This is not a basic guide in writing Ruby C extensions, so if you’ve never written one yourself this particular part might confuse you slightly. Don’t fret! Go forth slowly, Google the things you don’t understand and you’ll understand in no time.
+
+Now, where were we? Oh, yes, Ruby bindings for LMFAO! We will be supporting an API similar to this:
+
+
+{% highlight ruby %}
+require 'lmfao'
+
+result = LMFAO::call("some ruby object") do |data|
+  puts "LMFAO callback called"
+  data.upcase # handle the data from the callback somehow
+end
+
+puts "Result: #{result}"
+{% endhighlight %}
+
+
+I’ve taken the liberty of writing most of it for you. It is available in a GitHub repository: [Burgestrand/Library-of-Massive-Fun-And-Overjoy](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/tree/problem). Once you run LMFAO (`rake default`) you’ll notice the tests don’t pass: the callback returns nil.
+
+You might not realize it yet, but we have a major problem here. Inside `lmfao_callback` we do not hold the [GIL](http://en.wikipedia.org/wiki/Global_Interpreter_Lock), so we *cannot* call the Ruby C API safely. [`rb_thread_call_with_gvl`](https://github.com/ruby/ruby/blob/ruby_1_9_2/thread.c#L1170) looks promising at first, but we cannot use it as the the current thread was not created by Ruby. What to do? WHAT TO DO!? ;_;
+
+## Threads, event loop or… both?
+
+---
+
+**NOTE:** Content below is old and will be replaced. It is merely here to remind me of what I’ve previously written.
+
+You see, unless your current thread is a *Ruby* thread, you are not supposed to call any of the Ruby C API functions. Now, if libspotify calls one of our callbacks, and we cannot call any ruby functions from within that callback, how are we supposed to handle the callback using Ruby?
+
+## Shared heap to the rescue!
+Luckily for us (yay!), threads share the same heap, which in turn allows for easy communication between them. If we [malloc](http://en.wikipedia.org/wiki/Malloc#Dynamic_memory_allocation_in_C) in one thread, and share the pointer given to us with another thread, those two threads can communicate! All we need to do is to protect that memory area, making sure it is ever accessed by one thread at a time.
+
+## The final recipe
+To summarize, here’s what we have:
+
+- a C callback, called from a thread that cannot hold the GVL
+- a *ruby* thread that does nothing but wait for any callbacks to fire
+- our main ruby thread
+
+We want to know when the C callback is invoked, and what parameters it was given. It would also be nice to be able to return a value from this callback (if required). The entire flow is like this:
+
+1. (ruby): wait for the callback to fire
+2. (callback): wait for permission to access shared storage
+3. (callback): put parameter data into shared storage
+4. (callback): signal ruby that data has been delivered
+5. (callback): wait for a return value
+6. (ruby): read the data from shared storage
+7. (ruby): marshal the data into something usable within ruby
+8. (ruby): handle the data (e.g. pass it to a user-defined callback)
+9. (ruby): unmarshal our ruby return value for our callback
+10. (ruby): store the return value where the callback can reach it
+11. (ruby): signal the waiting callback
+12. (callback): read the return value
+13. (callback): return the return value
+14. (ruby): give permission for more callbacks to fire
+
+&#13;<small>(note: point #8-13 can be handled concurrently with point #14 by having the C callback pass along means for ruby to signal with when the callback is handled)</small>
+
+As you can imagine, waiting in Rubys main thread is not acceptable, as it would defeat the purpose of asynchronous callbacks. Instead we spawn [a thread specifically for this purpose](https://github.com/Burgestrand/Hallon/blob/35aa74f18e8cde59186ed30024de1cb55d6bec2e/ext/hallon/callbacks.c). Notice that I use [rb\_thread\_blocking\_region](https://github.com/ruby/ruby/blob/4db93c3f41818261121d53214030aad6ec001ee7/thread.c#L1119) to avoid locking the entire ruby interpreter while I wait for events. If you want your extension to work on 1.8.7 in a similar fashion, you’ll want to use a pipe and [rb\_thread\_wait\_fd](https://github.com/ruby/ruby/blob/4db93c3f41818261121d53214030aad6ec001ee7/thread.c#L2637) and friends instead. [Ruby FFI has implemented this](https://github.com/ffi/ffi/blob/master/ext/ffi_c/Function.c), if you want an example.
