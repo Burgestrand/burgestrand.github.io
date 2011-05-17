@@ -6,6 +6,7 @@
 
 %section
   {% for post in site.posts %}
+  {% if post.draft == nil %}
   %article{:class => "{{ post.layout }}"}
     {% if post.layout == "post" %}
     {% include index/post.html %}
@@ -16,4 +17,5 @@
     {% elsif post.layout == "image" %}
     {% include index/image.html %}
     {% endif %}
+  {% endif %}
   {% endfor %}

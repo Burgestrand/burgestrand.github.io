@@ -13,6 +13,7 @@ layout: rss (does not exist)
     <language>sv-se</language>
     <lastBuildDate>{{ site.posts.first.date | date: "%d %b %Y %H:%M:%S UTC" }}</lastBuildDate>
     {% for post in site.posts %}
+    {% if post.draft == nil %}
     <item>
       <title>{{ post.title }}</title>
       <link>{{ site.base_uri }}{{ post.url }}</link>
@@ -29,6 +30,7 @@ layout: rss (does not exist)
       <category domain="{{ site.base_uri }}/{{ category }}">{{category}}</category>
       {% endfor %}
     </item>
+    {% endif %}
     {% endfor %}
   </channel>
 </rss>
