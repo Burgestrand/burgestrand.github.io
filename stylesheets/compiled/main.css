@@ -92,8 +92,7 @@ p {
 
 /* line 29, ../../_src/stylesheets/_reset.scss */
 ul, ol {
-  list-style-position: inside;
-  margin: 0 2em 1em; }
+  margin: 0 1.1em 1em; }
 
 /* line 33, ../../_src/stylesheets/_reset.scss */
 ul li {

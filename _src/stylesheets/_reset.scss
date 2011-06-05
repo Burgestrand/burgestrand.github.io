@@ -1,5 +1,6 @@
 @import "compass/reset.scss";
 
+
 // CSS3
 section, article, header, footer, nav
 {
@@ -25,11 +26,7 @@ small
 
 p { margin: 0 0 1em; }
 
-ul, ol
-{
-  list-style-position: inside;
-  margin: 0 2em 1em;
-}
+ul, ol { margin: 0 1.1em 1em; }
 ul li { list-style-type: disc; }
 ol li { list-style-type: decimal; }
 
