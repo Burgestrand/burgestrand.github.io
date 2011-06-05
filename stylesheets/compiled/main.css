@@ -53,6 +53,7 @@ a img {
 
 /* line 5, ../../_src/stylesheets/_reset.scss */
 section, article, header, footer, nav {
+  display: block;
   margin: 0;
   padding: 0;
   border: 0;
@@ -63,60 +64,60 @@ section, article, header, footer, nav {
   font-family: inherit;
   vertical-align: baseline; }
 
-/* line 11, ../../_src/stylesheets/_reset.scss */
+/* line 12, ../../_src/stylesheets/_reset.scss */
 pre, code {
   font-family: monospace; }
 
-/* line 12, ../../_src/stylesheets/_reset.scss */
+/* line 13, ../../_src/stylesheets/_reset.scss */
 q, blockquote {
   color: #666; }
 
-/* line 13, ../../_src/stylesheets/_reset.scss */
+/* line 14, ../../_src/stylesheets/_reset.scss */
 em {
   font-style: italic; }
 
-/* line 15, ../../_src/stylesheets/_reset.scss */
+/* line 16, ../../_src/stylesheets/_reset.scss */
 strong {
   color: #444;
   font-weight: bold; }
 
-/* line 20, ../../_src/stylesheets/_reset.scss */
+/* line 21, ../../_src/stylesheets/_reset.scss */
 small {
   font-size: .8em;
   font-weight: normal; }
 
-/* line 25, ../../_src/stylesheets/_reset.scss */
+/* line 26, ../../_src/stylesheets/_reset.scss */
 p {
   margin: 0 0 1em; }
 
-/* line 28, ../../_src/stylesheets/_reset.scss */
+/* line 29, ../../_src/stylesheets/_reset.scss */
 ul, ol {
   list-style-position: inside;
   margin: 0 2em 1em; }
 
-/* line 32, ../../_src/stylesheets/_reset.scss */
+/* line 33, ../../_src/stylesheets/_reset.scss */
 ul li {
   list-style-type: disc; }
 
-/* line 33, ../../_src/stylesheets/_reset.scss */
+/* line 34, ../../_src/stylesheets/_reset.scss */
 ol li {
   list-style-type: decimal; }
 
-/* line 36, ../../_src/stylesheets/_reset.scss */
+/* line 37, ../../_src/stylesheets/_reset.scss */
 dl {
   margin-bottom: 1em; }
-  /* line 40, ../../_src/stylesheets/_reset.scss */
+  /* line 41, ../../_src/stylesheets/_reset.scss */
   dl dt {
     color: #666;
     font-weight: bold; }
-  /* line 45, ../../_src/stylesheets/_reset.scss */
+  /* line 46, ../../_src/stylesheets/_reset.scss */
   dl dd {
     margin: 0 1em; }
-  /* line 46, ../../_src/stylesheets/_reset.scss */
+  /* line 47, ../../_src/stylesheets/_reset.scss */
   dl dd + dt {
     margin-top: .5em; }
 
-/* line 51, ../../_src/stylesheets/_reset.scss */
+/* line 52, ../../_src/stylesheets/_reset.scss */
 nav ol, nav ul {
   list-style: none;
   margin: 0;
@@ -192,11 +193,11 @@ h1 {
     right: 0;
     top: 0; }
 
-/* line 47, ../../_src/stylesheets/typography/_flow.scss */
+/* line 49, ../../_src/stylesheets/typography/_flow.scss */
 article blockquote:not(.slug), article q {
   font-style: italic;
   line-height: 1.6em; }
-/* line 53, ../../_src/stylesheets/typography/_flow.scss */
+/* line 55, ../../_src/stylesheets/typography/_flow.scss */
 article blockquote:not(.slug):before {
   color: #999;
   float: left;

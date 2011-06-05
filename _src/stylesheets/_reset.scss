@@ -3,6 +3,7 @@
 // CSS3
 section, article, header, footer, nav
 {
+  display: block; // Firefox 3.6.3
   @include reset-box-model;
   @include reset-font;
 }
@@ -35,13 +36,13 @@ ol li { list-style-type: decimal; }
 dl
 {
   margin-bottom: 1em;
-  
+
   dt
   {
     color: #666;
     font-weight: bold;
   }
-  
+
   dd { margin: 0 1em; }
   dd + dt { margin-top: .5em; }
 }
