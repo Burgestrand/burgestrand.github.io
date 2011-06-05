@@ -7,13 +7,13 @@ slug: Half a year ago, I was working on bindings for a C library known as
       "libspotify":http://developer.spotify.com/en/libspotify/overview/.
       As you might know, writing C extensions for Ruby is _really_ easy,
       but this particular case was not.
-      
-      
+
+
       libspotify relies _heavily_ on user-provided callbacks for event
       handling. These callbacks are sometimes executed in their own
       thread, and those threads are not allowed to call the Ruby API.
-      
-      
+
+
       Now, how do you handle these callbacks if you cannot call Ruby code
       from within them? I’d like to tell you the answer to this question.
 draft: yes
@@ -24,7 +24,7 @@ draft: yes
 
 Okay. Down to the nitty-gritty. You have this awesome (and imaginary) C library, “library of massive fun and overjoy”, and you can call upon it to do some work. Thing is, when LMFAO does some work it spawns a new thread, and that thread will call a callback-function that you supply.
 
-Today, we are going to write a C extension for Ruby that allows our fellow Ruby programmers to use LMFAO without knowing an ounce of C; and to do that you’ll need the sauce, so here it is:
+Today, we are going to write a C extension for Ruby that allows our fellow Ruby programmers to use LMFAO without knowing an ounce of C; and to do that you’ll need the source, so here it is:
 
 <script src="https://gist.github.com/974171.js"> </script>
 
@@ -48,9 +48,25 @@ puts "Result: #{result}"
 
 I’ve taken the liberty of writing most of it for you. It is available in a GitHub repository: [Burgestrand/Library-of-Massive-Fun-And-Overjoy](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/tree/problem). Once you run LMFAO (`rake default`) you’ll notice the tests don’t pass: the callback returns `false`.
 
-You might not realize it yet, but we have a major problem here. Inside `lmfao_callback` we do not hold the [GIL](http://en.wikipedia.org/wiki/Global_Interpreter_Lock), so we *cannot* call the Ruby C API safely. [`rb_thread_call_with_gvl`](https://github.com/ruby/ruby/blob/ruby_1_9_2/thread.c#L1170) looks promising at first, but we cannot use it as the the current thread was not created by Ruby. What to do? WHAT TO DO!? ;_;
+You might not realize it yet, but we have a major problem here. Inside `lmfao_callback` we do not hold the [GIL](http://en.wikipedia.org/wiki/Global_Interpreter_Lock), so we *cannot* call the Ruby C API safely. [`rb_thread_call_with_gvl`](https://github.com/ruby/ruby/blob/ruby_1_9_2/thread.c#L1170) looks promising at first, but we cannot use it as the the current thread was not created by Ruby. So, what do we do?
 
 ## Threads, event loop or… both?
+
+As we are not allowed to call Ruby from within our `lmfao_callback`, we need a workaround. Now, this is the tricky part, so stay close with me.
+
+Once the callback fires, we need to tell Ruby that it has fired, and we also need to communicate which parameters it was given. As we cannot call Ruby directly, we need to put the parameters in a location that Ruby can access. Additionally, the callback must wait for a return value from Ruby before it can return said value to its’ caller.
+
+Now, since want to listen for notifications from our callbacks we must wait for them to arrive. Chances are we don’t want to do this in our main code, as we would never get anything done if all we did was wait. What we *can* do, though, is do the waiting in a separate Ruby thread.
+
+So, a quick recap:
+
+- we have a special ruby thread, waiting to be notified
+- when a callback is invoked, it stores its’ parameters somewhere, notifies ruby thread and waits
+- ruby thread is notified, reads the callback parameters, and executes the callback handler
+- ruby thread puts the return value of the handler in location where C callback can reach it, and notifies C callback
+- C callback wakes up again, reads return value and returns it
+
+Whew! A lot of things to keep track of, but this is a high-level view of what we need to do. Lets get to work!
 
 ---
 
