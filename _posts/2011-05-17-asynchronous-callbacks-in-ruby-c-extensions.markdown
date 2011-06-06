@@ -84,11 +84,11 @@ As the parameters become more complex, so does parameter dumping. I’ve thought
 
 ### Handling the callback
 
-Now to look [`LMFAO_handle_callback`](http://goo.gl/idSWp). For our simple example, the callback data is just a Ruby array containing a proc and the parameters to give it — we then execute it and simply return the result to the callback (line `#146` to `#153`).
+Now to look [`LMFAO_handle_callback`](http://goo.gl/idSWp). For our simple example, the callback data is just a Ruby array containing a proc and the parameters to give it — we then execute it and simply return the result to the callback (within lines `#146` to `#153`).
 
 In practice, it is never this simple. You need to convert the callback data to Ruby data, figure out which Ruby handler to invoke, and finally convert the result back to pure C data that the callback function can return.
 
-If you have a small amount of callbacks, you could handle these conversions for a few simple data types (or as for our case with LMFAO, do no conversion whatsoever). If you want to handle the general case however, it quickly gets complicated. Ruby FFI has an implementation of this in its [`callback_with_gvl`](http://goo.gl/AdiL6) function.
+If you have a small amount of callbacks, you could handle these conversions for a few simple data types (or in LMFAO’s case, no conversion whatsoever). If you want to handle the general case however, it quickly gets complicated. Ruby FFI has an implementation of this in its [`callback_with_gvl`](http://goo.gl/AdiL6) function.
 
 
 ## Summary
