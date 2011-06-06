@@ -56,9 +56,9 @@ As we are not allowed to call Ruby from within our `lmfao_callback`, we need a w
 
 Once the callback fires, we need to tell Ruby that it has fired, and we also need to communicate which parameters it was given. As we cannot call Ruby directly, we need to put the parameters in a location that Ruby can access. Additionally, the callback must wait for a return value from Ruby before it can return said value to its’ caller.
 
-Now, since want to listen for notifications from our callbacks we must wait for them to arrive. Chances are we don’t want to do this in our main code, as we would never get anything done if all we did was wait. What we *can* do, though, is do the waiting in a separate Ruby thread.
+Now, since we want to listen for notifications from our callbacks we must wait for them to arrive. Waiting in the main thread is a bad idea, as it would mean we did a lot of waiting and very little work. What we *can* do, is use a separate Ruby thread that’ll wait for us.
 
-So, a quick recap:
+So. Quick recap:
 
 - we have a special ruby thread, waiting to be notified
 - when a callback is invoked, it stores its’ parameters somewhere, notifies ruby thread and waits
@@ -72,43 +72,25 @@ Whew! A lot of things to keep track of, but this is a high-level view of what we
 
 First off, we’ll need a designated event thread. As previously mentioned, this thread will do nothing but wait for callbacks to happen; and when they do, it will dispatch off to a callback handler.
 
-Yet again, [the (new) code for this chapter is available on GitHub](http://goo.gl/Aw8ze). I’ve done my best to explain what is being done and why for each function and struct member. Still, if something is unclear I’d love to try and clear it up for you. You can find my e-mail [at the about me-page](/about-me.html). I don’t bite, I promise `:}`
+As I’ve already explained the high-level view of how this should work, I’m just going to give you [the code](http://goo.gl/Aw8ze). I’ve done my best to explain what is being done and why for each function and struct member in their comments. Do read it now, it’ll help understanding what’s coming next!
 
-### `LMFAO_handle_callback` and `lmfao_callback`
+### Calling out to Ruby
 
 You’ve probably noticed both `LMFAO_handle_callback` and `lmfao_callback` are empty functions. We’ll fill them in in this chapter, but they require more intimate discussion in comparison to the ruby event thread.
 
----
+We’ll talk about [`lmfao_callback`](http://goo.gl/sxZ5y) first, the simpler one of the two functions. This function should dump its’ data in the global queue, notify the event thread, and wait for the return value. Only two things in this code should ever change between different callbacks: the [parameter dumping](http://goo.gl/KsnyR) and [type casting the return value](http://goo.gl/8ZxdJ).
 
-**NOTE:** Content below is old and will be replaced. It is merely here to remind me of what I’ve previously written.
+As the parameters become more complex, so does parameter dumping. I’ve thought about making the `data` field in the `callback_t` struct a linked list instead. Each node would contain the data type, pointer to the value and finally a pointer to the next node. Doing it this way would help later when we convert it to Ruby data, as type information is embedded. I’ll leave this as an exercise.
 
-## Related
-- [Avoiding cross-thread violations in a Ruby extension](http://stackoverflow.com/questions/3752006/how-do-i-avoid-cross-thread-violations-in-a-ruby-extension)
-- [Function.c in Ruby FFI](https://github.com/ffi/ffi/blob/85e431eb13ed96d3926fbd82e2ece7f5d93156f3/ext/ffi_c/Function.c#L470)
-- [rb\_thread\_blocking\_region](https://github.com/ruby/ruby/blob/4db93c3f41818261121d53214030aad6ec001ee7/thread.c#L1119)
+### Handling the callback
 
-## The final recipe
-To summarize, here’s what we have:
+Now to look [`LMFAO_handle_callback`](http://goo.gl/idSWp). For our simple example, the callback data is just a Ruby array containing a proc and the parameters to give it — we then execute it and simply return the result to the callback (line `#146` to `#153`).
 
-- a C callback, called from a thread that cannot hold the GVL
-- a *ruby* thread that does nothing but wait for any callbacks to fire
-- our main ruby thread
+In practice, it is never this simple. You need to convert the callback data to Ruby data, figure out which Ruby handler to invoke, and finally convert the result back to pure C data that the callback function can return.
 
-We want to know when the C callback is invoked, and what parameters it was given. It would also be nice to be able to return a value from this callback (if required). The entire flow is like this:
+If you have a small amount of callbacks, you could handle these conversions for a few simple data types (or as for our case with LMFAO, do no conversion whatsoever). If you want to handle the general case however, it quickly gets complicated. Ruby FFI has an implementation of this in its [`callback_with_gvl`](http://goo.gl/AdiL6) function.
 
-1. (ruby): wait for the callback to fire
-2. (callback): wait for permission to access shared storage
-3. (callback): put parameter data into shared storage
-4. (callback): signal ruby that data has been delivered
-5. (callback): wait for a return value
-6. (ruby): read the data from shared storage
-7. (ruby): marshal the data into something usable within ruby
-8. (ruby): handle the data (e.g. pass it to a user-defined callback)
-9. (ruby): unmarshal our ruby return value for our callback
-10. (ruby): store the return value where the callback can reach it
-11. (ruby): signal the waiting callback
-12. (callback): read the return value
-13. (callback): return the return value
-14. (ruby): give permission for more callbacks to fire
 
-&#13;<small>(note: point #8-13 can be handled concurrently with point #14 by having the C callback pass along means for ruby to signal with when the callback is handled)</small>
+## Summary
+
+*MEEEEP*
