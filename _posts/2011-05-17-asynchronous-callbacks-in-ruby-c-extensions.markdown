@@ -46,7 +46,7 @@ puts "Result: #{result}"
 {% endhighlight %}
 
 
-I’ve taken the liberty of writing most of it for you. It is available in a GitHub repository: [Burgestrand/Library-of-Massive-Fun-And-Overjoy](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/tree/base). Once you run LMFAO (`rake default`) you’ll notice the tests don’t pass: the callback returns `false`.
+I’ve taken the liberty of writing most of it for you. It is available in a GitHub repository: [Burgestrand/Library-of-Massive-Fun-And-Overjoy](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/tree/problem). Once you run LMFAO (`rake default`) you’ll notice the tests don’t pass: the callback returns `false`.
 
 You might not realize it yet, but we have a major problem here. Inside [`lmfao_callback`](http://goo.gl/awsR8) we do not hold the [GIL](http://en.wikipedia.org/wiki/Global_Interpreter_Lock), so we *cannot* call the Ruby C API safely. [`rb_thread_call_with_gvl`](https://github.com/ruby/ruby/blob/ruby_1_9_2/thread.c#L1170) looks promising at first, but we cannot use it as the the current thread was not created by Ruby. So, what do we do?
 
@@ -67,6 +67,16 @@ So, a quick recap:
 - C callback wakes up again, reads return value and returns it
 
 Whew! A lot of things to keep track of, but this is a high-level view of what we need to do. Lets get to work!
+
+### The Ruby Event thread
+
+First off, we’ll need a designated event thread. As previously mentioned, this thread will do nothing but wait for callbacks to happen; and when they do, it will dispatch off to a callback handler.
+
+Yet again, [the (new) code for this chapter is available on GitHub](http://goo.gl/Aw8ze). I’ve done my best to explain what is being done and why for each function and struct member. Still, if something is unclear I’d love to try and clear it up for you. You can find my e-mail [at the about me-page](/about-me.html). I don’t bite, I promise `:}`
+
+### `LMFAO_handle_callback` and `lmfao_callback`
+
+You’ve probably noticed both `LMFAO_handle_callback` and `lmfao_callback` are empty functions. We’ll fill them in in this chapter, but they require more intimate discussion in comparison to the ruby event thread.
 
 ---
 
