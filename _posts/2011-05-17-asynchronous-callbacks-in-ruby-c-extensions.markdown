@@ -80,11 +80,11 @@ You’ve probably noticed both `LMFAO_handle_callback` and `lmfao_callback` are 
 
 We’ll talk about [`lmfao_callback`](http://goo.gl/sxZ5y) first, the simpler one of the two functions. This function should dump its’ data in the global queue, notify the event thread, and wait for the return value. Only two things in this code should ever change between different callbacks: the [parameter dumping](http://goo.gl/KsnyR) and [type casting the return value](http://goo.gl/8ZxdJ).
 
-As the parameters become more complex, so does parameter dumping. I’ve thought about making the `data` field in the `callback_t` struct a linked list instead. Each node would contain the data type, pointer to the value and finally a pointer to the next node. Doing it this way would help later when we convert it to Ruby data, as type information is embedded. I’ll leave this as an exercise.
+As the parameters become more complex, so does parameter dumping. I’ve thought about making the `data` field in the `callback_t` struct a linked list instead. Each node would contain the data type, pointer to the value and finally a pointer to the next node. I think I’ll leave this an exercise for you!
 
 ### Handling the callback
 
-Now to look [`LMFAO_handle_callback`](http://goo.gl/idSWp). For our simple example, the callback data is just a Ruby array containing a proc and the parameters to give it — we then execute it and simply return the result to the callback (within lines `#146` to `#153`).
+Now to look at [`LMFAO_handle_callback`](http://goo.gl/idSWp). In LMFAO, the callback data is just a Ruby array containing a proc and the parameters to give it. We `call` it, and simply return the result to the callback (lines `#146` to `#153`).
 
 In practice, it is never this simple. You need to convert the callback data to Ruby data, figure out which Ruby handler to invoke, and finally convert the result back to pure C data that the callback function can return.
 
