@@ -84,7 +84,7 @@ As the parameters become more complex, so does parameter dumping. I’ve thought
 
 ### Handling the callback
 
-Now to look at [`LMFAO_handle_callback`](http://goo.gl/idSWp). In LMFAO, the callback data is just a Ruby array containing a proc and the parameters to give it. We `call` it, and simply return the result to the callback (lines `#146` to `#153`).
+Now to look at [`LMFAO_handle_callback`](http://goo.gl/idSWp). In LMFAO, the callback data is just a Ruby array containing a proc and the parameters to give it. We `call` it, and simply return the result to the callback (lines [`#146` to `#153`](http://goo.gl/YHBWW)).
 
 In practice, it is never this simple. You need to convert the callback data to Ruby data, figure out which Ruby handler to invoke, and finally convert the result back to pure C data that the callback function can return.
 
