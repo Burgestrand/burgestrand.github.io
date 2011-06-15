@@ -22,9 +22,9 @@ draft: yes
 
 **WARNING**: this post will be very technical and mention topics related to concurrent programming and thread-synchronization. Knowledge about [mutexes](http://stackoverflow.com/questions/34524/what-is-a-mutex/34558#34558) and condition variables will be assumed.
 
-Okay. Down to the nitty-gritty. You have this awesome (and imaginary) C library, “library of massive fun and overjoy”, and you can call upon it to do some work. Thing is, when LMFAO does some work it spawns a new thread, and that thread will call a callback-function that you supply.
+Okay. Down to the nitty-gritty. You have this awesome (and imaginary) C library, “Library of Massive Fun And Overjoy”, and you can call upon it to do some work. Thing is, when <acronym title="Library of Massive Fun And Overjoy">LMFAO</acronym> does some work it spawns a new thread, and that thread will call a callback-function that you supply.
 
-Today, we are going to write a C extension for Ruby that allows our fellow Ruby programmers to use LMFAO without knowing an ounce of C; and to do that you’ll need the source, so here it is:
+Today, we are going to write a C extension for Ruby that allows our fellow Ruby programmers to use LMFAO without knowing an ounce of C; and to do that you’ll need the library’s source, so here it is:
 
 <script src="https://gist.github.com/974171.js"> </script>
 
