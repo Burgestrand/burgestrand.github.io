@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Asynchronous callbacks in Ruby C extensions
-date: 17 May 2011 06:15:12 UTC
+date: Wed 15 Jun 2011 10:37:25 UTC
 categories: [ruby, yarv, async]
 slug: Half a year ago, I was working on bindings for a C library known as
       "libspotify":http://developer.spotify.com/en/libspotify/overview/.
@@ -16,7 +16,6 @@ slug: Half a year ago, I was working on bindings for a C library known as
 
       Now, how do you handle these callbacks if you cannot call Ruby code
       from within them? I’d like to tell you the answer to this question.
-draft: yes
 ---
 
 
