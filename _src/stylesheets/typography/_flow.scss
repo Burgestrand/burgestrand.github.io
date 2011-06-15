@@ -41,6 +41,12 @@ h1
   }
 }
 
+acronym
+{
+  border-bottom: 2px dashed #AAA;
+  cursor: help;
+}
+
 article
 {
   blockquote:not(.slug), q
@@ -48,7 +54,7 @@ article
     font-style: italic;
     line-height: 1.6em;
   }
-  
+
   blockquote:not(.slug):before
   {
     color: #999;

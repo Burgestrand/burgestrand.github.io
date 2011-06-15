@@ -192,7 +192,12 @@ h1 {
     right: 0;
     top: 0; }
 
-/* line 49, ../../_src/stylesheets/typography/_flow.scss */
+/* line 47, ../../_src/stylesheets/typography/_flow.scss */
+acronym {
+  border-bottom: 2px dashed #AAA;
+  cursor: help; }
+
+/* line 55, ../../_src/stylesheets/typography/_flow.scss */
 article blockquote:not(.slug), article q {
   font-style: italic;
   line-height: 1.6em; }
