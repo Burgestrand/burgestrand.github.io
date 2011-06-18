@@ -8,15 +8,18 @@ slug: Ruby MRI threads suck! You should use "JRuby":http://jruby.org/
       people in the dust… NO! If you think this is true, kindly relocate
       yourself to "dunce’s corner":http://en.wikipedia.org/wiki/Dunce_cap
       and listen.
+
+
+      ("or skip to the code":/code/ruby-thread-pool)
 ---
 
 Two days ago, somebody — let us call her Imogen — asked for resources on threading in the [#ruby](irc://irc.freenode.net/#ruby) IRC channel. Imogen was instantly instilled with [fear, uncertainty and doubt](http://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt) from others in the channel; people whom I otherwise hold great respect for.
 
-> &lt;person A> with ruby, don’t \[write threaded code\]  
-> &lt;person B> doesn’t really help writing threaded code unless you're on jruby  
-> &lt;Imogen> but for my heavily I/O-wait jobs, mri threads seems like a good fit?  
-> &lt;person A> for concurrency in MRI use [spawn](http://www.ruby-doc.org/core-1.9/classes/Process.html#M002230)  
-> &lt;person B> 1 GIL and you’re toast  
+> &lt;person A> with ruby, don’t \[write threaded code\]
+> &lt;person B> doesn’t really help writing threaded code unless you're on jruby
+> &lt;Imogen> but for my heavily I/O-wait jobs, mri threads seems like a good fit?
+> &lt;person A> for concurrency in MRI use [spawn](http://www.ruby-doc.org/core-1.9/classes/Process.html#M002230)
+> &lt;person B> 1 GIL and you’re toast
 > &lt;Imogen> [*sad panda :(*](http://i55.tinypic.com/244fq.jpg)
 
 Now now, Imogen, don’t be a sad panda. While it is true that [Ruby MRI](http://www.ruby-lang.org/en/) will only run one thread at a time ([although that is not the whole story](http://stackoverflow.com/questions/56087/does-ruby-have-real-multithreading/57802#57802)), that does not mean threads are useless. To me, it sounds like your jobs are a perfect fit for ruby threads!
