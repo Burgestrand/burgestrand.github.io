@@ -3,12 +3,9 @@
   %head
     {% include common/head.html %}
   %body
-    .nordic-ruby.ribbon
-      %a{:href => 'http://nordicruby.org'} Attendee of Nordic Ruby
-    
     .main
       {% include common/header.html %}
-    
+
       %section
         %article{:class => "{{ page.layout }}"}
           {% if page.layout == "post" %}
@@ -20,7 +17,7 @@
           {% elsif page.layout == "image" %}
           {% include post/image.html %}
           {% endif %}
-          
+
           {% if page.comments %}
           %footer
             %h2 Comments <small>(powered by Disqus)</small>
@@ -30,12 +27,12 @@
               var disqus_identifier = '{{ page.id }}';
               var disqus_url        = '{{ site.base_uri }}{{ page.url }}';
               var disqus_title      = '{{ page.title | replace:"'","\\'" }}';
-            
+
               (function() {
                   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                   dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
                   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
               })();
           {% endif %}
-    
+
     {% include common/tracker.html %}
