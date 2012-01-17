@@ -1,0 +1,13 @@
+.sopa
+{
+  background: black;
+  color: white;
+  font: 2.0em/1.2 'Impact', sans-serif;
+  display: block;
+  letter-spacing: 2px;
+  padding: 1em 0;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include box-shadow(black, 0, 0, 3px);
+}

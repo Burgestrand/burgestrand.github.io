@@ -648,3 +648,17 @@ body {
     text-align: center;
     text-decoration: none;
     word-spacing: .1em; }
+
+.sopa {
+  background: black;
+  color: white;
+  font: 2em/1.2 "Impact", sans-serif;
+  display: block;
+  letter-spacing: 2px;
+  padding: 1em 0;
+  text-align: center;
+  text-transform: uppercase;
+  -moz-box-shadow: black 0 0 3px 0;
+  -webkit-box-shadow: black 0 0 3px 0;
+  -o-box-shadow: black 0 0 3px 0;
+  box-shadow: black 0 0 3px 0; }
