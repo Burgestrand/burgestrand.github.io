@@ -6,6 +6,11 @@ body > .main
   width: 35em;
 }
 
+.main > section
+{
+  margin-bottom: 2em;
+}
+
 article + article
 {
   margin-top: 2em;

@@ -2,33 +2,32 @@
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
+del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
   font-size: 100%;
-  font-family: inherit;
+  font: inherit;
   vertical-align: baseline; }
 
 body {
-  line-height: 1;
-  color: black;
-  background: white; }
+  line-height: 1; }
 
 ol, ul {
   list-style: none; }
 
 table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle; }
+  border-collapse: collapse;
+  border-spacing: 0; }
 
 caption, th, td {
   text-align: left;
@@ -36,23 +35,24 @@ caption, th, td {
   vertical-align: middle; }
 
 q, blockquote {
-  quotes: "" ""; }
+  quotes: none; }
   q:before, q:after, blockquote:before, blockquote:after {
-    content: ""; }
+    content: "";
+    content: none; }
 
 a img {
   border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
 
 section, article, header, footer, nav {
   display: block;
   margin: 0;
   padding: 0;
   border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
   font-size: 100%;
-  font-family: inherit;
+  font: inherit;
   vertical-align: baseline; }
 
 pre, code {
@@ -98,8 +98,7 @@ nav ol, nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  border: 0;
-  outline: 0; }
+  border: 0; }
 
 /*
 @import "typography/elements.scss";
@@ -189,7 +188,8 @@ a:active {
 
 body {
   border-top: .3em solid #666;
-  color: #333; }
+  color: #333;
+  text-shadow: white 0 1px 1px; }
 
 body > .main {
   font-size: 1.2em; }
@@ -204,6 +204,9 @@ body > .main {
   margin: 0 auto;
   position: relative;
   width: 35em; }
+
+.main > section {
+  margin-bottom: 2em; }
 
 article + article {
   margin-top: 2em;
@@ -242,31 +245,31 @@ article + article {
       .main > header nav li:first-child {
         margin-left: 0; }
 
-article > header, article > footer {
-  overflow: hidden;
-  *zoom: 1; }
-  article > header p, article > footer p {
-    background: #eee;
-    font-size: .8em;
-    color: #999;
-    margin: 0;
-    padding: .2em .4em; }
-  article > header a[rel="permalink"], article > footer a[rel="permalink"] {
-    float: right; }
+article > header p, article > footer p {
+  background: #eee;
+  font-size: .8em;
+  color: #999;
+  margin: 0;
+  padding: .2em .4em; }
+article > header a[rel="permalink"], article > footer a[rel="permalink"] {
+  float: right; }
 article > header p {
+  background: rgba(255, 255, 255, 0.4);
   margin: .5em 0 1em;
-  -moz-border-radius-topleft: 0.2em;
-  -webkit-border-top-left-radius: 0.2em;
-  -o-border-top-left-radius: 0.2em;
-  -ms-border-top-left-radius: 0.2em;
-  -khtml-border-top-left-radius: 0.2em;
-  border-top-left-radius: 0.2em;
-  -moz-border-radius-topright: 0.2em;
-  -webkit-border-top-right-radius: 0.2em;
-  -o-border-top-right-radius: 0.2em;
-  -ms-border-top-right-radius: 0.2em;
-  -khtml-border-top-right-radius: 0.2em;
-  border-top-right-radius: 0.2em; }
+  -moz-box-shadow: #999999 0 0 1px inset;
+  -webkit-box-shadow: #999999 0 0 1px inset;
+  -o-box-shadow: #999999 0 0 1px inset;
+  box-shadow: #999999 0 0 1px inset;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -khtml-border-radius: 0.2em;
+  border-radius: 0.2em; }
 article > footer p {
   margin: .5em 0 0;
   -moz-border-radius-bottomleft: 0.2em;
@@ -297,10 +300,10 @@ article.image > p {
 article.image img {
   background: white;
   border: .2em solid white;
-  -moz-box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px 0; }
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); }
 article.image footer h1 {
   color: #666; }
 
@@ -313,9 +316,8 @@ article.quote h1 {
     font-size: 4em;
     content: "“";
     margin-top: .2em;
-    opacity: 0.3;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    opacity: 0.3;
     text-indent: -0.5em; }
   article.quote h1 q {
     color: #333; }
@@ -330,10 +332,10 @@ article.about-me img.photo {
   border: .15em solid black;
   float: right;
   margin: 0 0 1em 1em;
-  -moz-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0; }
+  -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); }
 article.about-me header dd {
   margin: 0; }
 article.about-me dl dd {
@@ -635,11 +637,12 @@ body {
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 2px 5px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 2px 5px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.4) 0 2px 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 5px 0; }
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); }
   .nordic-ruby.ribbon a {
     color: #fff;
     display: block;
@@ -658,7 +661,7 @@ body {
   padding: 1em 0;
   text-align: center;
   text-transform: uppercase;
-  -moz-box-shadow: black 0 0 3px 0;
-  -webkit-box-shadow: black 0 0 3px 0;
-  -o-box-shadow: black 0 0 3px 0;
-  box-shadow: black 0 0 3px 0; }
+  -moz-box-shadow: 0 0 3px black;
+  -webkit-box-shadow: 0 0 3px black;
+  -o-box-shadow: 0 0 3px black;
+  box-shadow: 0 0 3px black; }
