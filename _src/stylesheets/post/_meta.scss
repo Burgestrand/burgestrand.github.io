@@ -14,18 +14,21 @@ article
     a[rel="permalink"] { float: right }
   }
 
-  & > header p
+  & > header p, & > footer p
   {
     background: rgba(255, 255, 255, 0.4);
-    margin: .5em 0 1em;
     @include box-shadow(#999 0 0 1px inset);
     @include box-sizing(border-box);
     @include border-radius(.2em);
   }
 
+  & > header p
+  {
+    margin: .5em 0 1em;
+  }
+
   & > footer p
   {
     margin: .5em 0 0;
-    @include border-bottom-radius(.2em);
   }
 }

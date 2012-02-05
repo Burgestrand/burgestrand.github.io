@@ -255,9 +255,8 @@ article > header p, article > footer p {
   padding: .2em .4em; }
 article > header a[rel="permalink"], article > footer a[rel="permalink"] {
   float: right; }
-article > header p {
+article > header p, article > footer p {
   background: rgba(255, 255, 255, 0.4);
-  margin: .5em 0 1em;
   -moz-box-shadow: #999999 0 0 1px inset;
   -webkit-box-shadow: #999999 0 0 1px inset;
   -o-box-shadow: #999999 0 0 1px inset;
@@ -272,20 +271,10 @@ article > header p {
   -ms-border-radius: 0.2em;
   -khtml-border-radius: 0.2em;
   border-radius: 0.2em; }
+article > header p {
+  margin: .5em 0 1em; }
 article > footer p {
-  margin: .5em 0 0;
-  -moz-border-radius-bottomleft: 0.2em;
-  -webkit-border-bottom-left-radius: 0.2em;
-  -o-border-bottom-left-radius: 0.2em;
-  -ms-border-bottom-left-radius: 0.2em;
-  -khtml-border-bottom-left-radius: 0.2em;
-  border-bottom-left-radius: 0.2em;
-  -moz-border-radius-bottomright: 0.2em;
-  -webkit-border-bottom-right-radius: 0.2em;
-  -o-border-bottom-right-radius: 0.2em;
-  -ms-border-bottom-right-radius: 0.2em;
-  -khtml-border-bottom-right-radius: 0.2em;
-  border-bottom-right-radius: 0.2em; }
+  margin: .5em 0 0; }
 
 article.post h2, article.post h3 {
   color: #333;
@@ -302,10 +291,10 @@ article.image > p {
 article.image img {
   background: white;
   border: .2em solid white;
-  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  -o-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); }
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px;
+  box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px; }
 article.image footer h1 {
   color: #666; }
 
@@ -334,10 +323,10 @@ article.about-me img.photo {
   border: .15em solid black;
   float: right;
   margin: 0 0 1em 1em;
-  -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
-  -o-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); }
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px; }
 article.about-me header dd {
   margin: 0; }
 article.about-me dl dd {
@@ -634,17 +623,17 @@ body {
   height: 36px;
   position: absolute;
   right: -5em;
-  text-shadow: -2px 0 #801a29, 2px 0 #782850;
   top: 4.8em;
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); }
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 2px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 2px 5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.4) 0 2px 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 5px;
+  text-shadow: -2px 0 #801a29, 2px 0 #782850; }
   .nordic-ruby.ribbon a {
     color: #fff;
     display: block;
@@ -663,7 +652,7 @@ body {
   padding: 1em 0;
   text-align: center;
   text-transform: uppercase;
-  -moz-box-shadow: 0 0 3px black;
-  -webkit-box-shadow: 0 0 3px black;
-  -o-box-shadow: 0 0 3px black;
-  box-shadow: 0 0 3px black; }
+  -moz-box-shadow: black 0 0 3px;
+  -webkit-box-shadow: black 0 0 3px;
+  -o-box-shadow: black 0 0 3px;
+  box-shadow: black 0 0 3px; }

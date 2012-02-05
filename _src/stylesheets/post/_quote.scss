@@ -4,7 +4,7 @@ article.quote
   {
     font-size: 1.4em;
     margin-bottom: .5em;
-    
+
     q:before
     {
       float: left;
@@ -15,9 +15,9 @@ article.quote
       @include opacity(.3);
       text-indent: -.5em;
     }
-    
+
     q { color: #333; }
-    
+
     & + p
     {
       &:before { content: "— "; }

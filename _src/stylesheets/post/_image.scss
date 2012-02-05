@@ -5,10 +5,10 @@ article.image
   {
     background: white;
     border: .2em solid white;
-    
-    @include box-shadow(rgba(0, 0, 0, 0.6), 2px, 2px, 5px);
+
+    @include box-shadow(rgba(0, 0, 0, 0.6) 2px 2px 5px);
   }
-  
+
   footer
   {
     h1 { color: #666; }

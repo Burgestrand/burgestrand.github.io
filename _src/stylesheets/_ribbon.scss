@@ -22,11 +22,11 @@ body { overflow-x: hidden; }
   height: 36px;
   position: absolute;
   right: -5em;
-  text-shadow: -2px 0 rgb(128, 26, 41), 2px 0 rgb(120, 40, 80);
   top: 4.8em;
 
   @include rotate(45deg);
-  @include box-shadow(rgba(0, 0, 0, 0.4), 0, 2px, 5px);
+  @include box-shadow(rgba(0, 0, 0, 0.4) 0 2px 5px);
+  @include text-shadow(-2px 0 rgb(128, 26, 41), 2px 0 rgb(120, 40, 80));
 
   a
   {

@@ -9,5 +9,5 @@
   text-align: center;
   text-transform: uppercase;
 
-  @include box-shadow(black, 0, 0, 3px);
+  @include box-shadow(black 0 0 3px);
 }
