@@ -1,14 +1,16 @@
 ---
 layout: post
 title: Reverse-engineering the Philips Hue
-date: 07 November 2011 07:06:00 UTC
-categories: [hacking, hue, philips-hue, ruby, home-automation]
+date: 7 November 2011 07:06:00 UTC
+categories: [hacking, hue, philips-hue, ruby, home-automation, lightning]
 slug:
-  "Philips Hue":http://www.meethue.com/ became available last week.
-  Essentially, it’s a system of LED lamps that support a wide range of colors
-  and brightness, and remote control from within your home or the Philips Hue
-  website. The lights fit into a regular E27 socket, and are extremely easy
+  The "Philips Hue":http://www.meethue.com/ became available
+  last week.  Essentially, it’s a system of LED lamps that
+  support a wide range of colors and brightness, and remote
+  control from within your home or the Philips Hue website. The
+  lights fit into a regular E27 socket, and are extremely easy
   to set-up.
+
 
   Philips have said they’ll eventually release a developer kit, which would
   allow anybody with a computer to control their lights without using the app
