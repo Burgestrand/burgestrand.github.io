@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reverse-engineering the Philips Hue
-date: 07 November 2011 08:06:00 UTC
+date: 07 November 2011 07:06:00 UTC
 categories: [hacking, hue, philips-hue, ruby, home-automation]
 slug:
   "Philips Hue":http://www.meethue.com/ became available last week.
