@@ -46,11 +46,7 @@ The mailing list e-mail address is <mailto:hue-hackers@googlegroups.com>.
 
 ### For you who are eager to start hacking the Hue…
 
-I’ll be writing another article soon, explaining how I went on about sniffing
-the Hue traffic and some of the issues I ran into. Hopefully it should serve as
-a nice starting guide, allowing you to explore the API yourself.
-
-Additionally, the [Ruhue][] repository contains a console script, allowing you
+The [Ruhue][] repository contains a console script, allowing you
 to use an interactive ruby interpreter to control your Hue lights. Further details
 are in the Ruhue README.
 
