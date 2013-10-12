@@ -47,7 +47,7 @@ puts "Result: #{result}"
 
 I’ve taken the liberty of writing most of it for you. It is available in a GitHub repository: [Burgestrand/Library-of-Massive-Fun-And-Overjoy](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/tree/problem). Once you run LMFAO (`rake default`) you’ll notice the tests don’t pass: the callback returns `false`.
 
-You might not realize it yet, but we have a major problem here. Inside [`lmfao_callback`](http://goo.gl/awsR8) we do not hold the [GIL](http://en.wikipedia.org/wiki/Global_Interpreter_Lock), so we *cannot* call the Ruby C API safely. [`rb_thread_call_with_gvl`](https://github.com/ruby/ruby/blob/ruby_1_9_2/thread.c#L1170) looks promising at first, but we cannot use it as the the current thread was not created by Ruby. So, what do we do?
+You might not realize it yet, but we have a major problem here. Inside [`lmfao_callback`](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/blob/problem/ext/lmfao_ext.c#L42) we do not hold the [GIL](http://en.wikipedia.org/wiki/Global_Interpreter_Lock), so we *cannot* call the Ruby C API safely. [`rb_thread_call_with_gvl`](https://github.com/ruby/ruby/blob/ruby_1_9_2/thread.c#L1170) looks promising at first, but we cannot use it as the the current thread was not created by Ruby. So, what do we do?
 
 ## Solving the communication problem
 
@@ -71,23 +71,23 @@ Whew! A lot of things to keep track of, but this is a high-level view of what we
 
 First off, we’ll need a designated event thread. As previously mentioned, this thread will do nothing but wait for callbacks to happen; and when they do, it will dispatch off to a callback handler.
 
-As I’ve already explained the high-level view of how this should work, I’m just going to give you [the code](http://goo.gl/Aw8ze). I’ve done my best to explain what is being done and why for each function and struct member in their comments. Do read it now, it’ll help understanding what’s coming next!
+As I’ve already explained the high-level view of how this should work, I’m just going to give you [the code](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/blob/event-thread/ext/lmfao_ext.c). I’ve done my best to explain what is being done and why for each function and struct member in their comments. Do read it now, it’ll help understanding what’s coming next!
 
 ### Calling out to Ruby
 
 You’ve probably noticed both `LMFAO_handle_callback` and `lmfao_callback` are empty functions. We’ll fill them in in this chapter, but they require more intimate discussion in comparison to the ruby event thread.
 
-We’ll talk about [`lmfao_callback`](http://goo.gl/sxZ5y) first, the simpler one of the two functions. This function should dump its’ data in the global queue, notify the event thread, and wait for the return value. Only two things in this code should ever change between different callbacks: the [parameter dumping](http://goo.gl/KsnyR) and [type casting the return value](http://goo.gl/8ZxdJ).
+We’ll talk about [`lmfao_callback`](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/blob/finished/ext/lmfao_ext.c#L91) first, the simpler one of the two functions. This function should dump its’ data in the global queue, notify the event thread, and wait for the return value. Only two things in this code should ever change between different callbacks: the [parameter dumping](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/blob/finished/ext/lmfao_ext.c#L96) and [type casting the return value](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/blob/finished/ext/lmfao_ext.c#L119).
 
 As the parameters become more complex, so does parameter dumping. I’ve thought about making the `data` field in the `callback_t` struct a linked list instead. Each node would contain the data type, pointer to the value and finally a pointer to the next node. I think I’ll leave this an exercise for you!
 
 ### Handling the callback
 
-Now to look at [`LMFAO_handle_callback`](http://goo.gl/idSWp). In LMFAO, the callback data is just a Ruby array containing a proc and the parameters to give it. We `call` it, and simply return the result to the callback (lines [`#146` to `#153`](http://goo.gl/YHBWW)).
+Now to look at [`LMFAO_handle_callback`](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/blob/finished/ext/lmfao_ext.c#L136). In LMFAO, the callback data is just a Ruby array containing a proc and the parameters to give it. We `call` it, and simply return the result to the callback (lines [`#146` to `#153`](https://github.com/Burgestrand/Library-of-Massive-Fun-And-Overjoy/blob/finished/ext/lmfao_ext.c#L146-L153)).
 
 In practice, it is never this simple. You need to convert the callback data to Ruby data, figure out which Ruby handler to invoke, and finally convert the result back to pure C data that the callback function can return.
 
-If you have a small amount of callbacks, you could handle these conversions for a few simple data types (or in LMFAO’s case, no conversion whatsoever). If you want to handle the general case however, it quickly gets complicated. Ruby FFI has an implementation of this in its [`callback_with_gvl`](http://goo.gl/AdiL6) function.
+If you have a small amount of callbacks, you could handle these conversions for a few simple data types (or in LMFAO’s case, no conversion whatsoever). If you want to handle the general case however, it quickly gets complicated. Ruby FFI has an implementation of this in its [`callback_with_gvl` and `invoke_callback`](https://github.com/ffi/ffi/blob/master/ext/ffi_c/Function.c#L747) functions.
 
 
 ## Summary
