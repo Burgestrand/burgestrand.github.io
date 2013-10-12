@@ -10,7 +10,7 @@ slug:
   nothing short of an amazing acomplishement.
 
 
-  Spotify also has a developer API, "libspotify":http://goo.gl/uBbIy,
+  Spotify also has a developer API, "libspotify":https://developer.spotify.com/technologies/libspotify/,
   written in C. Thing is, Ruby is a much nicer language to use than C,
   so what to do?
 ---
@@ -26,7 +26,7 @@ out didn’t work for us. Having a service relying very much on having a Spotify
 API we had to find a solution.
 
 And so, [Hallon](http://github.com/Burgestrand/Hallon) was born. During the
-weekend I revisited my C knowledge, studied up on [Ruby C extensions](http://goo.gl/nmcEN)
+weekend I revisited my C knowledge, studied up on [Ruby C extensions](http://www.ruby-doc.org/docs/ProgrammingRuby/html/ext_ruby.html)
 and quickly wrote the most minimal thing that could possibly work. By Monday
 we had our service up and running, using Hallon as back-end. And that’s how
 Hallon was born.
