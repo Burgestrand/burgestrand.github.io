@@ -1,0 +1,22 @@
+GIT
+  remote: git://github.com/rtomayko/rocco.git
+  revision: c1da4e3130a37f1c2f9b6516f3aec3af13f294c9
+  specs:
+    rocco (0.8.2)
+      mustache
+      redcarpet (~> 1.17)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mustache (1.0.2)
+    redcarpet (1.17.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rocco!
+
+BUNDLED WITH
+   1.10.5
