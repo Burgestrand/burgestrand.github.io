@@ -9,20 +9,20 @@
     %p
       I couldn't find the page you were looking for. Some links have moved recently,
       so you might have better luck changing the URL to
-      <a href="http://burgestrand.se/" id="url">burgestrand.se/articles/&lt;post title></a>
-    
+      <a href="http://www.burgestrand.se/" id="url">www.burgestrand.se/articles/&lt;post title></a>
+
     %h2 Still can’t find it?
     %p
       Then it’s likely that it has vanished into oblivion and will never be found.
-      My main page still remains at <a href="http://burgestrand.se/">burgestrand.se/</a>
+      My main page still remains at <a href="http://www.burgestrand.se/">www.burgestrand.se/</a>
       though, so all is not lost.
-    
+
     :javascript
       var article = document.getElementById("url");
       var loc     = window.location.pathname.toString();
       var title   = loc.substr(loc.lastIndexOf('/') + 1);
-      var url     = "http://burgestrand.se/articles/" + title;
+      var url     = "http://www.burgestrand.se/articles/" + title;
       article.href = url;
       article.innerHTML = url;
-    
+
     = Engine.new(File.read('_includes/common/tracker.haml')).render

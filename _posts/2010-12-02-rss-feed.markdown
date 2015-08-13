@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RSS feed för burgestrand.se
+title: RSS feed för www.burgestrand.se
 date: 02 Dec 2010 00:01:40 UTC
 ---
 
