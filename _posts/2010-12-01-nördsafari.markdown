@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Nördsafari!
 date: 01 Dec 2010 03:58:43 UTC
 categories: [om-mig, nerd]

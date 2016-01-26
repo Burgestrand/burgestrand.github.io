@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Reverse-engineering the Philips Hue
 date: 7 November 2011 07:06:00 UTC
 categories: [hacking, hue, philips-hue, ruby, home-automation, lightning]

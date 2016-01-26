@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Hallon, delicious Ruby bindings for libspotify
 date: 18 July 2011 10:25:54 UTC
 categories: [ruby, spotify, libspotify]

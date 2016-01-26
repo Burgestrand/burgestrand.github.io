@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Människor med paraply
 date: 26 Nov 2009 18:04:00 UTC
 categories: [om-andra]

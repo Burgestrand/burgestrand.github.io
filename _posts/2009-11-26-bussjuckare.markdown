@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Bussjuckare
 date: 26 Nov 2009 12:00:00 UTC
 categories: [om-andra]

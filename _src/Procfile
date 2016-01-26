@@ -1,3 +1,0 @@
-jekyll:  bundle exec jekyll ../ ../_site --auto --pygments --server $PORT
-compass: bundle exec compass watch . -c Rakefile
-haml:    bundle exec watchr haml.watchr

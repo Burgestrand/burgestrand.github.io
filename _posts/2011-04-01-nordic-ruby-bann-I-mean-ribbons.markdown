@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Nordic Ruby bann… I mean ribbons!
 date: 1 Apr 2011 01:14:37 UTC
 categories: [nordic_ruby, graphics]

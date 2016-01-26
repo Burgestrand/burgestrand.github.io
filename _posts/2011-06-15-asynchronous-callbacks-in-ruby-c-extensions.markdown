@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Asynchronous callbacks in Ruby C extensions
 date: Wed 15 Jun 2011 10:37:25 UTC
 categories: [ruby, yarv, async]

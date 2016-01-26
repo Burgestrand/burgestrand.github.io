@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Quick and simple Ruby thread pool
 date: 17 Apr 2011 12:25:54 UTC
 categories: [ruby, mri, concurrency]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Something you want to do, and something you ought to do.
 date: 13 Dec 2010 11:12:08 UTC
 categories: [om-mig, lifehacking]

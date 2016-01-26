@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Four layers of dreaming in a single power nap
 date: 10 Apr 2011 08:35:01 UTC
 categories: [about_me]

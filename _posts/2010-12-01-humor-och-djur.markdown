@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Humor och djur?
 date: 01 Dec 2010 20:46:13 UTC
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Kampsport i Göteborg
 date: 26 Nov 2009 02:05:00 UTC
 categories: [om-mig, kampsport]

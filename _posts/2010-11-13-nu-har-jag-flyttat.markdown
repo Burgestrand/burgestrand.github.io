@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Nu har jag flyttat!
 date: 13 Nov 2010 17:32:48 UTC
 categories: [om-mig]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Parallell remote execution with net/ssh in Ruby
 date: 10 Mar 2011 17:26:43 UTC
 categories: [ruby]
