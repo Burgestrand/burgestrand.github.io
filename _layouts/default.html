@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+  <meta name="description" content="{{ site.description }}">
+  <title>{{ site.title }}</title>
+  <link rel="canonical" href="{{ site.url }}" />
+</head>
+<body>
+  <article>
+    <div class="container">
+      <h1><a href="./">{{ site.tag_text }}</a></h1>
+      {{ content }}
+    </div>
+  </article>
+  {% include javascripts.html %}
+</body>
+</html>

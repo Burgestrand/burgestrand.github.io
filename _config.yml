@@ -3,18 +3,16 @@
 # - destination: <the build dir>
 # - lsi: false
 # - pygments: true
-#
 
-# Maruku for extensions & definition lists
+# Build settings
 markdown: kramdown
-# N posts per page
-paginate: 10
-# List of directories to exclude in Jekyll
 exclude: []
 
 # Custom data, available through {{ site.<variable> }}
-base_uri: "http://www.burgestrand.se"
-title: "by Kim Burgestrand"
+url: "http://www.burgestrand.se/"
+title: "Kim Burge Strand"
+tag_text: "This is the tag text."
+description: "This is the description"
 
 # Don not include categories in post permalinks
 permalink: /articles/:title.html

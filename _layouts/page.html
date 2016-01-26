@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+  <title>{{ site.title }}</title>
+</head>
+<body>
+  <article>
+    <div class="container">
+      <h3>{{ page.title }}</h3>
+      {{ content }}
+    </div>
+   </article>
+  {% include javascripts.html %}
+</body>
+</html>
