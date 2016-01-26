@@ -11,7 +11,7 @@ exclude: []
 # Custom data, available through {{ site.<variable> }}
 url: "http://www.burgestrand.se/"
 title: "Kim Burge Strand"
-tag_text: "This is the tag text."
+tag_text: "Kim Burge Strand"
 description: "This is the description"
 
 # Don not include categories in post permalinks
