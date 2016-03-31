@@ -1,0 +1,28 @@
+.side-by-side
+{
+  width: 130%;
+  margin: 6rem 0 6rem -15%;
+
+  > .toleft, > .toright
+  {
+    display: inline-block;
+    width: 47.5%;
+  }
+
+  > .toleft
+  {
+    margin-right: 2%;
+  }
+
+  > .toright
+  {
+    margin-left: 2%;
+    vertical-align: top;
+  }
+
+  > .toleft > p,
+  > .toright > p
+  {
+    margin: 0 0 4rem 0;
+  }
+}

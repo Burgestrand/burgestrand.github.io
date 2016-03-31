@@ -1,0 +1,42 @@
+.share
+{
+  float: right;
+  width: 40%;
+  display: inline;
+  text-align: right;
+  position: relative;
+  top: -10px;
+
+  > .twitter, > .facebook
+  {
+    display: inline;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+
+  > .twitter
+  {
+    background: #4fafed;
+  }
+
+  > .facebook
+  {
+    background: #4361b3;
+  }
+
+  svg
+  {
+    fill: #fff;
+    position: relative;
+    top: 3px;
+    margin: 0;
+    margin-right: 4px;
+    display: inherit;
+  }
+}
