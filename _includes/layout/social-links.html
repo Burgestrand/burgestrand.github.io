@@ -1,4 +1,22 @@
 <div class="social-links">
+  {% if site.social.email %}
+  <a class="link" data-title="{{ site.social.email }}" href="mailto:{{ site.social.email }}" target="_blank">
+    <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
+  </a>
+  {% endif %}
+
+  {% if site.social.github %}
+  <a class="link" data-title="github.com/{{ site.social.github }}" href="https://github.com/{{ site.social.github }}" target="_blank">
+    <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+  </a>
+  {% endif %}
+
+  {% if site.social.rubygems %}
+  <a class="link" data-title="rubygems.org/profiles/{{ site.social.rubygems }}" href="https://rubygems.org/profiles/Burgestrand" target="_blank">
+    <svg class="icon icon-rubygems"><use xlink:href="#icon-rubygems"></use></svg>
+  </a>
+  {% endif %}
+
   {% if site.social.facebook %}
   <a class="link" data-title="facebook.com/{{ site.social.facebook }}" href="https://facebook.com/{{ site.social.facebook }}" target="_blank">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
@@ -47,27 +65,9 @@
   </a>
   {% endif %}
 
-  {% if site.social.github %}
-  <a class="link" data-title="github.com/{{ site.social.github }}" href="https://github.com/{{ site.social.github }}" target="_blank">
-    <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
-  </a>
-  {% endif %}
-
   {% if site.social.medium %}
   <a class="link" data-title="medium.com/@{{ site.social.medium }}" href="https://medium.com/@{{ site.social.medium }}" target="_blank">
     <svg class="icon icon-medium"><use xlink:href="#icon-medium"></use></svg>
-  </a>
-  {% endif %}
-
-  {% if site.social.email %}
-  <a class="link" data-title="{{ site.social.email }}" href="mailto:{{ site.social.email }}" target="_blank">
-    <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
-  </a>
-  {% endif %}
-
-  {% if site.social.rubygems %}
-  <a class="link" data-title="rubygems.org/profiles/{{ site.social.rubygems }}" href="https://rubygems.org/profiles/Burgestrand" target="_blank">
-    <svg class="icon icon-rubygems"><use xlink:href="#icon-rubygems"></use></svg>
   </a>
   {% endif %}
 </div>
