@@ -1,4 +1,4 @@
-.home, .blog, .projects
+.index
 {
   margin-top: 125px;
 
@@ -27,9 +27,7 @@
   }
 }
 
-.home > .list,
-.blog > .list,
-.projects > .list
+.index > .list
 {
   > .item
   {
@@ -52,6 +50,14 @@
     width: 75%;
     font-weight: 500;
     transition: all ease-in-out .2s;
+
+    > .emoji
+    {
+      display: inline;
+      position: relative;
+      top: -4px;
+      margin-right: 10px;
+    }
   }
 
   > .item:hover > .url > .title
@@ -75,21 +81,5 @@
   .item:hover .url aside
   {
     color: $alpha;
-  }
-}
-
-.projects > .list > .item > .url
-{
-  > .title
-  {
-    display: inline;
-  }
-
-  > .emoji
-  {
-    display: inline;
-    position: relative;
-    top: -4px;
-    margin-right: 10px;
   }
 }
