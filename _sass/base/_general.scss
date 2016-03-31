@@ -94,7 +94,7 @@ figcaption
   width: 100%;
   text-align: center;
   font-size: 1.3rem;
-  color: gama;
+  color: $gama;
   font-weight: 300;
 }
 
@@ -141,7 +141,7 @@ pre
   line-height: 2rem;
   overflow: auto;
   background: #fff;
-  border: 1px solid epsilon;
+  border: 1px solid $epsilon;
   border-radius: 2px;
 }
 
