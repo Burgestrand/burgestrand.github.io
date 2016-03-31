@@ -1,18 +1,69 @@
-# Ignored by GitHub:
-# - source: <your pages repo>
-# - destination: <the build dir>
-# - lsi: false
-# - pygments: true
-
-# Build settings
+# Jekyll 3.0
 markdown: kramdown
-exclude: []
+highlighter: rouge
+permalink: /:title/
 
-# Custom data, available through {{ site.<variable> }}
-url: "http://www.burgestrand.se/"
-title: "Kim Burge Strand"
-tag_text: "Kim Burge Strand"
-description: "This is the description"
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
-# Don not include categories in post permalinks
-permalink: /articles/:title.html
+# Miscellaneous
+author: Kim Burge Strand
+description: This space is intentionally not left blank.
+picture: '/images/profile.jpg'
+
+title: Kim Burge Strand's website
+# description: ""
+url: http://burgestrand.se
+social:
+  links:
+    - https://github.com/Burgestrand
+    - https://facebook.com/burgestrand
+    - https://instagram.com/burgestrand
+    - https://twitter.com/burgestrand
+    - https://play.spotify.com/user/burgestrand
+
+social:
+  facebook: burgestrand
+  twitter: burgestrand
+  # google: burgestrand
+  instagram: burgestrand
+  # pinterest: burgestrand
+  # linkedin: burgestrand
+  # youtube: burgestrand
+  spotify: burgestrand
+  github: burgestrand
+  # medium: burgestrand
+  email: kim@burgestrand.se
+
+# do you want a larger site? change the option below
+# options: [normal, large] | default: normal
+# normal = 560px / large = 810px
+width: normal
+
+paginate: 5
+paginate_path: blog/:num/
+related: true
+
+gems:
+  - jemoji
+  - jekyll-mentions
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-paginate
+
+jekyll-mentions:
+    base_url: https://github.com
+
+exclude: [README.md, Gemfile, Gemfile.lock, CNAME]

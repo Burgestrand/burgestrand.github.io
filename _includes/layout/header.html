@@ -1,0 +1,34 @@
+{% if page.path == "index.html" or page.path == "about.md" or page.path == "blog/index.html" %}
+  <header class="header-home">
+    <a class="link" href="{{ site.url }}/about">
+      <img class="selfie" src="{{ site.url }}/{{ site.picture }}" alt="{{ site.author }}">
+    </a>
+
+    <h1 class="title">{{ site.author }}</h1>
+    <h2 class="description">{{ site.description }}</h2>
+
+    {% include layout/social-links.html %}
+  </header>
+{% endif %}
+
+<nav class="{% if page.path == "index.html" %}nav-home{% else %}nav{% endif %}">
+  <ul class="list">
+    {% if page.title != "Home" %}
+    <li class="item">
+      <a class="link" href="{{ site.url }}/">Home</a>
+    </li>
+    {% endif %}
+
+    {% if page.title != "Blog" %}
+    <li class="item">
+      <a class="link" href="{{ site.url }}/blog">Blog</a>
+    </li>
+    {% endif %}
+
+    {% if page.title != "About" %}
+    <li class="item">
+      <a class="link" href="{{ site.url }}/about">About</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>

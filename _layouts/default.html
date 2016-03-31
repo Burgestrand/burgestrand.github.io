@@ -1,16 +1,46 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  {% include head.html %}
-  <title>{{ site.title }}</title>
-</head>
-<body>
-  <article>
-    <div class="container">
-      <h1><a href="./">{{ site.tag_text }}</a></h1>
-      {{ content }}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <meta name=description content="{{ site.description }}">
+    <meta name=author content="{{ site.author }}">
+
+    <title>{{ site.author }} &middot; {{ page.title }}</title>
+
+    {% seo %}
+
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml" />
+
+    <link rel="stylesheet" href="/stylesheets/syntax.css">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+  </head>
+  <body>
+    {{ page.type }}
+    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
+      {% if page.tag %}
+      <div class="post">
+      {% else %}
+        {% if page.path == "index.html" or page.path == "about.md" or page.path == "blog/index.html" %}
+      <div class="page index">
+      {% else %}
+      <div class="page {{ page.title | downcase }}">
+        {% endif %}
+      {% endif %}
+
+        {{ content }}
+      </div>
     </div>
-  </article>
-  {% include javascripts.html %}
-</body>
+
+    {% include icons.html %}
+    {% include javascripts.html %}
+  </body>
 </html>
