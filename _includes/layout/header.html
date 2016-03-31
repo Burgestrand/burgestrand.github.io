@@ -1,4 +1,6 @@
-{% if page.path == "index.html" or page.path == "about.md" or page.path == "blog/index.html" %}
+{% include vars.html %}
+
+{% if root_page %}
   <header class="header-home">
     <a class="link" href="{{ site.url }}/about">
       <img class="selfie" src="{{ site.url }}/{{ site.picture }}" alt="{{ site.author }}">
@@ -13,19 +15,19 @@
 
 <nav class="{% if page.path == "index.html" %}nav-home{% else %}nav{% endif %}">
   <ul class="list">
-    {% if page.title != "Home" %}
+    {% if page.path != "index.html" %}
     <li class="item">
       <a class="link" href="{{ site.url }}/">Home</a>
     </li>
     {% endif %}
 
-    {% if page.title != "Blog" %}
+    {% if page.path != "blog/index.html" %}
     <li class="item">
       <a class="link" href="{{ site.url }}/blog">Blog</a>
     </li>
     {% endif %}
 
-    {% if page.title != "About" %}
+    {% if page.path != "about.html" %}
     <li class="item">
       <a class="link" href="{{ site.url }}/about">About</a>
     </li>

@@ -1,6 +1,4 @@
----
-layout: compress
----
+{% include vars.html %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,16 +19,13 @@ layout: compress
     <link rel="stylesheet" href="/stylesheets/main.css">
   </head>
   <body>
-    {{ page.type }}
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
       {% if page.tag %}
       <div class="post">
-      {% else %}
-        {% if page.path == "index.html" or page.path == "about.md" or page.path == "blog/index.html" %}
+      {% elsif root_page %}
       <div class="page index">
       {% else %}
       <div class="page {{ page.title | downcase }}">
-        {% endif %}
       {% endif %}
 
         {{ content }}

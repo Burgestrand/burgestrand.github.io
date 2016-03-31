@@ -93,6 +93,6 @@ If you have a small amount of callbacks, you could handle these conversions for 
 
 We’ve written a C threaded (albeit small) library, a C extension binding it and a whole lot of concurrency-related code. If you are still confused about all this, you are not alone; concurrency is hard!
 
-If you have suggestions, ideas or any other feedback you’re welcome to contact me. You’ll find my contact details on the [About Me](/about-me.html) page.
+If you have suggestions, ideas or any other feedback you’re welcome to contact me. You’ll find my contact details on the [About Me](/about) page.
 
 *Final note: do keep in mind that this entire article is a proof-of-concept. My hope is that if you ever find yourself needing to do this (shudder), you now have a better idea of how.*
