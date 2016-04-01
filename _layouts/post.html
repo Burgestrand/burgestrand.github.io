@@ -7,23 +7,23 @@ layout: default
 
 <span class="date">
   <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %B %d, %Y" }}</time>
-</span>
 
-<span class="reading-time" title="Estimated read time">
-  {% assign words = content | number_of_words %}
+  <span class="reading-time" title="Estimated read time">
+    {% assign words = content | number_of_words %}
 
-  ~
+    ~
 
-  {% if words < 360 %}
-      1 min
-  {% else %}
-      {{ words | divided_by:180 }} mins
-  {% endif %}
+    {% if words < 360 %}
+        1 min
+    {% else %}
+        {{ words | divided_by:180 }} mins
+    {% endif %}
+  </span>
 </span>
 
 <div class="post-tags">
   {% for tag in page.tags %}
-    <a class="item" href="{{ site.url }}/tags/#{{ tag | slugify }}">{{ tag }}</a>
+    <a class="item"> <!-- href="{{ site.url }}/tags/#{{ tag | slugify }}"-->{{ tag }}</a>
   {% endfor %}
 </div>
 
