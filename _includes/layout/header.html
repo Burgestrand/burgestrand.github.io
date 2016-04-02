@@ -2,9 +2,7 @@
 
 {% if root_page %}
   <header class="header-home">
-    <a class="link" href="{{ site.url }}/about">
-      <img class="selfie" src="{{ site.url }}/{{ site.picture }}" alt="{{ site.author }}">
-    </a>
+    {% include selfie.html %}
 
     <h1 class="title">{{ site.author }}</h1>
     <h2 class="description">{{ site.description }}</h2>
