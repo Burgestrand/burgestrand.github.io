@@ -96,4 +96,4 @@ puts "Image saved to #{path}!"
 {% endhighlight %}
 
 Thank you for reading! If there’s any questions, feel
-free to contact me. My details can be found on the [About Me](/about) page.
+free to contact me. My details can be found on the [About Me](/about-me/) page.
