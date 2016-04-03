@@ -16,7 +16,7 @@
     <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/assets/stylesheets/main.css">
   </head>
   <body>
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
@@ -32,9 +32,9 @@
       </div>
     </div>
 
-    {% include icons.html %}
+    {% include icons.svg %}
 
-    <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/timeago.js"></script>
+    <script src="/assets/javascripts/jquery.min.js"></script>
+    <script src="/assets/javascripts/timeago.js"></script>
   </body>
 </html>
