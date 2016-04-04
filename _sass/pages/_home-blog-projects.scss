@@ -49,7 +49,7 @@
     margin: 0;
     width: 75%;
     font-weight: 500;
-    transition: all ease-in-out .2s;
+    transition: color ease-in-out .2s;
 
     > .emoji
     {
@@ -75,7 +75,7 @@
     font-weight: 300;
     color: $gama;
     text-align: right;
-    transition: all ease-in-out .2s;
+    transition: color ease-in-out .2s;
   }
 
   .item:hover .url aside
