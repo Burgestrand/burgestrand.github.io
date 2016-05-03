@@ -6,7 +6,7 @@ layout: default
 <h1 class="title">{{ page.title }}</h1>
 
 <span class="date">
-  <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %B %d, %Y" }}</time>
+  <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %b %d, %Y" }}</time>
 
   <span class="reading-time" title="Estimated read time">
     {% assign words = content | number_of_words %}
@@ -14,9 +14,9 @@ layout: default
     ~
 
     {% if words < 360 %}
-        1 min
+      1 min
     {% else %}
-        {{ words | divided_by:180 }} mins
+      {{ words | divided_by:180 }} mins
     {% endif %}
   </span>
 </span>
