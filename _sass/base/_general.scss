@@ -125,7 +125,7 @@ figure.highlight
 
 code, tt
 {
-  padding: 1px 3px;
+  padding: 1px 0;
   font-family: $fontMonospace;
   font-size: 12px;
   line-height: 20px;
@@ -147,6 +147,7 @@ pre
   background: #fff;
   border: 1px solid $epsilon;
   border-radius: 2px;
+  white-space: pre;
 }
 
 .wrapper-normal, .wrapper-large
