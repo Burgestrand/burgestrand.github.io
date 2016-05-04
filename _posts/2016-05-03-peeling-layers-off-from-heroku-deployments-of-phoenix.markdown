@@ -1,6 +1,6 @@
 ---
 title: Peeling layers off from Heroku deployments of Phoenix
-date: 4 May 2016 14:00:00 GMT+2
+date: 4 May 2016 16:00:00 GMT+2
 categories: [elixir, heroku, deployment]
 ---
 
