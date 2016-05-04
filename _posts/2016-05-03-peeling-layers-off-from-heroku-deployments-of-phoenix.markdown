@@ -32,7 +32,7 @@ Once that was configured, I used the `postbuild` hook from the Node buildpack to
 ```
 
 It feels like a cleaner separation of concerns. In my previous setup, Phoenix Static was not only in charge of installing Node, NPM, and 
-Bower, but also compiling my assets using Brunch and digesting them with Phoenix.
+Bower, but also for compiling my assets using Brunch and digesting them with Phoenix.
 
 Now the Elixir buildpack is in charge of installing Elixir, the Node buildpack is in charge of installing Node, and I am in charge of
 compiling my assets.
