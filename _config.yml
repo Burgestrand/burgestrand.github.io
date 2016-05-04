@@ -2,6 +2,9 @@
 markdown: kramdown
 highlighter: rouge
 permalink: /articles/:title/
+kramdown:
+  input: GFM
+  hard_wrap: false
 
 defaults:
   -
