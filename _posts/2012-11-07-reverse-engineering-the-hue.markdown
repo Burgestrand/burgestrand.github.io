@@ -2,7 +2,7 @@
 title: Reverse-engineering the Philips Hue
 date: 7 November 2011 07:06:00 UTC
 categories: [hacking, hue, philips-hue, ruby, home-automation, lightning]
-slug:
+teaser:
   The "Philips Hue":http://www.meethue.com/ became available last week.  It’s a
   system of LED lamps that support a wide range of colors and brightness, and
   allows complete remote control from the Hue mobile application, or the
