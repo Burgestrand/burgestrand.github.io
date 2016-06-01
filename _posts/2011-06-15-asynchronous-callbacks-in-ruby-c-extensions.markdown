@@ -2,7 +2,7 @@
 title: Asynchronous callbacks in Ruby C extensions
 date: Wed 15 Jun 2011 10:37:25 UTC
 categories: [ruby, yarv, async]
-teaser: Half a year ago, I was working on bindings for a C library known as
+excerpt: Half a year ago, I was working on bindings for a C library known as
       "libspotify":http://developer.spotify.com/en/libspotify/overview/.
       As you might know, writing C extensions for Ruby is _really_ easy,
       but this particular case was not.

@@ -2,7 +2,7 @@
 title: GitHub pages and time formats
 date: 02 Dec 2010 01:10:12 UTC
 categories: [hacks, github, annoying]
-teaser: I’ve been very happy since I moved my blog to GitHub pages, but I just found my first annoyance.
+excerpt: I’ve been very happy since I moved my blog to GitHub pages, but I just found my first annoyance.
 ---
 
 Every post I make have an associated date and time; I also give it a time zone so it can accurately be converted between different time zones. This means everybody, no matter where in the world they live, can see when my posts are published in their own local timezone if they so wish.

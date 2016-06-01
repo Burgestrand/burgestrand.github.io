@@ -2,7 +2,7 @@
 title: Quick and simple Ruby thread pool
 date: 17 Apr 2011 12:25:54 UTC
 categories: [ruby, mri, concurrency]
-teaser: Ruby MRI threads suck! You should use "JRuby":http://jruby.org/
+excerpt: Ruby MRI threads suck! You should use "JRuby":http://jruby.org/
       for *REAL* concurrency and leave those pitiful green-threaded
       people in the dust… NO! If you think this is true, kindly relocate
       yourself to "dunce’s corner":http://en.wikipedia.org/wiki/Dunce_cap

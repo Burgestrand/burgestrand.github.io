@@ -2,7 +2,7 @@
 title: Hallon, delicious Ruby bindings for libspotify
 date: 18 July 2011 10:25:54 UTC
 categories: [ruby, spotify, libspotify]
-teaser:
+excerpt:
   I’ve always loved the "Spotify":http://spotify.com/ service. I
   love it so much that I find no need to pirate music anymore, and
   I’ve been a paying customer for nearly a year. Me being me, that’s

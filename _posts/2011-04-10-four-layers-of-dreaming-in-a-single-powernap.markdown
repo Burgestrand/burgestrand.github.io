@@ -2,7 +2,7 @@
 title: Four layers of dreaming in a single power nap
 date: 10 Apr 2011 08:35:01 UTC
 categories: [about_me]
-teaser: I usually don’t write about myself, and pretty much never ever of dreams. Today, however, I’ll make an exception because I must write this down somewhere I won’t lose it.
+excerpt: I usually don’t write about myself, and pretty much never ever of dreams. Today, however, I’ll make an exception because I must write this down somewhere I won’t lose it.
 ---
 
 I woke up early today, probably a bit too early. It was uncomfortable sleeping, especially for my recently plastered arm. After being awake for two hours without any sign of the sleep drowsiness wearing off, I decide to take a power nap. I set an alarm for thirty minutes, put my laptop back on the living room table and close my eyes…

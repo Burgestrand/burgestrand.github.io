@@ -2,7 +2,7 @@
 title: Something you want to do, and something you ought to do.
 date: 13 Dec 2010 11:12:08 UTC
 categories: [om-mig, lifehacking]
-teaser: Some days it will be hard keeping motivation up and procrastination will be a common resort. A Seinfeld Calendar is what some have used to keep their brains focused, and here’s my twist of it.
+excerpt: Some days it will be hard keeping motivation up and procrastination will be a common resort. A Seinfeld Calendar is what some have used to keep their brains focused, and here’s my twist of it.
 ---
 
 [Lifehacker](http://lifehacker.com/281626/jerry-seinfelds-productivity-secret) is where I first saw the notion of a “Seinfeld Calendar”:
