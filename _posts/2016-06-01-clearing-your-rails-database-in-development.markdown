@@ -1,6 +1,6 @@
 ---
 title: Clearing your Rails database in development
-date: 1 June 2016 17:17:00 GMT+2
+date: 2016-06-01 17:17:00 +0200
 categories: [ruby, tools, rails]
 ---
 
