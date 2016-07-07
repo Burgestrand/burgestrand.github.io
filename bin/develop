@@ -3,4 +3,4 @@
 hash bundle 2>/dev/null || gem install bundler
 bundle install -j4
 
-bundle exec jekyll server --port 8080 --config _config.yml,_config.dev.yml
+bundle exec jekyll server --drafts --port 8080 --config _config.yml,_config.dev.yml
