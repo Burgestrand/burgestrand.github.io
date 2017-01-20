@@ -1,7 +1,7 @@
 ---
 title: My recent quarter with Swift
 date: 2017-01-20T17:03:10+01:00
-categories: []
+categories: [swift,mobile,ios]
 ---
 
 I've been doing a lot of Swift lately, roughly since early September. I do like
