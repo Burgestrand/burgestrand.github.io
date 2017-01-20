@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ $# -eq 0 ]; then
+  echo "Usage: article [title]"
+  exit 1
+fi
+
 title=$@
 name=$(echo ${title// /-} | tr '[:upper:]' '[:lower:]')
 filename="_posts/$(date +'%Y-%m-%d')-${name}.markdown"
