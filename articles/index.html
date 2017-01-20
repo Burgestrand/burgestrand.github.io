@@ -9,10 +9,6 @@ title: Articles
     <p class="text-center">Nothing published yet!</p>
   {% else %}
     {% for post in site.posts %}
-      {% if post.draft and site.dev != true %}
-        {% continue %}
-      {% endif %}
-
       <div class="item {%if post.draft%}draft{% endif %} {% if post.star %}star{% endif %}">
         <a class="url" href="{{ site.url }}{{ post.url }}">
           <aside class="date">
