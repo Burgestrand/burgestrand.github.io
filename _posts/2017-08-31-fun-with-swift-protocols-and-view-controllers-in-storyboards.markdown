@@ -66,8 +66,8 @@ public struct Storyboard<T> {
 ```
 
 By using the above code, and assuming you stick to my convention of naming your
-single-view storyboards the same as your view controller, you may use the above
-code like this:
+single-view storyboards the same as your view controller, and mark it as the
+initial view controller of the storyboard, then you may use the above code like this:
 
 ```swift
 final class PostViewController: UIViewController, StoryboardDesigned {
