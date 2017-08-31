@@ -57,7 +57,7 @@ paginate: 5
 paginate_path: articles/:num/
 related: true
 
-gems:
+plugins:
   - jemoji
   - jekyll-mentions
   - jekyll-seo-tag
