@@ -13,9 +13,9 @@ likely to use:
 3. A self-contained storyboard, possibly multiple screens, I only use this if I don't need any data from the outside.
 
 I've been meaning to experiment with xibs more, since they allow for dependency
-injection through the initializer, but haven't quite needed it yet, but I digress…
+injection through the initializer, but haven't quite needed it yet. I digress…
 
-I wanted to share a Swift snippet with you to help with number **1** up there. It's not
+Anyhow! I wanted to share a Swift snippet with you to help with number **1** up there. It's not
 unique, ground-breaking or new by any means, but it's useful and it feels nice.
 Without any bells or whistles, here it is in all it's glory.
 
