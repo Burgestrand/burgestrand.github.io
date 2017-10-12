@@ -1,6 +1,6 @@
 ---
 title: String-like errors in Swift without monkey patching
-date: 2017-10-11T15:59:45+0200
+date: 2017-10-12T12:34:45+0200
 categories: [swift, ios, mobile]
 ---
 
