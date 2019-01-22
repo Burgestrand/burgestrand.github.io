@@ -1,7 +1,7 @@
 ---
 title: GitHub pages and time formats
 date: 02 Dec 2010 01:10:12 UTC
-categories: [hacks, github, annoying]
+categories: [hacks, github]
 excerpt: I’ve been very happy since I moved my blog to GitHub pages, but I just found my first annoyance.
 ---
 

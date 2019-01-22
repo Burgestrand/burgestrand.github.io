@@ -1,7 +1,7 @@
 ---
 title: Parallell remote execution with net/ssh in Ruby
 date: 10 Mar 2011 17:26:43 UTC
-categories: [ruby]
+categories: [ruby, net/ssh, scripting]
 excerpt: >
   I idle a lot in the "#ruby":irc://irc.freenode.net/#ruby IRC channel
   on Freenode (and "#ruby-lang":irc://irc.freenode.net/#ruby-lang).

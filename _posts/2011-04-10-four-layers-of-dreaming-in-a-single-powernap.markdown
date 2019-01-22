@@ -1,7 +1,7 @@
 ---
 title: Four layers of dreaming in a single power nap
 date: 10 Apr 2011 08:35:01 UTC
-categories: [about_me]
+categories: [about me]
 excerpt: I usually don’t write about myself, and pretty much never ever of dreams. Today, however, I’ll make an exception because I must write this down somewhere I won’t lose it.
 ---
 

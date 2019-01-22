@@ -1,7 +1,7 @@
 ---
 title: Nordic Ruby bann… I mean ribbons!
 date: 1 Apr 2011 01:14:37 UTC
-categories: [nordic_ruby, graphics]
+categories: [nordic ruby, graphics]
 ---
 
 The Nordic Ruby guys recently [wrote a blog post about adding their banners to your site](http://nordicruby.org/news#post_8). I liked the idea, but the provided banners did not fit anywhere into my site design. Even if I consider myself aestethically handicapped (I avoid any kind of graphics design), I had to overcome this minor speed bump somehow.

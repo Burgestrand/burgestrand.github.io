@@ -17,6 +17,11 @@ title: Articles
             </time>
           </aside>
           <h3 class="title">{{ post.title }}</h3>
+          <ul class="subtitle categories">
+            {% for category in post.categories %}
+            <li>#{{ category }}</li>
+            {% endfor %}
+          </ul>
         </a>
       </div>
     {% endfor %}
