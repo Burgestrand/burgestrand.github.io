@@ -20,10 +20,10 @@ defaults:
       layout: "post"
 
 # Miscellaneous
-author: Kim Burge Strand
+author: Kim Burgestrand
 description: A developer that occasionally creates things that are not code, and puts some of them here.
 
-title: Kim Burge Strand's website
+title: Kim Burgestrand's website
 # description: ""
 url: http://burgestrand.se
 social:
