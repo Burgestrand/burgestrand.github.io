@@ -89,7 +89,7 @@ FFI][FFI-commit] in a single commit. FFI brought _many_ benefits to the project:
 
 [FFI-commit]: https://github.com/Burgestrand/Hallon/commit/b49faef5f5aafde0131a2ce132fd3b6170f2a7ab
 [Ruby FFI]: https://github.com/ffi/ffi/wiki
-[LMFAO]: http://www.burgestrand.se/articles/asynchronous-callbacks-in-ruby-c-extensions/
+[LMFAO]: {% post_url 2011-06-15-asynchronous-callbacks-in-ruby-c-extensions %}
 
 ## FFI looks like Ruby, but really isn't Ruby
 
@@ -134,7 +134,7 @@ the speakers using for-the-purpose-made OpenAL sound FFI bindings for Hallon. It
 didn't segfault. It went well. It was scary, and fun.
 
 [Baba O'Riley]: https://open.spotify.com/track/2KmEgiY8fQs0G6WNxtzQKr
-[Hallon announcement]: http://www.burgestrand.se/articles/hallon-delicious-ruby-bindings-to-libspotify/
+[Hallon announcement]: {% post_url 2011-07-18-hallon-delicious-ruby-bindings-to-libspotify %}
 
 ## Abandoning Hallon in favor of FFI trickery
 

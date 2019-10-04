@@ -14,10 +14,10 @@
 
     {% seo %}
 
-    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{% link feed.xml %}" />
 
-    <link rel="stylesheet" href="/assets/stylesheets/main.css">
+    <link rel="stylesheet" href="{% link assets/stylesheets/main.scss %}">
   </head>
   <body>
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
@@ -35,7 +35,7 @@
 
     {% include icons.svg %}
 
-    <script src="/assets/javascripts/jquery.min.js"></script>
-    <script src="/assets/javascripts/timeago.js"></script>
+    <script src="{% link assets/javascripts/jquery.min.js %}"></script>
+    <script src="{% link assets/javascripts/timeago.js %}"></script>
   </body>
 </html>

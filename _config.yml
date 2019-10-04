@@ -21,18 +21,11 @@ defaults:
 
 # Miscellaneous
 author: Kim Burgestrand
-description: A developer that occasionally creates things that are not code, and puts some of them here.
-
+description: |-
+  Software development, and people… but also gaming, juggling,
+  martial arts, and action sports.
 title: Kim Burgestrand's website
-# description: ""
-url: https://burgestrand.se
-social:
-  links:
-    - https://github.com/Burgestrand
-    - https://facebook.com/burgestrand
-    - https://instagram.com/burgestrand
-    - https://twitter.com/burgestrand
-    - https://play.spotify.com/user/burgestrand
+url: https://www.burgestrand.se
 
 social:
   facebook: burgestrand
@@ -54,7 +47,7 @@ social:
 width: normal
 
 paginate: 5
-paginate_path: articles/:num/
+paginate_path: articles/page-:num/
 related: true
 
 plugins:
@@ -66,8 +59,5 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sass-converter
-
-jekyll-mentions:
-    base_url: https://github.com
 
 exclude: [README.md, Gemfile, Gemfile.lock, CNAME, bin/]

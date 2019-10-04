@@ -10,7 +10,7 @@ title: Articles
   {% else %}
     {% for post in site.posts %}
       <div class="item {%if post.draft%}draft{% endif %} {% if post.star %}star{% endif %}">
-        <a class="url" href="{{ site.url }}{{ post.url }}">
+        <a class="url" href="{{ post.url | relative_url }}">
           <aside class="date">
             <time datetime="{{ post.date | date:"%d-%m-%Y" }}">
               {{ post.date | date: "%b %d, %Y" }}

@@ -1,3 +1,14 @@
-{% if page.path == "index.html" or page.path == "about-me/index.html" or page.path == "articles/index.html" %}
+{% comment %}
+root_page is to avoid rendering the hero.
+{% endcomment %}
+
+{% if page.path == "index.html" or page.path == "about-me/index.html" or page.path == "articles/index.html" or page.path ==  %r"articles/page-\d" %}
   {% assign root_page = true %}
 {% endif %}
+
+<!--
+  collection: {{ page.collection }}
+  path: {{ page.path }}
+  dir: {{ page.dir }}
+  root: {{ root_page }}
+-->

@@ -23,7 +23,7 @@ layout: default
 
 <div class="post-tags">
   {% for tag in page.tags %}
-    <a class="item"> <!-- href="{{ site.url }}/tags/#{{ tag | slugify }}"-->{{ tag }}</a>
+    <a class="item">{{ tag }}</a>
   {% endfor %}
 </div>
 
@@ -35,13 +35,13 @@ layout: default
   </div>
 
   <div class="toright">
-    <a class="link" href="{{ site.url }}/about-me/">
+    <a class="link" href="{% link about-me/index.html %}#content">
       <h4 class="name">{{ site.author }}</h4>
       <p class="bio">{{ site.description }}</p>
     </a>
 
     <div class="share">
-      <a class="twitter popup" href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}&via={{ site.social.twitter }}">
+      <a class="twitter popup" href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_param_escape }}&text={{ page.title | url_param_escape }}&via={{ site.social.twitter }}">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg><span class="icon-twitter">Tweet</span>
       </a>
     </div>

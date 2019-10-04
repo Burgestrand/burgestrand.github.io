@@ -4,7 +4,7 @@
   <header class="header-home">
     {% include selfie.html %}
 
-    <h1 class="title">{{ site.author }}</h1>
+    <h1 class="title"><a href="{% link about-me/index.html %}#content">{{ site.author }}</a></h1>
     <h2 class="description">{{ site.description }}</h2>
 
     {% include layout/social-links.html %}
@@ -15,19 +15,19 @@
   <ul class="list">
     {% if page.path != "index.html" %}
     <li class="item">
-      <a class="link" href="{{ site.url }}/">Home</a>
+      <a class="link" href="{% link index.html %}">Home</a>
     </li>
     {% endif %}
 
     {% if page.path != "articles/index.html" %}
     <li class="item">
-      <a class="link" href="{{ site.url }}/articles">Articles</a>
+      <a class="link" href="{% link articles/index.html %}">Articles</a>
     </li>
     {% endif %}
 
     {% if page.path != "about-me/index.html" %}
     <li class="item">
-      <a class="link" href="{{ site.url }}/about-me/">About Me</a>
+      <a class="link" href="{% link about-me/index.html %}#content">About Me</a>
     </li>
     {% endif %}
   </ul>
