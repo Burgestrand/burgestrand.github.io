@@ -1,0 +1,15 @@
+nav.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    & > * {
+        display: flex;
+        flex: 1 0 0;
+        justify-content: center;
+        align-items: center;
+
+        font-variant: lowercase;
+    }
+}

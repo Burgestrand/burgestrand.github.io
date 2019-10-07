@@ -1,6 +1,6 @@
 # My personal website
 
-<http://www.burgestrand.se/>
+<https://www.burgestrand.se/>
 
 GitHub pages, nothing fancy.
 
@@ -12,3 +12,13 @@ tooling with GitHub pages.
 
 See `bin/develop` for writing new articles and developing the site.
 You might want to `bundle update` every now and then.
+
+## Development
+
+```
+Landing page (/)
+├── Articles (/articles/)
+│   ├── Page #<n> (/articles/page-<n>/)
+│   └── Article (/articles/<title>)
+└── About Me (/about-me/)
+```

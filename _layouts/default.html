@@ -20,15 +20,8 @@
     <link rel="stylesheet" href="{% link assets/stylesheets/main.scss %}">
   </head>
   <body>
-    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
-      {% if page.tag %}
-      <div class="post">
-      {% elsif root_page %}
-      <div class="page index">
-      {% else %}
-      <div class="page {{ page.title | downcase }}">
-      {% endif %}
-
+    <div class="wrapper-normal">
+      <div class="page {{ page.class }} {% if page.collection %}{{ page.collection }}-collection{% endif %}">
         {{ content }}
       </div>
     </div>

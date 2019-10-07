@@ -1,10 +1,14 @@
-.nav, .nav-home
+.main-nav
 {
+  margin-top: 4rem;
+  text-align: center;
+
   > .list
   {
     list-style: none;
     margin: 0;
-    padding: 0 13px 0;
+    padding: 0;
+    text-align: center;
 
     > .item
     {
@@ -18,40 +22,6 @@
       font-size: 1.4rem;
       padding: 20px 10px;
       text-decoration: none;
-    }
-  }
-}
-
-.nav
-{
-  position: fixed;
-  right: 0;
-  top: 0;
-
-  > .list
-  {
-    padding: 0 13px 0;
-
-    > .item > .link
-    {
-      font-size: 1.4rem;
-      padding: 20px 10px;
-    }
-  }
-}
-
-.nav-home
-{
-  margin-top: 4rem;
-  text-align: center;
-
-  > .list
-  {
-    padding: 0;
-    text-align: center;
-
-    > .item > .link
-    {
       font-size: 2rem;
       padding: 7px 15px;
       margin: 0;

@@ -1,17 +1,15 @@
 {% include vars.html %}
 
-{% if root_page %}
-  <header class="header-home">
-    {% include selfie.html %}
+<header class="header-home">
+  {% include selfie.html %}
 
-    <h1 class="title"><a href="{% link about-me/index.html %}#content">{{ site.author }}</a></h1>
-    <h2 class="description">{{ site.description }}</h2>
+  <h1 class="title"><a href="{% link about-me/index.html %}">{{ site.author }}</a></h1>
+  <h2 class="description">{{ site.description }}</h2>
 
-    {% include layout/social-links.html %}
-  </header>
-{% endif %}
+  {% include layout/social-links.html %}
+</header>
 
-<nav class="{% if page.path == "index.html" %}nav-home{% else %}nav{% endif %}">
+<nav class="main-nav">
   <ul class="list">
     {% if page.path != "index.html" %}
     <li class="item">
@@ -27,7 +25,7 @@
 
     {% if page.path != "about-me/index.html" %}
     <li class="item">
-      <a class="link" href="{% link about-me/index.html %}#content">About Me</a>
+      <a class="link" href="{% link about-me/index.html %}">About Me</a>
     </li>
     {% endif %}
   </ul>

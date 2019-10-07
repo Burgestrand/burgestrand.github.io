@@ -1,14 +1,16 @@
 ---
 layout: default
 title: Articles
+class: articles
 ---
 {% include layout/header.html %}
 
 <section class="list">
+  <a id="content"></a>
   {% if site.posts.size == 0 %}
     <p class="text-center">Nothing published yet!</p>
   {% else %}
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
       <div class="item {%if post.draft%}draft{% endif %} {% if post.star %}star{% endif %}">
         <a class="url" href="{{ post.url | relative_url }}">
           <aside class="date">
@@ -25,6 +27,26 @@ title: Articles
         </a>
       </div>
     {% endfor %}
+
+    <nav class="pagination">
+      <div class="previous">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}">
+            go to page {{ paginator.previous_page }}
+          </a>
+        {% endif %}
+      </div>
+      <div class="page-number">
+        <span>{{ paginator.page }} of {{ paginator.total_pages }}</span>
+      </div>
+      <div class="next">
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}">
+            go to page {{ paginator.next_page }}
+          </a>
+        {% endif %}
+      </div>
+    </nav>
   {% endif %}
 </section>
 
