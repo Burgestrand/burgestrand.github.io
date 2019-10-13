@@ -2,6 +2,12 @@
 $fontSans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fontMonospace: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
+@mixin small-screen {
+    @media(max-width: 30rem) {
+        @content;
+    }
+}
+
 // ~ colors
 $alpha:   #666;
 $beta:    #222;

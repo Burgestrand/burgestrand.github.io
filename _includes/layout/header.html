@@ -1,32 +1,34 @@
 {% include vars.html %}
 
-<header class="header-home">
-  {% include selfie.html %}
+<section class="header">
+  <header class="header-home">
+    {% include selfie.html %}
 
-  <h1 class="title"><a href="{% link about-me/index.html %}">{{ site.author }}</a></h1>
-  <h2 class="description">{{ site.description }}</h2>
+    <h1 class="title"><a href="{% link about-me/index.html %}">{{ site.author }}</a></h1>
+    <h2 class="description">{{ site.description }}</h2>
+  </header>
 
   {% include layout/social-links.html %}
-</header>
 
-<nav class="main-nav">
-  <ul class="list">
-    {% if page.path != "index.html" %}
-    <li class="item">
-      <a class="link" href="{% link index.html %}">Home</a>
-    </li>
-    {% endif %}
+  <nav class="main-nav">
+    <ul class="list">
+      {% if page.path != "index.html" %}
+      <li class="item">
+        <a class="link" href="{% link index.html %}">Home</a>
+      </li>
+      {% endif %}
 
-    {% if page.path != "articles/index.html" %}
-    <li class="item">
-      <a class="link" href="{% link articles/index.html %}">Articles</a>
-    </li>
-    {% endif %}
+      {% if page.path != "articles/index.html" %}
+      <li class="item">
+        <a class="link" href="{% link articles/index.html %}">Articles</a>
+      </li>
+      {% endif %}
 
-    {% if page.path != "about-me/index.html" %}
-    <li class="item">
-      <a class="link" href="{% link about-me/index.html %}">About Me</a>
-    </li>
-    {% endif %}
-  </ul>
-</nav>
+      {% if page.path != "about-me/index.html" %}
+      <li class="item">
+        <a class="link" href="{% link about-me/index.html %}">About Me</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+</section>

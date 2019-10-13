@@ -1,9 +1,15 @@
 .social-links
 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
   margin: .5rem 0;
 
   > .link
   {
+    text-align: center;
     margin: 0;
     text-decoration: none;
     position: relative;
