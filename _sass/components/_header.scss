@@ -1,12 +1,22 @@
 .header-home
 {
-  display: block;
+  display: flex;
+  flex-direction: column;
+
   margin: 0 auto;
   text-align: center;
+  
+  .selfie-picture {
+    display: flex;
+    justify-content: center;
+  }
 
   .selfie-picture > img
   {
-    width: 125px;
+    height: auto;
+    width: auto;
+    max-height: 125px;
+    max-width: 125px;
     margin-bottom: 25px;
   }
 
@@ -23,12 +33,12 @@
 
   > .description
   {
-    font-size: 1.8calc(5rem * 0.625);
+    font-size: calc(1.85rem * 0.625);
     font-weight: 300;
     font-style: normal;
     color: $gama;
     width: 70%;
-    margin: 0 auto 30px;
+    margin: 0 auto 1rem;
 
     a
     {

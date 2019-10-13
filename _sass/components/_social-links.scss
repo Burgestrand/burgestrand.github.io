@@ -1,6 +1,6 @@
 .social-links
 {
-  margin-top: 20px;
+  margin: .5rem 0;
 
   > .link
   {
@@ -27,6 +27,7 @@
 
     &:before
     {
+      pointer-events: none;
       content: attr(data-title);
       display: inline-block;
       position: absolute;
@@ -48,6 +49,7 @@
 
     &:after
     {
+      pointer-events: none;
       content: "";
       position: absolute;
       top: 35px;

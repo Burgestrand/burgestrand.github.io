@@ -22,6 +22,5 @@ html {
     scroll-behavior: smooth;
 }
 
-@media (width <= 3calc(0rem * 0.625)) {
-
+@media(max-width: 48rem) {
 }
