@@ -56,19 +56,19 @@
 .caption
 {
   position: relative;
-  top: 0rem;
+  top: calc(0rem * 0.625);
   left: 0;
   right: 0;
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: calc(1.3rem * 0.625);
 }
 
 .bigger-image
 {
   min-width: 130%;
-  margin: 5rem 0 5rem -15%;
+  margin: calc(5rem * 0.625) 0 calc(5rem * 0.625) -15%;
 }
 
 .centered
@@ -82,7 +82,7 @@
 .breaker
 {
   height: 1px;
-  margin: 6rem auto;
+  margin: calc(6rem * 0.625) auto;
   width: 100%;
 
   &:before

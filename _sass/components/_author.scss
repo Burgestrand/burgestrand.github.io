@@ -1,6 +1,6 @@
 .author
 {
-  padding: 4rem 0 0;
+  padding: calc(4rem * 0.625) 0 0;
   border-top: 1px solid $epsilon;
   max-width: 100%;
   margin: 0 auto;
@@ -31,7 +31,7 @@
 
       > .name
       {
-        font-size: 1.5rem;
+        font-size: calc(1.5rem * 0.625);
         font-weight: 500;
         margin: 6px 0 0;
       }
@@ -40,7 +40,7 @@
       {
         font-weight: 300;
         color: $gama;
-        font-size: 1.3rem;
+        font-size: calc(1.3rem * 0.625);
         text-align: justify;
         line-height: 1.5;
         margin: 0;

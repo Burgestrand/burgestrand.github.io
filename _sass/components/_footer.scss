@@ -1,9 +1,9 @@
 .footer-main
 {
   border-top: 1px solid $epsilon;
-  padding: 4rem 0;
-  margin: 4rem 0 0;
-  font-size: 1.3rem;
+  padding: calc(4rem * 0.625) 0;
+  margin: calc(4rem * 0.625) 0 0;
+  font-size: calc(1.3rem * 0.625);
   color: $gama;
   font-weight: 300;
   text-align: center;

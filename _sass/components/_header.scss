@@ -12,7 +12,7 @@
 
   > .title
   {
-    font-size: 4rem;
+    font-size: calc(4rem * 0.625);
     margin: 0 0 13px;
     
     a {
@@ -23,7 +23,7 @@
 
   > .description
   {
-    font-size: 1.85rem;
+    font-size: 1.8calc(5rem * 0.625);
     font-weight: 300;
     font-style: normal;
     color: $gama;

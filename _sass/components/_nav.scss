@@ -1,6 +1,6 @@
 .main-nav
 {
-  margin-top: 4rem;
+  margin-top: calc(4rem * 0.625);
   text-align: center;
 
   > .list
@@ -19,10 +19,10 @@
     {
       display: inline-block;
       font-weight: 300;
-      font-size: 1.4rem;
+      font-size: calc(1.4rem * 0.625);
       padding: 20px 10px;
       text-decoration: none;
-      font-size: 2rem;
+      font-size: calc(2rem * 0.625);
       padding: 7px 15px;
       margin: 0;
       border-radius: 4%;

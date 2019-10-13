@@ -1,6 +1,6 @@
 body, html
 {
-  font-size: 62.5%;
+  font-size: 100%;
 }
 
 body
@@ -22,7 +22,7 @@ h1, h2, h3, h4
 
 h1
 {
-  font-size: 3rem;
+  font-size: calc(3rem * 0.625);
   letter-spacing: -1px;
   color: $beta;
   font-weight: 700;
@@ -30,17 +30,17 @@ h1
 
 h2
 {
-  font-size: 2.2rem;
+  font-size: calc(2.2rem * 0.625);
 }
 
 h3
 {
-  font-size: 2rem;
+  font-size: calc(2rem * 0.625);
 }
 
 h4
 {
-  font-size: 1.6rem;
+  font-size: calc(1.6rem * 0.625);
 }
 
 a
@@ -68,7 +68,7 @@ ul, ol
 {
   li
   {
-    line-height: 2.4rem;
+    line-height: calc(2.4rem * 0.625);
     font-weight: 300;
     color: $alpha;
   }
@@ -93,7 +93,7 @@ figcaption
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: calc(1.3rem * 0.625);
   color: $gama;
   font-weight: 300;
 }
@@ -141,8 +141,8 @@ pre
   width: 100%;
   padding: 5px 10px;
   font-family: $fontMonospace;
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: calc(1.2rem * 0.625);
+  line-height: calc(2rem * 0.625);
   overflow: auto;
   background: #fff;
   border: 1px solid $epsilon;
