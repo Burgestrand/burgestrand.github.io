@@ -2,34 +2,45 @@
 {
   text-align: center;
 
-  > .list
+  ul
   {
     list-style: none;
     margin: 0;
     padding: 0;
     text-align: center;
 
-    > .item
+    li
     {
       display: inline-block;
     }
 
-    > .item > .link
+    .active .link:after {
+      transform: scaleX(1);
+    }
+
+    .link
     {
       display: inline-block;
       font-weight: 300;
-      font-size: calc(1.4rem * 0.625);
-      padding: 20px 10px;
       text-decoration: none;
-      font-size: calc(2rem * 0.625);
+      font-size: 1.25rem;
       padding: 7px 15px;
       margin: 0;
-      border-radius: 4%;
-      transition: color .4s ease-in-out;
+      transition: color .1s ease-in-out;
+
+      &:after {
+        display: block;
+        content: '';
+        border-bottom: 1px solid rgba($delta, 0.4);
+        transform: scaleX(0);
+        transition: transform .1s ease-in-out
+      }
 
       &:hover
       {
-        color: $alpha;
+        &:after {
+          transform: scaleX(1);
+        }
       }
     }
   }

@@ -21,7 +21,7 @@
   </head>
   <body>
     <div class="wrapper-normal">
-      <div class="page {{ page.class }} {% if page.collection %}{{ page.collection }}-collection{% endif %}">
+      <div class="page {{ page.active }} {% if page.collection %}{{ page.collection }}-collection{% endif %}">
         {{ content }}
       </div>
     </div>
