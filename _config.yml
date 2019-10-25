@@ -18,6 +18,9 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  
+collections:
+  works:
 
 # Miscellaneous
 author: Kim Burgestrand

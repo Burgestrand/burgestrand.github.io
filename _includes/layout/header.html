@@ -20,6 +20,9 @@
         <a class="link" href="{% link articles/index.html %}">Articles</a>
       </li>
 
+      <li class="item {% if page.active == "works" %}active{% endif %}">
+        <a class="link" href="{% link works/index.html %}">Works</a>
+      </li>
 
       <li class="item {% if page.active == "about-me" %}active{% endif %}">
         <a class="link" href="{% link about-me/index.html %}">About Me</a>
