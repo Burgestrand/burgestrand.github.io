@@ -17,4 +17,4 @@ categories: []
 ---
 EOF
 
-mvim $filename
+open $filename
