@@ -29,22 +29,14 @@ layout: default
 
 {{content}}
 
-<section class="author">
-  <div class="toleft">
+<section class="border-t pt-10 flex flex-row gap-4">
+  <div class="basis-1/3">
     {% include selfie.html %}
   </div>
 
-  <div class="toright">
-    <a class="link" href="{% link about-me/index.html %}">
-      <h4 class="name">{{ site.author }}</h4>
-      <p class="bio">{{ site.description }}</p>
-    </a>
-
-    <div class="share">
-      <a class="twitter popup" href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_param_escape }}&text={{ page.title | url_param_escape }}&via={{ site.social.twitter }}">
-        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg><span class="icon-twitter">Tweet</span>
-      </a>
-    </div>
+  <div class="basis-2/3 flex flex-col justify-center">
+    <h4 class="name">{{ site.author }}</h4>
+    <p class="bio m-0">{{ site.description }}</p>
   </div>
 </section>
 
