@@ -26,20 +26,6 @@ description: |-
 title: Kim Burgestrand's website
 url: https://www.burgestrand.se
 
-social:
-  - icon: mail
-    url: mailto:kim@burgestrand.se
-    title: kim@burgestrand.se
-  - icon: github
-    url: https://github.com/burgestrand
-    title: "@burgestrand"
-  - icon: rubygems
-    url: https://rubygems.org/profiles/Burgestrand
-    title: burgestrand
-  - icon: mastodon
-    url: https://ruby.social/@burgestrand
-    title: "@burgestrand@ruby.social"
-
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
 # normal = 560px / large = 810px

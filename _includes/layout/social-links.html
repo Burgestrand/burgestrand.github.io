@@ -1,5 +1,5 @@
 <nav class="social-links">
-  {% for social in site.social %}
+  {% for social in site.data.social %}
     <a class="link" data-title="{{ social.title }}" href="{{ social.url }}" target="_blank">
       <svg class="icon icon-{{ social.icon }}"><use xlink:href="#icon-{{ social.icon }}"></use></svg>
     </a>
