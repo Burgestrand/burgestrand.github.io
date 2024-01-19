@@ -37,7 +37,7 @@
       content: attr(data-title);
       display: inline-block;
       position: absolute;
-      bottom: -34px;
+      bottom: calc(-1lh - 6px);
       left: -6px;
       margin: 0 auto;
       font-size: 13px;
@@ -46,7 +46,6 @@
       color: #fff;
       border-radius: 2px;
       height: 22px;
-      line-height: 22px;
       opacity: 0;
       transition: opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear;
       transform: translate3d(0,-8px,0);
@@ -58,7 +57,7 @@
       pointer-events: none;
       content: "";
       position: absolute;
-      top: 35px;
+      bottom: 0;
       left: 13px;
       width: 0;
       height: 0;
