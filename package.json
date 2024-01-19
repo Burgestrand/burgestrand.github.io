@@ -1,0 +1,18 @@
+{
+  "name": "burgestrand.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Burgestrand/burgestrand.github.io.git",
+  "author": "Kim Burgestrand <kim@burgestrand.se>",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.0.16"
+  }
+}

@@ -1,11 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
-hash bundle 2>/dev/null || gem install bundler
-bundle install -j4
+if ! gem list foreman -i --silent; then
+  echo "Installing foreman..."
+  gem install foreman
+fi
 
-bundle exec jekyll server \
-  --watch \
-  --livereload \
-  --drafts \
-  --port 8080 --host=0.0.0.0 \
-  --config _config.yml,_config.dev.yml
+exec foreman start -f Procfile.dev "$@"

@@ -1,0 +1,2 @@
+jekyll: bin/jekyll
+tailwind: npx tailwindcss --input ./assets/stylesheets/_tailwind.css --output ./assets/stylesheets/tailwind.css --watch

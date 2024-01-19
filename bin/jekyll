@@ -1,0 +1,11 @@
+#!/bin/bash
+
+hash bundle 2>/dev/null || gem install bundler
+bundle install -j4
+
+bundle exec jekyll server \
+  --watch \
+  --livereload \
+  --drafts \
+  --port 8080 --host=0.0.0.0 \
+  --config _config.yml,_config.dev.yml

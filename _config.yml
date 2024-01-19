@@ -45,4 +45,13 @@ plugins:
   - jekyll-paginate
   - jekyll-sass-converter
 
-exclude: [README.md, Gemfile, Gemfile.lock, CNAME, bin/]
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - CNAME
+  - bin/
+  - .sass-cache/
+  - .jekyll-cache/
+  - node_modules/
+  - vendor/

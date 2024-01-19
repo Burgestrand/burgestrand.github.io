@@ -7,6 +7,8 @@
 - icon: rubygems
   url: https://rubygems.org/profiles/Burgestrand
   title: burgestrand
+  class: "fill-red-500"
 - icon: mastodon
   url: https://ruby.social/@burgestrand
   title: "@burgestrand@ruby.social"
+  class: "text-blue-500"
