@@ -27,18 +27,18 @@ title: Kim Burgestrand's website
 url: https://www.burgestrand.se
 
 social:
-  facebook: burgestrand
-  twitter: burgestrand
-  # google: burgestrand
-  instagram: burgestrand
-  # pinterest: burgestrand
-  # linkedin: burgestrand
-  # youtube: burgestrand
-  spotify: burgestrand
-  github: burgestrand
-  # medium: burgestrand
-  email: kim@burgestrand.se
-  rubygems: burgestrand
+  - icon: mail
+    url: mailto:kim@burgestrand.se
+    title: kim@burgestrand.se
+  - icon: github
+    url: https://github.com/burgestrand
+    title: "@burgestrand"
+  - icon: rubygems
+    url: https://rubygems.org/profiles/Burgestrand
+    title: burgestrand
+  - icon: mastodon
+    url: https://ruby.social/@burgestrand
+    title: "@burgestrand@ruby.social"
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
