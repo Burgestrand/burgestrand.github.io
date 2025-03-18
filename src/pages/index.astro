@@ -13,11 +13,16 @@ const socials = [
 <Layout>
   <main class="flex flex-col items-center justify-center h-full gap-4">
     <header class="flex flex-col items-center justify-center gap-4">
-      <Image
-        src={avatar}
-        alt="Photo of Kim Burgestrand"
-        class="object-cover rounded-full size-60 border border-white"
-      />
+      <a
+        href="/"
+        class="rounded-full shadow-md shadow-black border-gray-900 border-1"
+      >
+        <Image
+          src={avatar}
+          alt="Photo of Kim Burgestrand"
+          class="object-cover rounded-full size-60"
+        />
+      </a>
       <h1 class="text-4xl font-bold font-roboto-slab">Kim Burgestrand</h1>
       <ul class="flex flex-row gap-4">
         {
@@ -45,8 +50,9 @@ const socials = [
           >Resarö</a
         > in the Stockholm archipelago. My history includes a short visit to Jönköping
         University where I met my partner Elin, a pit stop at Gothenburg University,
-        and then roughly five years as a developer at <a
-          href="https://www.varvet.com/">Elabs (Varvet since 2016)</a
+        and then roughly five years as a full-stack developer at digital agency called
+        <a href="https://www.varvet.com/">Elabs</a><sup
+          ><a href="#ft-1">#1</a></sup
         >.
       </p>
 
@@ -55,7 +61,7 @@ const socials = [
         while we lived happily out in the woods of <a
           href="https://en.wikipedia.org/wiki/Let_the_Right_One_In_(novel)"
           >Blackeberg</a
-        >, while I ran a startup in the consumer mobile space.
+        >, while I ran a startup as tech lead in the consumer mobile space.
       </p>
 
       <p>
@@ -74,7 +80,8 @@ const socials = [
         of a small rebooted digital agency named <a
           href="https://www.varvet.com/">Varvet</a
         >. We spend our time building beautiful and useful digital services,
-        like websites and apps.
+        like websites and apps. Long-lasting relationships and problem-solving
+        is our forte.
       </p>
 
       <p>In 2021 my daughter was born.</p>
@@ -89,19 +96,29 @@ const socials = [
         >, <a
           href="https://en.wikipedia.org/wiki/First-person_view_(radio_control)"
           >an FPV freestyle drone</a
+        >. I <a href="https://rubygems.org/gems/pundit"
+          >maintain a popular software package (over 75 million downloads)</a
         >, and I <a href="https://www.rindögården.se">help run a fritidsgård</a
         >.
       </p>
 
       <p>
-        All of that, and what's absolutely most important to me is my family.
+        In 2024 I thought Rindö should have a public midsummer festival, so I
+        hosted one with two friends and 300+ people showed up. Absolutely
+        amazing. We'll do it again in 2025.
       </p>
 
       <p>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          >I'm a life partner, and a dad.</a
-        >
+        Having said all of that, my family is the absolutely most important
+        thing to me. I'm a life partner,
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">and a dad.</a>
       </p>
+
+      <footer class="text-gray-500">
+        <ol>
+          <li><a id="ft-1"></a>1. Merged with Varvet in 2016.</li>
+        </ol>
+      </footer>
     </article>
   </main>
 </Layout>
