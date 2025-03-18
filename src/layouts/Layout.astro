@@ -1,0 +1,30 @@
+---
+const title = "Kim Burgestrand";
+const description =
+  "Personal website of Kim Burgestrand - developer, maker, community builder, and dad.";
+import avatar from "@/assets/Varvet.jpg";
+import "@/styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+
+    <meta property="og:title" content="Kim Burgestrand" />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={avatar.src} />
+    <meta property="og:url" content="https://www.burgestrand.se" />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-(--rich-black) text-(--on-rich-black)">
+    <slot />
+  </body>
+</html>
