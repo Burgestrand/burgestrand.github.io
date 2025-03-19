@@ -1,124 +1,84 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import avatar from "@/assets/Varvet.jpg";
-
-const socials = [
-  { text: "GitHub", url: "https://github.com/burgestrand" },
-  { text: "LinkedIn", url: "https://linkedin.com/in/burgestrand" },
-  { text: "Mastodon", url: "https://ruby.social/@burgestrand" },
-];
+import FullPageLayout from "../layouts/FullPageLayout.astro";
+import Header from "@/components/Header.astro";
 ---
 
-<Layout>
-  <main class="flex flex-col items-center justify-center h-full gap-4">
-    <header class="flex flex-col items-center justify-center gap-4">
-      <a
-        href="/"
-        class="rounded-full shadow-md shadow-black border-gray-900 border-1"
+<FullPageLayout>
+  <Header />
+  <article class="max-w-lg flex flex-col gap-4">
+    <h2 class="text-2xl font-roboto-slab">About Me</h2>
+
+    <p>
+      I’m a self-taught Swedish developer and grew up on an island named
+      <a href="http://maps.apple.com/?address=Resarö,+Vaxholm,+Sweden&t=m"
+        >Resarö</a
+      > in the Stockholm archipelago. My history includes a short visit to Jönköping
+      University where I met my partner Elin, a pit stop at Gothenburg University,
+      and then roughly five years as a full-stack developer at digital agency called
+      <a href="https://www.varvet.com/">Elabs</a><sup
+        ><a href="#ft-1">#1</a></sup
+      >.
+    </p>
+
+    <p>
+      In 2016, Elin and I moved to Stockholm to get closer to family. For a
+      while we lived happily out in the woods of <a
+        href="https://en.wikipedia.org/wiki/Let_the_Right_One_In_(novel)"
+        >Blackeberg</a
+      >, while I ran a startup as tech lead in the consumer mobile space.
+    </p>
+
+    <p>
+      Late 2018 my son was born, and in the following summer we packed our
+      things and moved out into the archipelago, to a small ex-military island
+      known <a href="http://maps.apple.com/?address=Rindö,+Vaxholm,+Sweden&t=m"
+        >Rindö</a
+      >. Things were great, and then the pandemic hit.
+    </p>
+
+    <p>
+      Long story short, since 2020 I am a <a href="https://kim.varvet.com"
+        >co-founder & partner</a
       >
-        <Image
-          src={avatar}
-          alt="Photo of Kim Burgestrand"
-          class="object-cover rounded-full size-60"
-        />
-      </a>
-      <h1 class="text-4xl font-bold font-roboto-slab">Kim Burgestrand</h1>
-      <ul class="flex flex-row gap-4">
-        {
-          socials.map((social) => (
-            <li key={social.text}>
-              <a
-                href={social.url}
-                class="border-b"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {social.text}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </header>
-    <article class="max-w-lg flex flex-col gap-4">
-      <h2 class="text-2xl font-roboto-slab">About Me</h2>
+      of a small rebooted digital agency named <a href="https://www.varvet.com/"
+        >Varvet</a
+      >. We spend our time building beautiful and useful digital services, like
+      websites and apps. Long-lasting relationships and problem-solving is our
+      forte.
+    </p>
 
-      <p>
-        I’m a self-taught Swedish developer and grew up on an island named
-        <a href="http://maps.apple.com/?address=Resarö,+Vaxholm,+Sweden&t=m"
-          >Resarö</a
-        > in the Stockholm archipelago. My history includes a short visit to Jönköping
-        University where I met my partner Elin, a pit stop at Gothenburg University,
-        and then roughly five years as a full-stack developer at digital agency called
-        <a href="https://www.varvet.com/">Elabs</a><sup
-          ><a href="#ft-1">#1</a></sup
-        >.
-      </p>
+    <p>In 2021 my daughter was born.</p>
 
-      <p>
-        In 2016, Elin and I moved to Stockholm to get closer to family. For a
-        while we lived happily out in the woods of <a
-          href="https://en.wikipedia.org/wiki/Let_the_Right_One_In_(novel)"
-          >Blackeberg</a
-        >, while I ran a startup as tech lead in the consumer mobile space.
-      </p>
+    <p>
+      When I do have some free time I enjoy far too many things to list, and the
+      hobbies keep piling up. I'm a maker of things, karate instructor, juggler,
+      computer gamer, snowboarder, and community builder. I <a
+        href="https://github.com/Burgestrand/V1.324">built a 3D printer</a
+      >, <a href="https://github.com/MillenniumMachines/Milo-v1.5">a CNC mill</a
+      >, <a
+        href="https://en.wikipedia.org/wiki/First-person_view_(radio_control)"
+        >an FPV freestyle drone</a
+      >. I <a href="https://rubygems.org/gems/pundit"
+        >maintain a popular software package (over 75 million downloads)</a
+      >, and I <a href="https://www.rindögården.se">help run a fritidsgård</a>.
+    </p>
 
-      <p>
-        Late 2018 my son was born, and in the following summer we packed our
-        things and moved out into the archipelago, to a small ex-military island
-        known <a
-          href="http://maps.apple.com/?address=Rindö,+Vaxholm,+Sweden&t=m"
-          >Rindö</a
-        >. Things were great, and then the pandemic hit.
-      </p>
+    <p>
+      In 2024 I thought Rindö should have a public midsummer festival, so I
+      hosted one with two friends and 300+ people showed up. Absolutely amazing.
+      We'll do it again in 2025.
+    </p>
 
-      <p>
-        Long story short, since 2020 I am a <a href="https://kim.varvet.com"
-          >co-founder & partner</a
-        >
-        of a small rebooted digital agency named <a
-          href="https://www.varvet.com/">Varvet</a
-        >. We spend our time building beautiful and useful digital services,
-        like websites and apps. Long-lasting relationships and problem-solving
-        is our forte.
-      </p>
+    <p>
+      Having said all of that, my family is the absolutely most important thing
+      to me. I'm a life partner,
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">and a dad.</a>
+    </p>
 
-      <p>In 2021 my daughter was born.</p>
-
-      <p>
-        When I do have some free time I enjoy far too many things to list, and
-        the hobbies keep piling up. I'm a maker of things, karate instructor,
-        juggler, computer gamer, snowboarder, and community builder. I <a
-          href="https://github.com/Burgestrand/V1.324">built a 3D printer</a
-        >, <a href="https://github.com/MillenniumMachines/Milo-v1.5"
-          >a CNC mill</a
-        >, <a
-          href="https://en.wikipedia.org/wiki/First-person_view_(radio_control)"
-          >an FPV freestyle drone</a
-        >. I <a href="https://rubygems.org/gems/pundit"
-          >maintain a popular software package (over 75 million downloads)</a
-        >, and I <a href="https://www.rindögården.se">help run a fritidsgård</a
-        >.
-      </p>
-
-      <p>
-        In 2024 I thought Rindö should have a public midsummer festival, so I
-        hosted one with two friends and 300+ people showed up. Absolutely
-        amazing. We'll do it again in 2025.
-      </p>
-
-      <p>
-        Having said all of that, my family is the absolutely most important
-        thing to me. I'm a life partner,
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">and a dad.</a>
-      </p>
-
-      <footer class="text-gray-500">
-        <ol>
-          <li><a id="ft-1"></a>1. Merged with Varvet in 2016.</li>
-        </ol>
-      </footer>
-    </article>
-  </main>
-</Layout>
+    <footer class="text-gray-500">
+      <ol>
+        <li><a id="ft-1"></a>1. Merged with Varvet in 2016.</li>
+      </ol>
+    </footer>
+  </article>
+</FullPageLayout>
