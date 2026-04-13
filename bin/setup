@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+asdf plugin add nodejs 2>/dev/null || true
+asdf install
+
+npm install
