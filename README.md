@@ -7,6 +7,6 @@ Built using [Astro](https://astro.build/).
 ## Development
 
 ```bash
-npm install
-npm run dev
+bin/setup
+bin/dev
 ```
