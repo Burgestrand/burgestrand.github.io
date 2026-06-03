@@ -12,9 +12,9 @@
     "vite": "^7"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
-    "@tailwindcss/vite": "^4.0.14",
-    "astro": "^6.1.5",
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.4.3",
     "tailwindcss": "^4.0.14"
   }
 }
